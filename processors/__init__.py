@@ -1,0 +1,4 @@
+from cycling_predictor.processors.processor import CPProcessor
+from cycling_predictor.processors.trainer import CPTrainer
+from cycling_predictor.processors.predictor import CPPredictor
+from cycling_predictor.processors.selector import CPSelector
