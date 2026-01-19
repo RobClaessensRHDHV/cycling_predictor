@@ -5,8 +5,8 @@ import numpy as np
 import optuna
 
 from cycling_predictor.collectors import CPGTEntryCollector
-from cycling_predictor.processors.trainer import CPTrainer
 from cycling_predictor.models import XGBModel
+from cycling_predictor.processors import CPTrainer
 
 
 def param_space(trial: optuna.Trial) -> dict:
@@ -73,7 +73,7 @@ def objective(trial: optuna.Trial) -> float:
 
 # Get entry collector
 _entry_collector = CPGTEntryCollector.load(
-    '..\collectors\data\entry_collector_classics_2023_2024_2025_50.json')
+    '..\\cycling_predictor\\collectors\\data\\entry_collector_classics_2023_2024_2025_50.json')
 
 # Set up trainer
 trainer = CPTrainer(

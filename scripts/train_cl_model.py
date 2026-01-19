@@ -3,14 +3,13 @@ import operator as op
 import numpy as np
 
 from cycling_predictor.collectors import CPGTEntryCollector
-from cycling_predictor.processors.trainer import CPTrainer
-from cycling_predictor.processors.predictor import CPPredictor
 from cycling_predictor.models import XGBModel
+from cycling_predictor.processors import CPTrainer, CPPredictor
 
 
 # Get entry collector
 _entry_collector = CPGTEntryCollector.load(
-    '..\collectors\data\entry_collector_classics_2023_2024_2025_50.json')
+    '..\\cycling_predictor\\collectors\\data\\entry_collector_classics_2023_2024_2025_50.json')
 
 # Set up trainer
 trainer = CPTrainer(
@@ -131,7 +130,7 @@ else:
 
 # Get prediction entry collector
 _prediction_entry_collector = CPGTEntryCollector.load(
-    '..\collectors\data\entry_collector_classics_2022_50.json')
+    '..\\cycling_predictor\\collectors\\data\\entry_collector_classics_2022_50.json')
 
 # Set up predictor with trained model
 predictor = CPPredictor(
