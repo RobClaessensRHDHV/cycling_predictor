@@ -9,7 +9,7 @@ from cycling_predictor.processors import CPTrainer, CPPredictor
 
 # Get entry collector
 _entry_collector = CPGTEntryCollector.load(
-    '../src/collectors/data/entry_collector_giro_tour_vuelta_2023_2024_2025_100.json')
+    '../cycling_predictor/collectors/data/entry_collector_giro_tour_vuelta_2023_2024_2025_100.json')
 
 # Set up trainer (RR1)
 trainer = CPTrainer(
