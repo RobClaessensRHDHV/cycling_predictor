@@ -1,0 +1,27 @@
+[project]
+name = "cycling-predictor"
+version = "0.0.0"
+description = "A cycling race ranking predictor leveraging machine learning techniques."
+readme = "README.md"
+authors = [
+    { name = "Rob Claessens" }
+]
+requires-python = ">=3.11"
+license = "MIT"
+
+[tool.poetry.dependencies]
+numpy = "^2.2.0"
+torch = "^2.6.0"
+xgboost = "^2.1.0"
+scikit-learn = "^1.6.0"
+requests = "^2.31.0"
+procyclingstats = "^0.2.7"
+ortools = "^9.12.4544"
+scipy = "^1.15.0"
+matplotlib = "^3.10.0"
+selenium = "^4.38.0"
+cloudscraper = "^1.2.71"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
