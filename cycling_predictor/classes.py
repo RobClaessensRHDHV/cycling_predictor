@@ -191,22 +191,12 @@ class CPRace(ABC):
             year: int = 0,
             start_date: date = None,
             end_date: date = None,
-            distance: int = 0,
-            vertical_meters: int = 0,
-            profile_score: int = 0,
-            gradient_final_km: float = 0.0,
-            race_startlist_quality_score: int = 0,
             race_profile: Optional[CPRaceProfile] = None,
             startlist: List[str] = None):
         self.name = name
         self.year = year
         self.start_date = start_date
         self.end_date = end_date
-        self.distance = distance
-        self.vertical_meters = vertical_meters
-        self.profile_score = profile_score
-        self.gradient_final_km = gradient_final_km
-        self.race_startlist_quality_score = race_startlist_quality_score
         self.race_profile = race_profile
         self.startlist = startlist
         self._uid = str(uuid4())
@@ -232,11 +222,6 @@ class CPRace(ABC):
             "year": self.year,
             "start_date": self.start_date.isoformat() if self.start_date else None,
             "end_date": self.end_date.isoformat() if self.end_date else None,
-            "distance": self.distance,
-            "vertical_meters": self.vertical_meters,
-            "profile_score": self.profile_score,
-            "gradient_final_km": self.gradient_final_km,
-            "race_startlist_quality_score": self.race_startlist_quality_score,
             "race_profile": self.race_profile,
             "startlist": self.startlist,
             "uid": self.uid,
@@ -249,11 +234,6 @@ class CPRace(ABC):
             year=data.get("year", 0),
             start_date=date.fromisoformat(data["start_date"]) if data.get("start_date") else None,
             end_date=date.fromisoformat(data["end_date"]) if data.get("end_date") else None,
-            distance=data.get("distance", 0),
-            vertical_meters=data.get("vertical_meters", 0),
-            profile_score=data.get("profile_score", 0),
-            gradient_final_km=data.get("gradient_final_km", 0.0),
-            race_startlist_quality_score=data.get("race_startlist_quality_score", 0),
             race_profile=data.get("race_profile", None),
             startlist=data.get("startlist", None),
         )
@@ -285,15 +265,15 @@ class CPStage(CPRace):
             year,
             start_date,
             end_date,
-            distance,
-            vertical_meters,
-            profile_score,
-            gradient_final_km,
-            race_startlist_quality_score,
             race_profile,
             startlist,
         )
 
+        self.distance = distance
+        self.vertical_meters = vertical_meters
+        self.profile_score = profile_score
+        self.gradient_final_km = gradient_final_km
+        self.race_startlist_quality_score = race_startlist_quality_score
         self.stage_type = stage_type
         self.stage_profile = stage_profile
         self.stage_number = stage_number
@@ -301,6 +281,11 @@ class CPStage(CPRace):
     def dumps(self):
         data = super().dumps()
         data.update({
+            "distance": self.distance,
+            "vertical_meters": self.vertical_meters,
+            "profile_score": self.profile_score,
+            "gradient_final_km": self.gradient_final_km,
+            "race_startlist_quality_score": self.race_startlist_quality_score,
             "stage_type": self.stage_type,
             "stage_profile": self.stage_profile,
             "stage_number": self.stage_number,

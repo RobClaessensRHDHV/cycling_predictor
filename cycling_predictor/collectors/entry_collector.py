@@ -89,11 +89,6 @@ class CPEntryCollector(CPBaseCollector):
             year=year,
             start_date=datetime.strptime(race_dict.get('startdate'), '%Y-%m-%d').date() if race_dict.get('startdate') else None,
             end_date=datetime.strptime(race_dict.get('enddate'), '%Y-%m-%d').date() if race_dict.get('enddate') else None,
-            distance=race_dict.get('distance', 0),
-            vertical_meters=race_dict.get('vertical_meters', 0),
-            profile_score=race_dict.get('profile_score', 0),
-            gradient_final_km=race_dict.get('gradient_final_km', 0.0),
-            race_startlist_quality_score=race_dict.get('race_startlist_quality_score', (0, 0))[1],
             race_profile=CPRaceProfileMap.get(name, None),
             startlist=startlist,
         )
