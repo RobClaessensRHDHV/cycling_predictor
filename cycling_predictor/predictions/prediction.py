@@ -12,7 +12,6 @@ class CPPrediction:
     """
     CyclingPredictor Prediction class.
     """
-    # TODO: Dump prediction (basic data dump or also proper ranking dump? - i.e. dump top k?)
     def __init__(
             self,
             prediction: np.ndarray,
@@ -145,6 +144,7 @@ class CPPrediction:
         return {
             "cls": self.__class__.__name__,
             "prediction": self.prediction.tolist(),
+            "scores": self.scores.tolist() if self.scores is not None else None,
             "result": self.result.tolist() if self.result is not None else None,
             "stage": self.stage.dumps() if self.stage else None,
             "riders": [rider.dumps() for rider in self.riders],
@@ -155,6 +155,7 @@ class CPPrediction:
         riders = [CPRider.loads(rider) for rider in data.get("riders", [])]
         prediction = cls(
             prediction=np.array(data["prediction"]),
+            scores=np.array(data["scores"]) if data.get("scores") is not None else None,
             result=np.array(data["result"]) if data.get("result") is not None else None,
             stage=CPStage.loads(data["stage"]) if data.get("stage") else None,
             riders=riders,
