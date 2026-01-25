@@ -58,7 +58,7 @@ class CPEnsemblePredictor:
             else:
                 predictions.append(self._combine_predictions(stage_predictions, normalize=normalize))
 
-        return predictions
+        return sorted(predictions, key=lambda p: (p.stage.start_date if p.stage else None))
 
     @staticmethod
     def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False) -> CPPrediction:
