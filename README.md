@@ -34,6 +34,9 @@ Processors handle the data logic, training, and prediction workflows.
 - **CPProcessor**: Abstract base class for processors, defining common methods for data filtering, preprocessing, dumping, loading, etc.
 - **CPTrainer**: Orchestrates the training process, including data preprocessing, scaling, and model fitting.
 - **CPPredictor**: Uses trained models to generate rank predictions for given stages.
+- **CPEnsemblePredictor**: A processor that takes multiple `CPPredictor` instances, delegating preprocessing and 
+  aggregating results. It automatically handles non-overlapping results (e.g. for all GT stages) and combines 
+  overlapping results (e.g. for hybrid classics) using combined predictions.
 - **CPSelector**: Employs optimization techniques (like a Knapsack algorithm using OR-Tools) to select an optimal team 
   based on predicted scores and budget constraints. *Note that this class isn't a descendant of `CPProcessor`*,
   but because of its functionality is still considered a processor.

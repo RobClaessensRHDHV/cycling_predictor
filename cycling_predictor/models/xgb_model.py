@@ -90,6 +90,7 @@ class XGBModel(BaseModel):
             # Create prediction
             prediction_obj = CPPrediction(
                 prediction=rankdata(-predictions[start:end], method='ordinal'),
+                scores=predictions[start:end],
                 result=y[start:end] if y is not None else None,
             )
 
@@ -169,6 +170,7 @@ class XGBModel(BaseModel):
             # Create prediction
             prediction_obj = CPPrediction(
                 prediction=rankdata(-predictions[start:end], method='ordinal'),
+                scores=predictions[start:end],
                 result=y[start:end] if y is not None else None,
                 stage=stages[start] if stages else None,
                 riders=riders[start:end] if riders else None,

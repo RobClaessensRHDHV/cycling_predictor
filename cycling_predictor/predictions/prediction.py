@@ -16,16 +16,19 @@ class CPPrediction:
     def __init__(
             self,
             prediction: np.ndarray,
+            scores: Optional[np.ndarray] = None,
             result: Optional[np.ndarray] = None,
             stage: Optional[CPStage] = None,
             riders: List[CPRider] = None):
         """
         :param prediction: Prediction, array of integers in predicted order (rank 1 - N).
+        :param scores: Optional raw scores from the model (i.e. relevance scores before conversion to ranks).
         :param result: Optional actual result, array of integers in actual order (rank 1 - N).
         :param stage: Predicted stage.
         :param riders: Optional list of riders used in the prediction/result.
         """
         self.prediction = prediction
+        self.scores = scores
         self.result = result
         self.stage = stage
         self.riders = riders
