@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import numpy as np
 from scipy.stats import rankdata
@@ -18,12 +18,14 @@ class CPEnsemblePredictor:
         """
         self.predictors = predictors
 
-    def preprocess(self, **kwargs) -> None:
+    def preprocess(self, rider_feature_noise: Optional[float] = None) -> None:
         """
         Delegates preprocessing to all child predictors.
+
+        :param rider_feature_noise: Optional noise to add to rider features for augmentation.
         """
         for predictor in self.predictors:
-            predictor.preprocess(**kwargs)
+            predictor.preprocess(rider_feature_noise=rider_feature_noise)
 
     def predict(self, normalize: bool = False) -> List[CPPrediction]:
         """

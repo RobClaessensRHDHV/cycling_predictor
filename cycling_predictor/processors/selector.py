@@ -1,4 +1,5 @@
 from typing import List, Tuple, Optional
+
 from ortools.linear_solver import pywraplp
 
 from cycling_predictor.maps import CPClassicPointsMap
@@ -118,61 +119,31 @@ class CPSelector:
 
 if __name__ == "__main__":
 
-    from cycling_predictor.collectors import CPClassicEntryCollector
-    from cycling_predictor.processors import CPTrainer, CPPredictor
+    from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
-    # Load trainer
-    _sprint_trainer = CPTrainer.load('data\CPTrainer_classics_2023_2024_2025_50_0.2_20_sprint.json')
-    _cobbles_trainer = CPTrainer.load('data\CPTrainer_classics_2023_2024_2025_50_0.2_15_cobbles.json')
-    _hills_trainer = CPTrainer.load('data\CPTrainer_classics_2023_2024_2025_50_0.2_29_hills.json')
+    # Load predictors
+    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_sprint.json')
+    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_cobbles.json')
+    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_hills.json')
 
-    # Get prediction entry collector
-    _prediction_entry_collector = CPClassicEntryCollector.load(
-        '..\collectors\data\entry_collector_classics_2022_50.json')
-
-    # Set up predictors with trained models
-    _sprint_predictor = CPPredictor(
-        collector=_prediction_entry_collector,
-        rider_feature_filter=_sprint_trainer.rider_feature_filter,
-        interactions=_sprint_trainer.interactions,
-        stage_filter={'year': (2022,), 'race_profile': ('sprint',)},
-        scaler=_sprint_trainer.scaler,
-        model=_sprint_trainer.model,
-    )
-    _cobbles_predictor = CPPredictor(
-        collector=_prediction_entry_collector,
-        rider_feature_filter=_cobbles_trainer.rider_feature_filter,
-        interactions=_cobbles_trainer.interactions,
-        stage_filter={'year': (2022,), 'race_profile': ('cobbles',)},
-        scaler=_cobbles_trainer.scaler,
-        model=_cobbles_trainer.model,
-    )
-    _hills_predictor = CPPredictor(
-        collector=_prediction_entry_collector,
-        rider_feature_filter=_hills_trainer.rider_feature_filter,
-        interactions=_hills_trainer.interactions,
-        stage_filter={'year': (2022,), 'race_profile': ('hills',)},
-        scaler=_hills_trainer.scaler,
-        model=_hills_trainer.model,
+    # Set up ensemble predictor
+    _ensemble_predictor = CPEnsemblePredictor(
+        predictors=[
+            _sprint_predictor,
+            _cobbles_predictor,
+            _hills_predictor
+        ]
     )
 
     # Preprocess data for predictions
-    _sprint_predictor.preprocess()
-    _cobbles_predictor.preprocess()
-    _hills_predictor.preprocess()
-    # _sprint_predictor.preprocess(rider_feature_noise=0.25)
-    # _cobbles_predictor.preprocess(rider_feature_noise=0.25)
-    # _hills_predictor.preprocess(rider_feature_noise=0.25)
+    _ensemble_predictor.preprocess(rider_feature_noise=0.1)
 
     # Predict
-    _predictions = list()
-    _predictions += _sprint_predictor.predict()
-    _predictions += _cobbles_predictor.predict()
-    _predictions += _hills_predictor.predict()
+    _predictions = _ensemble_predictor.predict()
 
     # Create selector
     _selector = CPSelector(
-        riders=_prediction_entry_collector.riders,
+        riders=_sprint_predictor.collector.riders,
         predictions=_predictions,
     )
 
