@@ -25,9 +25,12 @@ class CPEnsemblePredictor:
         for predictor in self.predictors:
             predictor.preprocess(**kwargs)
 
-    def predict(self) -> List[CPPrediction]:
+    def predict(self, normalize: bool = False) -> List[CPPrediction]:
         """
         Collects results from all child predictors and merges them.
+
+        :param normalize: Whether to normalize raw scores when combining predictions.
+        :return: List of combined predictions.
         """
         # Collect all predictions from children
         prediction_dict: Dict[str, List[CPPrediction]] = dict()
@@ -41,45 +44,46 @@ class CPEnsemblePredictor:
                     if prediction_dict.get(stage_uid):
                         prediction_dict[stage_uid].append(child_prediction)
                     else:
-                        prediction_dict[stage_uid] = [child_predictions]
+                        prediction_dict[stage_uid] = [child_prediction]
 
         # Iterate through collected stages and finalize
-        final_predictions = []
+        predictions = list()
         for stage_uid, stage_predictions in prediction_dict.items():
             # If only one prediction, directly pass along
             if len(stage_predictions) == 1:
-                final_predictions.append(stage_predictions[0])
+                predictions.append(stage_predictions[0])
             # Otherwise, combine predictions
             else:
-                final_predictions.append(self._combine_predictions(stage_predictions))
+                predictions.append(self._combine_predictions(stage_predictions, normalize=normalize))
 
-        return final_predictions
+        return predictions
 
     @staticmethod
-    def _combine_predictions(predictions: List[CPPrediction]) -> CPPrediction:
+    def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False) -> CPPrediction:
         """
         Combines multiple predictions for the same stage.
-        If models provide raw scores, it uses normalized relevance scores.
+        If models provide raw scores, it uses relevance scores.
         Otherwise, it falls back to rank-based fusion.
+
+        :param predictions: List of predictions to combine.
+        :param normalize: Whether to normalize raw scores when combining predictions.
+        :return: Combined prediction.
         """
         reference_prediction = predictions[0]
         num_riders = len(reference_prediction.prediction)
         
-        # Calculate a consensus score where HIGHER is BETTER
+        # Calculate a consensus score (where higher is better!)
         consensus_scores = np.zeros(num_riders)
         num_predictors = len(predictions)
 
         for prediction in predictions:
             if prediction.scores is not None:
-                # Use raw scores. First, normalize to [0, 1] within this specific prediction
-                # Note: XGBRanker scores are usually such that higher is better relevance.
-                s_min, s_max = prediction.scores.min(), prediction.scores.max()
-                if s_max > s_min:
-                    normalized_scores = (prediction.scores - s_min) / (s_max - s_min)
-                # If all scores are identical, treat all as equally relevant
-                else:
-                    normalized_scores = np.ones(num_riders)
-                consensus_scores += normalized_scores / num_predictors
+                # Use raw scores (optionally normalized)
+                scores = prediction.scores
+                if normalize:
+                    s_min, s_max = scores.min(), scores.max()
+                    scores = (scores - s_min) / (s_max - s_min) if s_max > s_min else np.ones(num_riders)
+                consensus_scores += scores / num_predictors
             else:
                 # Fallback to rank-based. Turn ranks (1=best) into scores (higher=best)
                 # Max rank - current rank gives a simple inverted scale
@@ -97,3 +101,26 @@ class CPEnsemblePredictor:
             stage=reference_prediction.stage,
             riders=reference_prediction.riders
         )
+
+
+if __name__ == "__main__":
+
+    # Load predictors
+    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_sprint.json')
+    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_cobbles.json')
+    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2022_50_2022_hills.json')
+
+    # Set up ensemble predictor
+    _ensemble_predictor = CPEnsemblePredictor(
+        predictors=[
+            _sprint_predictor,
+            _cobbles_predictor,
+            _hills_predictor
+        ]
+    )
+
+    # Preprocess data for predictions
+    _ensemble_predictor.preprocess()
+
+    # Predict
+    _ensemble_predictor.predict()
