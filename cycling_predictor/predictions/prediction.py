@@ -44,6 +44,10 @@ class CPPrediction:
             return prediction_str
 
     @property
+    def uid(self):
+        return self._uid
+
+    @property
     def rider_prediction(self) -> List[CPRider]:
         """
         Get the list of predicted riders in order.
@@ -164,7 +168,7 @@ class CPPrediction:
                 else:
                     fp = f'data/prediction_{self.stage.name}_{self.stage.year}.json'
             else:
-                fp = f'data/prediction_{self._uid}.json'
+                fp = f'data/prediction_{self.uid}.json'
 
         with open(fp, 'w+') as f:
             json.dump(data, f, indent=2)

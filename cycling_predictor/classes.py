@@ -73,6 +73,10 @@ class CPRider:
             return self.name == other.name
         return False
 
+    @property
+    def uid(self):
+        return self._uid
+
     def get_results(self, year, raise_error: bool = False):
         if self.results and self.results.get(year):
             return
@@ -146,7 +150,7 @@ class CPRider:
             "ttl": self.ttl,
             "tts": self.tts,
             "pr_": self.pr_,
-            "uid": self._uid,
+            "uid": self.uid,
         }
 
     @classmethod
@@ -218,6 +222,10 @@ class CPRace(ABC):
             return self.name == other.name and self.start_date == other.start_date and self.end_date == other.end_date
         return False
 
+    @property
+    def uid(self):
+        return self._uid
+
     def dumps(self):
         return {
             "name": self.name,
@@ -231,7 +239,7 @@ class CPRace(ABC):
             "race_startlist_quality_score": self.race_startlist_quality_score,
             "race_profile": self.race_profile,
             "startlist": self.startlist,
-            "uid": self._uid,
+            "uid": self.uid,
         }
 
     @classmethod
@@ -381,10 +389,14 @@ class CPEntry:
             return self.rider == other.rider and self.stage == other.stage
         return False
 
+    @property
+    def uid(self):
+        return self._uid
+
     def dumps(self):
         return {
-            "rider": self.rider._uid,
-            "stage": self.stage._uid,
+            "rider": self.rider.uid,
+            "stage": self.stage.uid,
             "rank": self.rank,
             "rider_age": self.rider_age,
             "rider_form": self.rider_form,
@@ -412,4 +424,4 @@ class CPEntry:
 
         target = self.rank or 0
 
-        return sample, target, self.stage._uid, self.rider._uid
+        return sample, target, self.stage.uid, self.rider.uid

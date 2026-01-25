@@ -209,24 +209,24 @@ class CPEntryCollector(CPBaseCollector):
 
     def get_rider(self, rider_uid: str) -> Optional[CPRider]:
         for rider in self.riders:
-            if rider._uid == rider_uid:
+            if rider.uid == rider_uid:
                 return rider
         return None
     
     def get_race(self, race_uid: str) -> Optional[CPRace]:
         for race in self.races:
-            if race._uid == race_uid:
+            if race.uid == race_uid:
                 return race
         
         for stage in self.stages:
-            if stage._uid == race_uid:
+            if stage.uid == race_uid:
                 return stage
         
         return None
 
     def get_stage(self, stage_uid: str) -> Optional[CPStage]:
         for stage in self.stages:
-            if stage._uid == stage_uid:
+            if stage.uid == stage_uid:
                 return stage
         return None
 
