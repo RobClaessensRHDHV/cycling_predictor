@@ -89,7 +89,6 @@ class CPEntryCollector(CPBaseCollector):
             year=year,
             start_date=datetime.strptime(race_dict.get('startdate'), '%Y-%m-%d').date() if race_dict.get('startdate') else None,
             end_date=datetime.strptime(race_dict.get('enddate'), '%Y-%m-%d').date() if race_dict.get('enddate') else None,
-            race_profile=CPTerrainTypeMap.get(name, None),
             startlist=startlist,
         )
 

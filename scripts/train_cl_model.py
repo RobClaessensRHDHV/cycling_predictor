@@ -27,7 +27,7 @@ trainer = CPTrainer(
         ('hll', 'vertical_meters'): op.mul,
         ('hll', 'race_startlist_quality_score'): op.mul,
     },
-    stage_filter={'race_profile': ('hills',)},
+    stage_filter={'terrain_types': ('hills',)},
 )
 
 # Preprocess data
@@ -138,7 +138,7 @@ predictor = CPPredictor(
     rider_feature_filter=trainer.rider_feature_filter,
     interactions=trainer.interactions,
     # stage_filter={'year': (2022,)},
-    stage_filter={'year': (2022,), 'race_profile': ('hills',)},
+    stage_filter={'year': (2022,), 'terrain_types': ('hills',)},
     scaler=trainer.scaler,
     model=trainer.model,
 )

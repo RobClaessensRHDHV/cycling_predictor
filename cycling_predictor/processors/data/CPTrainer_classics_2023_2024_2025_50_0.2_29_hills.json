@@ -36673,7 +36673,7 @@
   },
   "rider_filter": null,
   "stage_filter": {
-    "race_profile": [
+    "terrain_types": [
       "hills"
     ]
   },

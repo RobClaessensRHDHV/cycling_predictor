@@ -90,7 +90,7 @@ trainer = CPTrainer(
         ('hll', 'vertical_meters'): op.mul,
         ('hll', 'race_startlist_quality_score'): op.mul,
     },
-    # stage_filter={'race_profile': ('cobbles',)},
+    # stage_filter={'terrain_types': ('cobbles',)},
 )
 
 # Preprocess data
