@@ -52,7 +52,7 @@ class CPPredictor(CPProcessor):
     def dump_fn(self) -> str:
         collector_fn = self.collector.dump_fn.split('_', 1)[1]
         return (f"{self.__class__.__name__}_{Path(collector_fn).stem}_"
-                f"{'_'.join([v for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
+                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
 
     def scale(self, samples: np.ndarray) -> np.ndarray:
         """
@@ -107,21 +107,21 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPTrainer
 
     # Load trainer
-    trainer = CPTrainer.load(r'data\CPTrainer_giro_tour_vuelta_2023_2024_2025_100_0.2_15.json')
+    _trainer = CPTrainer.load(r'data\CPTrainer_giro_tour_vuelta_2023_2024_2025_100_0.2_15.json')
 
     # Set up predictor with trained model
-    predictor = CPPredictor(
-        collector=trainer.collector,
-        rider_feature_filter=trainer.rider_feature_filter,
-        stage_feature_filter=trainer.stage_feature_filter,
-        interactions=trainer.interactions,
+    _predictor = CPPredictor(
+        collector=_trainer.collector,
+        rider_feature_filter=_trainer.rider_feature_filter,
+        stage_feature_filter=_trainer.stage_feature_filter,
+        interactions=_trainer.interactions,
         stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (1,), 'stage_type': ('RR',)},
-        scaler=trainer.scaler,
-        model=trainer.model,
+        scaler=_trainer.scaler,
+        model=_trainer.model,
     )
 
     # Preprocess data for prediction
-    predictor.preprocess()
+    _predictor.preprocess()
 
     # Predict
-    predictor.predict()
+    _predictor.predict()

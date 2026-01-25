@@ -61,7 +61,7 @@ class CPTrainer(CPProcessor):
         collector_fn = self.collector.dump_fn.split('_',1)[1]
         return (f"{self.__class__.__name__}_{Path(collector_fn).stem}_"
                 f"{self.config.get('test_size')}_{self.config.get('random_state')}_"
-                f"{'_'.join([v for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
+                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
 
     def scale(self, samples: np.ndarray) ->np.ndarray:
         """
