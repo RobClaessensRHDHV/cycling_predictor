@@ -10590,7 +10590,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -10784,7 +10784,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -10978,7 +10978,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -11172,7 +11172,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -11366,7 +11366,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -11560,7 +11560,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -11754,7 +11754,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -11948,7 +11948,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -12142,7 +12142,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -12336,7 +12336,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -12530,7 +12530,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -12724,7 +12724,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -12918,7 +12918,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -13112,7 +13112,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -13306,7 +13306,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -13500,7 +13500,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -13694,7 +13694,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -13888,7 +13888,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -14082,7 +14082,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -14276,7 +14276,7 @@
       "stage_type": "ITT",
       "stage_profile": 5,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -14470,7 +14470,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -14664,7 +14664,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -14858,7 +14858,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -15052,7 +15052,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -15246,7 +15246,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -15440,7 +15440,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -15634,7 +15634,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -15828,7 +15828,7 @@
       "stage_type": "ITT",
       "stage_profile": 3,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16022,7 +16022,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16216,7 +16216,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16410,7 +16410,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16604,7 +16604,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16798,7 +16798,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -16992,7 +16992,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -17186,7 +17186,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -17380,7 +17380,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -17574,7 +17574,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -17768,7 +17768,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -17962,7 +17962,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -18156,7 +18156,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -18350,7 +18350,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -18544,7 +18544,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -18746,7 +18746,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -18948,7 +18948,7 @@
       "stage_type": "ITT",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -19150,7 +19150,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -19352,7 +19352,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -19554,7 +19554,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -19756,7 +19756,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -19958,7 +19958,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -20160,7 +20160,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -20362,7 +20362,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -20564,7 +20564,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -20766,7 +20766,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -20968,7 +20968,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -21170,7 +21170,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -21372,7 +21372,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -21574,7 +21574,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -21776,7 +21776,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -21978,7 +21978,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -22180,7 +22180,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -22382,7 +22382,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -22584,7 +22584,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "giro-d-italia",
@@ -22786,7 +22786,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -22980,7 +22980,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -23174,7 +23174,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -23368,7 +23368,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -23562,7 +23562,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -23756,7 +23756,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -23950,7 +23950,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -24144,7 +24144,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -24338,7 +24338,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -24532,7 +24532,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -24726,7 +24726,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -24920,7 +24920,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -25114,7 +25114,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -25308,7 +25308,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -25502,7 +25502,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -25696,7 +25696,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -25890,7 +25890,7 @@
       "stage_type": "ITT",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -26084,7 +26084,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -26278,7 +26278,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -26472,7 +26472,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -26666,7 +26666,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -26860,7 +26860,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -27054,7 +27054,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -27248,7 +27248,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -27442,7 +27442,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -27636,7 +27636,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -27830,7 +27830,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28024,7 +28024,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28218,7 +28218,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28412,7 +28412,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28606,7 +28606,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28800,7 +28800,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -28994,7 +28994,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -29188,7 +29188,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -29382,7 +29382,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -29576,7 +29576,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -29770,7 +29770,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -29964,7 +29964,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -30158,7 +30158,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -30352,7 +30352,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -30546,7 +30546,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -30740,7 +30740,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -30934,7 +30934,7 @@
       "stage_type": "ITT",
       "stage_profile": 4,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -31136,7 +31136,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -31338,7 +31338,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -31540,7 +31540,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -31742,7 +31742,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -31944,7 +31944,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -32146,7 +32146,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -32348,7 +32348,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -32550,7 +32550,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -32752,7 +32752,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -32954,7 +32954,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -33156,7 +33156,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -33358,7 +33358,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -33560,7 +33560,7 @@
       "stage_type": "ITT",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -33762,7 +33762,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -33964,7 +33964,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -34166,7 +34166,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -34368,7 +34368,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -34570,7 +34570,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -34772,7 +34772,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -34974,7 +34974,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "tour-de-france",
@@ -35176,7 +35176,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35370,7 +35370,7 @@
       "stage_type": "TTT",
       "stage_profile": 1,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35564,7 +35564,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35758,7 +35758,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35952,7 +35952,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36146,7 +36146,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36340,7 +36340,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36534,7 +36534,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36728,7 +36728,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36922,7 +36922,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37116,7 +37116,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37310,7 +37310,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37504,7 +37504,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37698,7 +37698,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37892,7 +37892,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38086,7 +38086,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38280,7 +38280,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38474,7 +38474,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38668,7 +38668,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38862,7 +38862,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39056,7 +39056,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39250,7 +39250,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39444,7 +39444,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39638,7 +39638,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39832,7 +39832,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40026,7 +40026,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40220,7 +40220,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40414,7 +40414,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40608,7 +40608,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40802,7 +40802,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40996,7 +40996,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41190,7 +41190,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41384,7 +41384,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41578,7 +41578,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41772,7 +41772,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41966,7 +41966,7 @@
       "stage_type": "RR",
       "stage_profile": 4,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42160,7 +42160,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42354,7 +42354,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42548,7 +42548,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42742,7 +42742,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42936,7 +42936,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43130,7 +43130,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43324,7 +43324,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 21,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43526,7 +43526,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 1,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43728,7 +43728,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 2,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43930,7 +43930,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 3,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44132,7 +44132,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 4,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44334,7 +44334,7 @@
       "stage_type": "TTT",
       "stage_profile": 1,
       "stage_number": 5,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44536,7 +44536,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 6,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44738,7 +44738,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 7,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44940,7 +44940,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 8,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45142,7 +45142,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 9,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45344,7 +45344,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 10,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45546,7 +45546,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 11,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45748,7 +45748,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 12,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45950,7 +45950,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 13,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46152,7 +46152,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 14,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46354,7 +46354,7 @@
       "stage_type": "RR",
       "stage_profile": 2,
       "stage_number": 15,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46556,7 +46556,7 @@
       "stage_type": "RR",
       "stage_profile": 3,
       "stage_number": 16,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46758,7 +46758,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 17,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46960,7 +46960,7 @@
       "stage_type": "ITT",
       "stage_profile": 1,
       "stage_number": 18,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -47162,7 +47162,7 @@
       "stage_type": "RR",
       "stage_profile": 1,
       "stage_number": 19,
-      "terrain_type": null
+      "terrain_types": null
     },
     {
       "name": "vuelta-a-espana",
@@ -47364,7 +47364,7 @@
       "stage_type": "RR",
       "stage_profile": 5,
       "stage_number": 20,
-      "terrain_type": null
+      "terrain_types": null
     }
   ],
   "entries": [

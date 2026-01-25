@@ -21597,7 +21597,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -21616,7 +21616,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -21636,7 +21636,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21655,7 +21655,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "hills"
         ]
@@ -21675,7 +21675,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -21694,7 +21694,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -21713,7 +21713,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -21733,7 +21733,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -21752,7 +21752,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles",
           "hills"
         ]
@@ -21772,7 +21772,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -21791,7 +21791,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -21810,7 +21810,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21829,7 +21829,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21848,7 +21848,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21867,7 +21867,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21886,7 +21886,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -21905,7 +21905,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -21925,7 +21925,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -21944,7 +21944,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "hills"
         ]
@@ -21964,7 +21964,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -21983,7 +21983,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22002,7 +22002,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -22022,7 +22022,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22041,7 +22041,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles",
           "hills"
         ]
@@ -22061,7 +22061,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -22080,7 +22080,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22099,7 +22099,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22118,7 +22118,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22137,7 +22137,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22156,7 +22156,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22175,7 +22175,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22194,7 +22194,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -22214,7 +22214,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22233,7 +22233,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "hills"
         ]
@@ -22253,7 +22253,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -22272,7 +22272,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22291,7 +22291,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint",
           "cobbles"
         ]
@@ -22311,7 +22311,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22330,7 +22330,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles",
           "hills"
         ]
@@ -22350,7 +22350,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "sprint"
         ]
       },
@@ -22369,7 +22369,7 @@
         "stage_type": "RR",
         "stage_profile": 1,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "cobbles"
         ]
       },
@@ -22388,7 +22388,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22407,7 +22407,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22426,7 +22426,7 @@
         "stage_type": "RR",
         "stage_profile": 3,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       },
@@ -22445,7 +22445,7 @@
         "stage_type": "RR",
         "stage_profile": 2,
         "stage_number": null,
-        "terrain_type": [
+        "terrain_types": [
           "hills"
         ]
       }
