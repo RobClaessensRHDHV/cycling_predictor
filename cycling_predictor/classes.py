@@ -252,7 +252,7 @@ class CPStage(CPRace):
             profile_score: int = 0,
             gradient_final_km: float = 0.0,
             race_startlist_quality_score: int = 0,
-            terrain_type: Optional[CPTerrainType] = None,
+            terrain_types: List[CPTerrainType] = None,
             stage_type: Optional[CPTStageType] = None,
             stage_profile: Optional[CPTStageProfile] = None,
             stage_number: int = 0):
@@ -269,7 +269,7 @@ class CPStage(CPRace):
         self.profile_score = profile_score
         self.gradient_final_km = gradient_final_km
         self.race_startlist_quality_score = race_startlist_quality_score
-        self.terrain_type = terrain_type
+        self.terrain_types = terrain_types
         self.stage_type = stage_type
         self.stage_profile = stage_profile
         self.stage_number = stage_number
@@ -282,7 +282,7 @@ class CPStage(CPRace):
             "profile_score": self.profile_score,
             "gradient_final_km": self.gradient_final_km,
             "race_startlist_quality_score": self.race_startlist_quality_score,
-            "terrain_type": self.terrain_type,
+            "terrain_types": self.terrain_types,
             "stage_type": self.stage_type,
             "stage_profile": self.stage_profile,
             "stage_number": self.stage_number,
@@ -302,7 +302,7 @@ class CPStage(CPRace):
             profile_score=data.get("profile_score", 0),
             gradient_final_km=data.get("gradient_final_km", 0.0),
             race_startlist_quality_score=data.get("race_startlist_quality_score", 0),
-            terrain_type=data.get("terrain_type", None),
+            terrain_types=data.get("terrain_types", None),
             stage_type=data.get("stage_type", None),
             stage_profile=data.get("stage_profile", None),
             stage_number=data.get("stage_number", 0),

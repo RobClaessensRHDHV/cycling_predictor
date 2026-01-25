@@ -147,7 +147,7 @@ class CPEntryCollector(CPBaseCollector):
             profile_score=stage_dict.get('profile_score', 0),
             gradient_final_km=stage_dict.get('gradient_final_km', 0.0),
             race_startlist_quality_score=stage_dict.get('race_startlist_quality_score', (0, 0))[1],
-            terrain_type=CPTerrainTypeMap.get(name, None),
+            terrain_types=CPTerrainTypeMap.get(name, None),
             stage_type=stage_dict.get('stage_type', None),
             stage_profile=int(stage_dict.get('profile_icon')[1]) if stage_dict.get('profile_icon') else None,
             stage_number=number,
