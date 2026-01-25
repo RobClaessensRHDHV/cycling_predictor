@@ -8712,7 +8712,6 @@
       "year": 2023,
       "start_date": "2023-05-06",
       "end_date": "2023-05-28",
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -8898,7 +8897,6 @@
       "year": 2024,
       "start_date": "2024-05-04",
       "end_date": "2024-05-26",
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -9084,7 +9082,6 @@
       "year": 2025,
       "start_date": "2025-05-09",
       "end_date": "2025-06-01",
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -9278,7 +9275,6 @@
       "year": 2023,
       "start_date": "2023-07-01",
       "end_date": "2023-07-23",
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -9464,7 +9460,6 @@
       "year": 2024,
       "start_date": "2024-06-29",
       "end_date": "2024-07-21",
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -9650,7 +9645,6 @@
       "year": 2025,
       "start_date": "2025-07-05",
       "end_date": "2025-07-27",
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -9844,7 +9838,6 @@
       "year": 2023,
       "start_date": "2023-08-26",
       "end_date": "2023-09-17",
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -10030,7 +10023,6 @@
       "year": 2024,
       "start_date": "2024-08-17",
       "end_date": "2024-09-08",
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -10216,7 +10208,6 @@
       "year": 2025,
       "start_date": "2025-08-23",
       "end_date": "2025-09-14",
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -10417,7 +10408,6 @@
       "profile_score": 11,
       "gradient_final_km": 2.4,
       "race_startlist_quality_score": 835,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -10599,7 +10589,8 @@
       "uid": "7da80e8a-ee8d-4053-9d1e-50fe9cbfa7c5",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -10611,7 +10602,6 @@
       "profile_score": 51,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 835,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -10793,7 +10783,8 @@
       "uid": "a17245d4-a30b-4b2c-b88b-4f1d53fc3944",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -10805,7 +10796,6 @@
       "profile_score": 92,
       "gradient_final_km": 1.2,
       "race_startlist_quality_score": 835,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -10987,7 +10977,8 @@
       "uid": "45c84501-1f30-4066-85aa-020e5dccff9c",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -10999,7 +10990,6 @@
       "profile_score": 207,
       "gradient_final_km": 0.7,
       "race_startlist_quality_score": 835,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -11181,7 +11171,8 @@
       "uid": "0ba44015-a9dc-4a25-9339-c1e45cfe9358",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -11193,7 +11184,6 @@
       "profile_score": 77,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 830,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -11375,7 +11365,8 @@
       "uid": "8389d19d-bccb-4c02-a2e6-316b987f8475",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -11387,7 +11378,6 @@
       "profile_score": 92,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 828,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -11569,7 +11559,8 @@
       "uid": "a4ac7acb-af95-4364-9281-adb6ecf84817",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -11581,7 +11572,6 @@
       "profile_score": 253,
       "gradient_final_km": 8.4,
       "race_startlist_quality_score": 824,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -11763,7 +11753,8 @@
       "uid": "f3e909a0-657a-4826-841f-b2401bc98ba0",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -11775,7 +11766,6 @@
       "profile_score": 180,
       "gradient_final_km": 1.9,
       "race_startlist_quality_score": 804,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -11957,7 +11947,8 @@
       "uid": "ae7e900a-729d-4f12-872c-8ee0dac1d59f",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -11969,7 +11960,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 801,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -12151,7 +12141,8 @@
       "uid": "246e632a-dc1f-49c2-ade4-3ab63756b041",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -12163,7 +12154,6 @@
       "profile_score": 76,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 692,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -12345,7 +12335,8 @@
       "uid": "09a70050-dd3e-408a-93bf-ea38e28afcf5",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -12357,7 +12348,6 @@
       "profile_score": 60,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 653,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -12539,7 +12529,8 @@
       "uid": "9134ec74-d629-4572-b8b3-2d0d9f62ebc0",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -12551,7 +12542,6 @@
       "profile_score": 112,
       "gradient_final_km": 1.2,
       "race_startlist_quality_score": 629,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -12733,7 +12723,8 @@
       "uid": "a228b4ec-9548-4a7d-9d9b-8498e3f254b4",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -12745,7 +12736,6 @@
       "profile_score": 283,
       "gradient_final_km": 3.4,
       "race_startlist_quality_score": 568,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -12927,7 +12917,8 @@
       "uid": "9797ceaa-b425-436a-950f-b787f56be7d6",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -12939,7 +12930,6 @@
       "profile_score": 68,
       "gradient_final_km": 2.4,
       "race_startlist_quality_score": 561,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -13121,7 +13111,8 @@
       "uid": "3147c5a3-2955-4da7-9201-1858d9815e47",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -13133,7 +13124,6 @@
       "profile_score": 202,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 560,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -13315,7 +13305,8 @@
       "uid": "d5a30279-a593-4368-9295-b6a8fff1917f",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -13327,7 +13318,6 @@
       "profile_score": 456,
       "gradient_final_km": 5.3,
       "race_startlist_quality_score": 548,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -13509,7 +13499,8 @@
       "uid": "c0c44c39-0523-4024-a09d-a22750330ec3",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -13521,7 +13512,6 @@
       "profile_score": 5,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 528,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -13703,7 +13693,8 @@
       "uid": "bed67359-eb96-4aa3-8834-50f6369a3e5c",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -13715,7 +13706,6 @@
       "profile_score": 362,
       "gradient_final_km": 5.7,
       "race_startlist_quality_score": 524,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -13897,7 +13887,8 @@
       "uid": "fc928673-caea-422c-a8c0-7a7080f3f887",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -13909,7 +13900,6 @@
       "profile_score": 478,
       "gradient_final_km": 13.9,
       "race_startlist_quality_score": 514,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -14091,7 +14081,8 @@
       "uid": "a88ec392-7844-433e-87b5-8d7c67a93dc6",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -14103,7 +14094,6 @@
       "profile_score": 197,
       "gradient_final_km": 9.1,
       "race_startlist_quality_score": 514,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -14285,7 +14275,8 @@
       "uid": "7dd74c93-569e-4675-956c-af0c5b7a3794",
       "stage_type": "ITT",
       "stage_profile": 5,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -14297,7 +14288,6 @@
       "profile_score": 21,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 514,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "davide-ballerini",
@@ -14479,7 +14469,8 @@
       "uid": "dfee6dfc-2ae3-498f-8060-c3c448e89f86",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -14491,7 +14482,6 @@
       "profile_score": 145,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 721,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -14673,7 +14663,8 @@
       "uid": "041ccc82-79de-46b5-b8a0-f1833dded1be",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -14685,7 +14676,6 @@
       "profile_score": 222,
       "gradient_final_km": 6.3,
       "race_startlist_quality_score": 720,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -14867,7 +14857,8 @@
       "uid": "b3a83fda-eb6c-4adb-bd33-3306aa60da04",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -14879,7 +14870,6 @@
       "profile_score": 35,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 715,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -15061,7 +15051,8 @@
       "uid": "1db71b67-9bd2-4f8e-aadb-fd86172b8f50",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -15073,7 +15064,6 @@
       "profile_score": 44,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 709,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -15255,7 +15245,8 @@
       "uid": "ca37e095-4497-4c13-9b24-2054edbe3c90",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -15267,7 +15258,6 @@
       "profile_score": 59,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 697,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -15449,7 +15439,8 @@
       "uid": "98d628af-dd40-4f65-b46f-017e5d7d9de2",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -15461,7 +15452,6 @@
       "profile_score": 102,
       "gradient_final_km": 1.1,
       "race_startlist_quality_score": 679,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -15643,7 +15633,8 @@
       "uid": "3620e585-af72-4b88-9afe-cf6cbaf492cb",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -15655,7 +15646,6 @@
       "profile_score": 42,
       "gradient_final_km": 3.3,
       "race_startlist_quality_score": 679,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -15837,7 +15827,8 @@
       "uid": "4c64f7c8-1bc6-4c51-af33-8879eeec0125",
       "stage_type": "ITT",
       "stage_profile": 3,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -15849,7 +15840,6 @@
       "profile_score": 265,
       "gradient_final_km": 6.3,
       "race_startlist_quality_score": 669,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -16031,7 +16021,8 @@
       "uid": "ae9bafdd-7061-43cc-91f2-c55cb4f83a40",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -16043,7 +16034,6 @@
       "profile_score": 77,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 659,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -16225,7 +16215,8 @@
       "uid": "a47b66d5-1771-442e-91ed-974a8f62882d",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -16237,7 +16228,6 @@
       "profile_score": 267,
       "gradient_final_km": 7.1,
       "race_startlist_quality_score": 617,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -16419,7 +16409,8 @@
       "uid": "03cff0c8-9697-4f38-9001-e5f947b9fd3e",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -16431,7 +16422,6 @@
       "profile_score": 36,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 608,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -16613,7 +16603,8 @@
       "uid": "05964d67-2e04-4521-bd10-7a2f3863bc34",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -16625,7 +16616,6 @@
       "profile_score": 95,
       "gradient_final_km": 0.8,
       "race_startlist_quality_score": 603,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -16807,7 +16797,8 @@
       "uid": "45bd8966-2ff7-4859-8c50-d37873bd419a",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -16819,7 +16810,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 603,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17001,7 +16991,8 @@
       "uid": "54dda5c6-c9ac-4c65-b58b-4f0c677951ab",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17013,7 +17004,6 @@
       "profile_score": 9,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 596,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17195,7 +17185,8 @@
       "uid": "e37f2bb8-8435-4eb3-a3e0-61d18f5cda71",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17207,7 +17198,6 @@
       "profile_score": 397,
       "gradient_final_km": 10.6,
       "race_startlist_quality_score": 594,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17389,7 +17379,8 @@
       "uid": "436bf57f-e225-4c04-bf08-a204908c6ad0",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17401,7 +17392,6 @@
       "profile_score": 234,
       "gradient_final_km": 13.6,
       "race_startlist_quality_score": 568,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17583,7 +17573,8 @@
       "uid": "ac5fe0a1-6628-42c1-897e-adb9a31533d6",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17595,7 +17586,6 @@
       "profile_score": 341,
       "gradient_final_km": 5.6,
       "race_startlist_quality_score": 566,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17777,7 +17767,8 @@
       "uid": "9d2a36a1-c943-4df8-a48f-e9dbda85d0a4",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17789,7 +17780,6 @@
       "profile_score": 18,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 559,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -17971,7 +17961,8 @@
       "uid": "f428adf4-64d1-4754-aaf8-7a5f11d8dc36",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -17983,7 +17974,6 @@
       "profile_score": 258,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 557,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -18165,7 +18155,8 @@
       "uid": "afd1621e-da1b-4ad6-b713-ebab7707f70c",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -18177,7 +18168,6 @@
       "profile_score": 316,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 556,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -18359,7 +18349,8 @@
       "uid": "7e2f3611-a027-4585-8d5c-83570434b9c3",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -18371,7 +18362,6 @@
       "profile_score": 13,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 556,
-      "race_profile": null,
       "startlist": [
         "geraint-thomas",
         "thymen-arensman",
@@ -18553,7 +18543,8 @@
       "uid": "02c8e56b-5eb5-45e4-b156-304e3d68bedb",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -18565,7 +18556,6 @@
       "profile_score": 79,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 946,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -18755,7 +18745,8 @@
       "uid": "d9e315ba-d840-4aa6-895b-67057f7bce90",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -18767,7 +18758,6 @@
       "profile_score": 8,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 925,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -18957,7 +18947,8 @@
       "uid": "10348268-74b7-4aa2-831f-1bb43b12ab92",
       "stage_type": "ITT",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -18969,7 +18960,6 @@
       "profile_score": 164,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 925,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -19159,7 +19149,8 @@
       "uid": "b4b82e56-3d66-44d4-987d-2576dfa3a4de",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -19171,7 +19162,6 @@
       "profile_score": 5,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 925,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -19361,7 +19351,8 @@
       "uid": "336c180d-4ce0-41b6-a831-61ce05d50729",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -19373,7 +19364,6 @@
       "profile_score": 91,
       "gradient_final_km": 2.3,
       "race_startlist_quality_score": 923,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -19563,7 +19553,8 @@
       "uid": "2d3b9bcf-f721-4331-8fb1-aa25f98b3dd4",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -19575,7 +19566,6 @@
       "profile_score": 46,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 921,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -19765,7 +19755,8 @@
       "uid": "af6c08a7-6a85-4561-b2a3-5291e4100ae9",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -19777,7 +19768,6 @@
       "profile_score": 199,
       "gradient_final_km": 7.5,
       "race_startlist_quality_score": 910,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -19967,7 +19957,8 @@
       "uid": "955d87b5-8afb-4cc4-8a22-22e383c1fe0f",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -19979,7 +19970,6 @@
       "profile_score": 161,
       "gradient_final_km": 2.0,
       "race_startlist_quality_score": 909,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -20169,7 +20159,8 @@
       "uid": "c8213bbf-8fa9-4b33-8a2c-28eab25a9cb9",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -20181,7 +20172,6 @@
       "profile_score": 117,
       "gradient_final_km": 6.5,
       "race_startlist_quality_score": 908,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -20371,7 +20361,8 @@
       "uid": "358b5d5d-c4f9-4d23-b264-45dfc496dc3a",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -20383,7 +20374,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 907,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -20573,7 +20563,8 @@
       "uid": "53df8be7-8ecb-4439-a39d-6424de4ea2b2",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -20585,7 +20576,6 @@
       "profile_score": 192,
       "gradient_final_km": 3.4,
       "race_startlist_quality_score": 907,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -20775,7 +20765,8 @@
       "uid": "790d9a94-a59a-483e-8cad-e0c654e83003",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -20787,7 +20778,6 @@
       "profile_score": 29,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 907,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -20977,7 +20967,8 @@
       "uid": "557430e8-cf8e-454c-821a-b1ab1a427ac7",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -20989,7 +20980,6 @@
       "profile_score": 95,
       "gradient_final_km": 6.4,
       "race_startlist_quality_score": 907,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -21179,7 +21169,8 @@
       "uid": "db053f01-5d8f-49b0-b8e1-838b7b4a0724",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -21191,7 +21182,6 @@
       "profile_score": 51,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 905,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -21381,7 +21371,8 @@
       "uid": "76ddb749-06e4-4afe-a671-acd0931ad147",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -21393,7 +21384,6 @@
       "profile_score": 172,
       "gradient_final_km": 0.6,
       "race_startlist_quality_score": 870,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -21583,7 +21573,8 @@
       "uid": "e4decfe1-de78-4d80-ab43-ee52e59dcc4d",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -21595,7 +21586,6 @@
       "profile_score": 384,
       "gradient_final_km": 9.0,
       "race_startlist_quality_score": 840,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -21785,7 +21775,8 @@
       "uid": "4a7d0513-0e47-4a97-9c7f-3e75d5b76f10",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -21797,7 +21788,6 @@
       "profile_score": 220,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 785,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -21987,7 +21977,8 @@
       "uid": "502c1673-26d9-4bf0-92e9-862ce6533143",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -21999,7 +21990,6 @@
       "profile_score": 51,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 773,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -22189,7 +22179,8 @@
       "uid": "a9b88a6b-0625-457c-a6bb-b4acebc1ad2b",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -22201,7 +22192,6 @@
       "profile_score": 328,
       "gradient_final_km": 1.2,
       "race_startlist_quality_score": 753,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -22391,7 +22381,8 @@
       "uid": "ad9193c6-0cd1-4034-aa0c-e1f4f242b6fc",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -22403,7 +22394,6 @@
       "profile_score": 351,
       "gradient_final_km": 3.7,
       "race_startlist_quality_score": 746,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -22593,7 +22583,8 @@
       "uid": "5d8d2618-43a3-4293-88d9-a798b661766b",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "giro-d-italia",
@@ -22605,7 +22596,6 @@
       "profile_score": 42,
       "gradient_final_km": 1.6,
       "race_startlist_quality_score": 746,
-      "race_profile": null,
       "startlist": [
         "primoz-roglic",
         "giovanni-aleotti",
@@ -22795,7 +22785,8 @@
       "uid": "1d590128-920f-4f7b-a3d4-da7556f373fa",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -22807,7 +22798,6 @@
       "profile_score": 166,
       "gradient_final_km": 5.4,
       "race_startlist_quality_score": 1584,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -22989,7 +22979,8 @@
       "uid": "92abfbdf-fa29-4c1f-9791-17e007fce8fe",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23001,7 +22992,6 @@
       "profile_score": 141,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1539,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -23183,7 +23173,8 @@
       "uid": "445e463e-a595-4514-9e53-bd13f7cc2c74",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23195,7 +23186,6 @@
       "profile_score": 68,
       "gradient_final_km": 0.6,
       "race_startlist_quality_score": 1539,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -23377,7 +23367,8 @@
       "uid": "53410ed9-5e16-4ff5-9dd3-5791b542ed7b",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23389,7 +23380,6 @@
       "profile_score": 20,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 1539,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -23571,7 +23561,8 @@
       "uid": "74843750-4810-4461-a17c-ae920bd6aa10",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23583,7 +23574,6 @@
       "profile_score": 239,
       "gradient_final_km": 0.9,
       "race_startlist_quality_score": 1534,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -23765,7 +23755,8 @@
       "uid": "ee9f4109-2ae0-40ff-81d6-5f70f877b8b7",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23777,7 +23768,6 @@
       "profile_score": 310,
       "gradient_final_km": 6.4,
       "race_startlist_quality_score": 1534,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -23959,7 +23949,8 @@
       "uid": "2c92e66f-033f-450d-8793-b49629c4fbed",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -23971,7 +23962,6 @@
       "profile_score": 7,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1534,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -24153,7 +24143,8 @@
       "uid": "9ea84e83-412e-4270-973d-33b55b165d60",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -24165,7 +24156,6 @@
       "profile_score": 61,
       "gradient_final_km": 3.4,
       "race_startlist_quality_score": 1534,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -24347,7 +24337,8 @@
       "uid": "989f0129-3f76-4c17-ad89-afb9304c4440",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -24359,7 +24350,6 @@
       "profile_score": 273,
       "gradient_final_km": 12.2,
       "race_startlist_quality_score": 1525,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -24541,7 +24531,8 @@
       "uid": "32f813c9-7ee8-489e-bfb5-70e014e0b54d",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -24553,7 +24544,6 @@
       "profile_score": 118,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 1525,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -24735,7 +24725,8 @@
       "uid": "fe9d8e0e-6505-4aa7-947e-49eb1416c9c5",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -24747,7 +24738,6 @@
       "profile_score": 34,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1525,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -24929,7 +24919,8 @@
       "uid": "f2760fab-0390-44e9-9aaa-9c0615eef7f2",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -24941,7 +24932,6 @@
       "profile_score": 147,
       "gradient_final_km": 0.6,
       "race_startlist_quality_score": 1515,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -25123,7 +25113,8 @@
       "uid": "b23d6b47-6b65-48e3-8d4c-c20e2b3a19ad",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -25135,7 +25126,6 @@
       "profile_score": 260,
       "gradient_final_km": 8.0,
       "race_startlist_quality_score": 1513,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -25317,7 +25307,8 @@
       "uid": "c251b039-65cd-4f73-9e4d-e5e66afd7b90",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -25329,7 +25320,6 @@
       "profile_score": 308,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 1491,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -25511,7 +25501,8 @@
       "uid": "90eb92ce-05ac-4adc-8a4a-00f24a2b8ddd",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -25523,7 +25514,6 @@
       "profile_score": 335,
       "gradient_final_km": 9.3,
       "race_startlist_quality_score": 1416,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -25705,7 +25695,8 @@
       "uid": "7c5c770d-9066-41be-b84d-88644e968129",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -25717,7 +25708,6 @@
       "profile_score": 109,
       "gradient_final_km": 6.0,
       "race_startlist_quality_score": 1396,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -25899,7 +25889,8 @@
       "uid": "1d670f75-80f7-4c07-b2e8-254dfb8ecb11",
       "stage_type": "ITT",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -25911,7 +25902,6 @@
       "profile_score": 445,
       "gradient_final_km": 5.6,
       "race_startlist_quality_score": 1394,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -26093,7 +26083,8 @@
       "uid": "2f19d7e2-6563-413a-bad0-400d4813ea20",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -26105,7 +26096,6 @@
       "profile_score": 18,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 1334,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -26287,7 +26277,8 @@
       "uid": "d3f557b4-16c7-4873-8fc8-eadee1b1b228",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -26299,7 +26290,6 @@
       "profile_score": 50,
       "gradient_final_km": 1.5,
       "race_startlist_quality_score": 1332,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -26481,7 +26471,8 @@
       "uid": "94279221-85ed-4407-9379-4f6f91d7ca63",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -26493,7 +26484,6 @@
       "profile_score": 303,
       "gradient_final_km": 1.6,
       "race_startlist_quality_score": 1332,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -26675,7 +26665,8 @@
       "uid": "012c04d7-78ed-4f46-a56b-187141d33845",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -26687,7 +26678,6 @@
       "profile_score": 14,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 1327,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -26869,7 +26859,8 @@
       "uid": "35e5bcce-3c63-41be-952b-29f07f62afbb",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -26881,7 +26872,6 @@
       "profile_score": 176,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 1723,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -27063,7 +27053,8 @@
       "uid": "9cf8ddb5-0caa-4c0f-a81e-992147377769",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -27075,7 +27066,6 @@
       "profile_score": 109,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1721,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -27257,7 +27247,8 @@
       "uid": "6f607efa-e0fc-4e5c-8b08-a92bf5b5450c",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -27269,7 +27260,6 @@
       "profile_score": 16,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 1721,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -27451,7 +27441,8 @@
       "uid": "0392e0d0-62ee-42db-b686-d492e1b79016",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -27463,7 +27454,6 @@
       "profile_score": 187,
       "gradient_final_km": 1.8,
       "race_startlist_quality_score": 1720,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -27645,7 +27635,8 @@
       "uid": "9b3bb91f-a8ed-4da0-906e-ff66cf25080b",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -27657,7 +27648,6 @@
       "profile_score": 25,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 1720,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -27839,7 +27829,8 @@
       "uid": "22098d4e-4bc3-4f71-a989-0497b4e94d4c",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -27851,7 +27842,6 @@
       "profile_score": 7,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 1720,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -28033,7 +28023,8 @@
       "uid": "6b03a958-5c34-48ca-9635-db05c3ff240f",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -28045,7 +28036,6 @@
       "profile_score": 13,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 1720,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -28227,7 +28217,8 @@
       "uid": "96b02802-b77b-4f97-a5fc-fb7d30a2ad22",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -28239,7 +28230,6 @@
       "profile_score": 63,
       "gradient_final_km": 3.3,
       "race_startlist_quality_score": 1670,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -28421,7 +28411,8 @@
       "uid": "418af67b-a3dd-4de5-ad4a-3cdcebf5bc19",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -28433,7 +28424,6 @@
       "profile_score": 30,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 1670,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -28615,7 +28605,8 @@
       "uid": "776b72bc-2c68-4a64-a1bd-e5a2939b62cc",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -28627,7 +28618,6 @@
       "profile_score": 6,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1620,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -28809,7 +28799,8 @@
       "uid": "4356fa0f-8388-4ac5-a578-a70fa6fde4f0",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -28821,7 +28812,6 @@
       "profile_score": 241,
       "gradient_final_km": 4.4,
       "race_startlist_quality_score": 1619,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29003,7 +28993,8 @@
       "uid": "5737aab0-3ecb-4491-9394-827c1835a6b3",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29015,7 +29006,6 @@
       "profile_score": 53,
       "gradient_final_km": 1.1,
       "race_startlist_quality_score": 1609,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29197,7 +29187,8 @@
       "uid": "248c7671-4ddc-48b1-9add-7f822861c6a1",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29209,7 +29200,6 @@
       "profile_score": 53,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1521,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29391,7 +29381,8 @@
       "uid": "c28c35e5-d225-456e-a1b7-f135782c41a5",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29403,7 +29394,6 @@
       "profile_score": 340,
       "gradient_final_km": 5.8,
       "race_startlist_quality_score": 1465,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29585,7 +29575,8 @@
       "uid": "44a5c616-4ba5-45de-a9f2-380bfc69972f",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29597,7 +29588,6 @@
       "profile_score": 366,
       "gradient_final_km": 5.4,
       "race_startlist_quality_score": 1441,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29779,7 +29769,8 @@
       "uid": "aabaf761-de82-42d1-88a3-486de3f4e37e",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29791,7 +29782,6 @@
       "profile_score": 15,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 1390,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -29973,7 +29963,8 @@
       "uid": "9b692af5-af5f-42e2-bd85-d2071e433f71",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -29985,7 +29976,6 @@
       "profile_score": 177,
       "gradient_final_km": 3.7,
       "race_startlist_quality_score": 1384,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -30167,7 +30157,8 @@
       "uid": "be5565cb-0127-4c4b-b867-2426f02745f8",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -30179,7 +30170,6 @@
       "profile_score": 101,
       "gradient_final_km": 0.7,
       "race_startlist_quality_score": 1362,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -30361,7 +30351,8 @@
       "uid": "0e0bdc4b-8ab7-4d51-b4e9-5fde979b8be9",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -30373,7 +30364,6 @@
       "profile_score": 275,
       "gradient_final_km": 5.8,
       "race_startlist_quality_score": 1351,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -30555,7 +30545,8 @@
       "uid": "9771c7a6-4272-4da2-8542-3904ed187eff",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -30567,7 +30558,6 @@
       "profile_score": 380,
       "gradient_final_km": 7.9,
       "race_startlist_quality_score": 1344,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -30749,7 +30739,8 @@
       "uid": "92e6f7a5-ff4b-49cf-9ac7-fa991b5bddcd",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -30761,7 +30752,6 @@
       "profile_score": 73,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 1344,
-      "race_profile": null,
       "startlist": [
         "jonas-vingegaard",
         "tiesj-benoot",
@@ -30943,7 +30933,8 @@
       "uid": "be8f8575-1c53-4ca0-8ba8-1bb399d61486",
       "stage_type": "ITT",
       "stage_profile": 4,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -30955,7 +30946,6 @@
       "profile_score": 17,
       "gradient_final_km": 0.7,
       "race_startlist_quality_score": 1711,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -31145,7 +31135,8 @@
       "uid": "9d1d5b13-8680-4d93-8251-7e68a1332bea",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -31157,7 +31148,6 @@
       "profile_score": 73,
       "gradient_final_km": 4.5,
       "race_startlist_quality_score": 1671,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -31347,7 +31337,8 @@
       "uid": "27d7bdc1-3539-422b-835b-2b68482f94c5",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -31359,7 +31350,6 @@
       "profile_score": 9,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 1671,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -31549,7 +31539,8 @@
       "uid": "ba5122ec-9312-4868-8e59-4f5aeb79e066",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -31561,7 +31552,6 @@
       "profile_score": 81,
       "gradient_final_km": 2.3,
       "race_startlist_quality_score": 1621,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -31751,7 +31741,8 @@
       "uid": "395eed54-860b-47d4-9d8f-1d5792670664",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -31763,7 +31754,6 @@
       "profile_score": 1,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 1600,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -31953,7 +31943,8 @@
       "uid": "34124068-8581-4cf9-81b4-378b9ceb42c3",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -31965,7 +31956,6 @@
       "profile_score": 143,
       "gradient_final_km": 7.5,
       "race_startlist_quality_score": 1600,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -32155,7 +32145,8 @@
       "uid": "e48ce89e-9d2b-4b56-8e85-f6574c4d0b7d",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -32167,7 +32158,6 @@
       "profile_score": 80,
       "gradient_final_km": 6.2,
       "race_startlist_quality_score": 1600,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -32357,7 +32347,8 @@
       "uid": "30b331e3-629e-4f8c-8058-fb02020b659f",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -32369,7 +32360,6 @@
       "profile_score": 10,
       "gradient_final_km": 3.1,
       "race_startlist_quality_score": 1591,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -32559,7 +32549,8 @@
       "uid": "b0b1e631-801a-4bc5-be6c-9285e756a145",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -32571,7 +32562,6 @@
       "profile_score": 6,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 1591,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -32761,7 +32751,8 @@
       "uid": "540200fb-789a-48f8-808d-a4232fb6a503",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -32773,7 +32764,6 @@
       "profile_score": 240,
       "gradient_final_km": 7.1,
       "race_startlist_quality_score": 1531,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -32963,7 +32953,8 @@
       "uid": "5e17dea0-fd96-4bba-9251-b881a88d402a",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -32975,7 +32966,6 @@
       "profile_score": 78,
       "gradient_final_km": 1.0,
       "race_startlist_quality_score": 1521,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -33165,7 +33155,8 @@
       "uid": "1642da40-797a-46d8-b33f-49b2642d0e35",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -33177,7 +33168,6 @@
       "profile_score": 333,
       "gradient_final_km": 7.6,
       "race_startlist_quality_score": 1519,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -33367,7 +33357,8 @@
       "uid": "c1dbc79d-1c5e-4d61-849b-daed24a6dc30",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -33379,7 +33370,6 @@
       "profile_score": 119,
       "gradient_final_km": 8.1,
       "race_startlist_quality_score": 1519,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -33569,7 +33559,8 @@
       "uid": "ebb862ed-8424-4ef1-9420-62df8ebe0e50",
       "stage_type": "ITT",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -33581,7 +33572,6 @@
       "profile_score": 396,
       "gradient_final_km": 9.2,
       "race_startlist_quality_score": 1514,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -33771,7 +33761,8 @@
       "uid": "1ca43354-6c3f-441b-9838-fb12ca275343",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -33783,7 +33774,6 @@
       "profile_score": 73,
       "gradient_final_km": 1.2,
       "race_startlist_quality_score": 1419,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -33973,7 +33963,8 @@
       "uid": "5419a66d-1854-4b30-aee5-153089585094",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -33985,7 +33976,6 @@
       "profile_score": 302,
       "gradient_final_km": 10.7,
       "race_startlist_quality_score": 1369,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -34175,7 +34165,8 @@
       "uid": "3589c6f5-c8d1-4e44-8784-86f60648e6a5",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -34187,7 +34178,6 @@
       "profile_score": 25,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 1364,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -34377,7 +34367,8 @@
       "uid": "3d81548b-af17-4a35-a27e-dcc05db273bb",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -34389,7 +34380,6 @@
       "profile_score": 414,
       "gradient_final_km": 7.0,
       "race_startlist_quality_score": 1353,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -34579,7 +34569,8 @@
       "uid": "d1faa0a8-9f11-45ec-b546-bfe7d9b5e09d",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -34591,7 +34582,6 @@
       "profile_score": 340,
       "gradient_final_km": 6.8,
       "race_startlist_quality_score": 1318,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -34781,7 +34771,8 @@
       "uid": "bbab8406-ce73-48ea-9430-257e0b94f9b7",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -34793,7 +34784,6 @@
       "profile_score": 107,
       "gradient_final_km": 1.5,
       "race_startlist_quality_score": 1316,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -34983,7 +34973,8 @@
       "uid": "fb860d2a-2113-4e5c-abd2-7de5cbfd6305",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "tour-de-france",
@@ -34995,7 +34986,6 @@
       "profile_score": 26,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1316,
-      "race_profile": null,
       "startlist": [
         "tadej-pogacar",
         "joao-almeida",
@@ -35185,7 +35175,8 @@
       "uid": "8a31b6de-2b73-481e-a738-24fb928c21d1",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35197,7 +35188,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 846,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -35379,7 +35369,8 @@
       "uid": "c60e5bb6-e016-4149-8b64-20d3b8036192",
       "stage_type": "TTT",
       "stage_profile": 1,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35391,7 +35382,6 @@
       "profile_score": 80,
       "gradient_final_km": 3.9,
       "race_startlist_quality_score": 844,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -35573,7 +35563,8 @@
       "uid": "15572e0a-e837-48f5-868c-6401051273ff",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35585,7 +35576,6 @@
       "profile_score": 263,
       "gradient_final_km": 7.2,
       "race_startlist_quality_score": 839,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -35767,7 +35757,8 @@
       "uid": "bdacdd96-2a1c-4442-ac8e-51dae3fa961a",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35779,7 +35770,6 @@
       "profile_score": 57,
       "gradient_final_km": 2.8,
       "race_startlist_quality_score": 839,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -35961,7 +35951,8 @@
       "uid": "6625a66d-caad-4a14-8a47-53e11fcdfae8",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -35973,7 +35964,6 @@
       "profile_score": 65,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 809,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -36155,7 +36145,8 @@
       "uid": "9535c92f-a5fb-4350-be68-cae170fcbbcb",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36167,7 +36158,6 @@
       "profile_score": 273,
       "gradient_final_km": 8.5,
       "race_startlist_quality_score": 799,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -36349,7 +36339,8 @@
       "uid": "d3cf8368-6294-4ad1-abb5-7812af993d7c",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36361,7 +36352,6 @@
       "profile_score": 12,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 776,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -36543,7 +36533,8 @@
       "uid": "a57dfcaf-ccd1-4133-aa1a-ff872fb53d0f",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36555,7 +36546,6 @@
       "profile_score": 235,
       "gradient_final_km": 2.7,
       "race_startlist_quality_score": 766,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -36737,7 +36727,8 @@
       "uid": "ff7d247d-244f-4fcf-811e-226d911868fe",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36749,7 +36740,6 @@
       "profile_score": 162,
       "gradient_final_km": 8.8,
       "race_startlist_quality_score": 761,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -36931,7 +36921,8 @@
       "uid": "a81e5a58-b594-419e-b686-5b7f884300f7",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -36943,7 +36934,6 @@
       "profile_score": 5,
       "gradient_final_km": 0.7,
       "race_startlist_quality_score": 759,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -37125,7 +37115,8 @@
       "uid": "a970ea48-2447-4883-a711-e9db01eda0f6",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37137,7 +37128,6 @@
       "profile_score": 112,
       "gradient_final_km": 8.6,
       "race_startlist_quality_score": 759,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -37319,7 +37309,8 @@
       "uid": "ba8c2c07-9dbe-41d0-88c5-23f1d35b2bcd",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37331,7 +37322,6 @@
       "profile_score": 11,
       "gradient_final_km": 0.9,
       "race_startlist_quality_score": 759,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -37513,7 +37503,8 @@
       "uid": "6fc9abc4-e94b-41ce-9977-c8e4c6a521ed",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37525,7 +37516,6 @@
       "profile_score": 400,
       "gradient_final_km": 9.8,
       "race_startlist_quality_score": 754,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -37707,7 +37697,8 @@
       "uid": "5ee12ec9-e87b-49ac-8e26-2bcf27c73d54",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37719,7 +37710,6 @@
       "profile_score": 406,
       "gradient_final_km": 2.7,
       "race_startlist_quality_score": 752,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -37901,7 +37891,8 @@
       "uid": "61a80e42-d93d-492e-985e-6d0a8b614813",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -37913,7 +37904,6 @@
       "profile_score": 111,
       "gradient_final_km": 0.8,
       "race_startlist_quality_score": 750,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -38095,7 +38085,8 @@
       "uid": "8cb3875a-be50-445c-b078-8180f1c18caf",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38107,7 +38098,6 @@
       "profile_score": 153,
       "gradient_final_km": 8.6,
       "race_startlist_quality_score": 736,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -38289,7 +38279,8 @@
       "uid": "9c416ef5-b8e0-43ea-b7b7-dc3ac0a33dda",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38301,7 +38292,6 @@
       "profile_score": 464,
       "gradient_final_km": 3.4,
       "race_startlist_quality_score": 733,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -38483,7 +38473,8 @@
       "uid": "17151385-81a2-4380-9054-5ab6c53888d7",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38495,7 +38486,6 @@
       "profile_score": 422,
       "gradient_final_km": 8.3,
       "race_startlist_quality_score": 731,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -38677,7 +38667,8 @@
       "uid": "896710a5-68a4-4959-9241-864f3f6975f4",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38689,7 +38680,6 @@
       "profile_score": 8,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 730,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -38871,7 +38861,8 @@
       "uid": "c72c2762-343b-412b-ad14-2789d55739b0",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -38883,7 +38874,6 @@
       "profile_score": 186,
       "gradient_final_km": 1.7,
       "race_startlist_quality_score": 730,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -39065,7 +39055,8 @@
       "uid": "efa37cc9-d238-490b-822a-2ecc7d63d712",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39077,7 +39068,6 @@
       "profile_score": 12,
       "gradient_final_km": 1.5,
       "race_startlist_quality_score": 730,
-      "race_profile": null,
       "startlist": [
         "remco-evenepoel",
         "andrea-bagioli",
@@ -39259,7 +39249,8 @@
       "uid": "94a47b47-177f-4a4e-bd61-faf509d02e27",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39271,7 +39262,6 @@
       "profile_score": 1,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 916,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -39453,7 +39443,8 @@
       "uid": "404e019a-339d-4dbb-8107-7eea96ca535c",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39465,7 +39456,6 @@
       "profile_score": 86,
       "gradient_final_km": 1.9,
       "race_startlist_quality_score": 916,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -39647,7 +39637,8 @@
       "uid": "41bca736-d02c-4680-94dd-e80132ddd8bc",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39659,7 +39650,6 @@
       "profile_score": 58,
       "gradient_final_km": 1.5,
       "race_startlist_quality_score": 914,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -39841,7 +39831,8 @@
       "uid": "2c861fd1-34f6-41ba-b27b-18231c9a8895",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -39853,7 +39844,6 @@
       "profile_score": 238,
       "gradient_final_km": 6.7,
       "race_startlist_quality_score": 914,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -40035,7 +40025,8 @@
       "uid": "6a133213-79f4-41e2-ba1a-f8f3e5b0a0e2",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40047,7 +40038,6 @@
       "profile_score": 32,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 914,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -40229,7 +40219,8 @@
       "uid": "456ab604-6f5e-4eb1-b158-a1ea029a6744",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40241,7 +40232,6 @@
       "profile_score": 170,
       "gradient_final_km": 4.4,
       "race_startlist_quality_score": 909,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -40423,7 +40413,8 @@
       "uid": "6fab05d3-75b9-47bb-8274-8fe70e355d28",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40435,7 +40426,6 @@
       "profile_score": 78,
       "gradient_final_km": 1.4,
       "race_startlist_quality_score": 898,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -40617,7 +40607,8 @@
       "uid": "7478b725-a4ab-4df4-8975-036513a0c46c",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40629,7 +40620,6 @@
       "profile_score": 145,
       "gradient_final_km": 9.5,
       "race_startlist_quality_score": 897,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -40811,7 +40801,8 @@
       "uid": "5f3077b2-0a07-47d0-9db8-fbef25bfc9c6",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -40823,7 +40814,6 @@
       "profile_score": 305,
       "gradient_final_km": 1.1,
       "race_startlist_quality_score": 852,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41005,7 +40995,8 @@
       "uid": "5e32b690-f291-4ca7-b78f-984be6d8a411",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41017,7 +41008,6 @@
       "profile_score": 178,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 823,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41199,7 +41189,8 @@
       "uid": "0198211b-6ca6-4642-ac77-dbbe7f55177b",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41211,7 +41202,6 @@
       "profile_score": 148,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 809,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41393,7 +41383,8 @@
       "uid": "572d5872-e8a2-484d-99a6-abcd60267524",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41405,7 +41396,6 @@
       "profile_score": 174,
       "gradient_final_km": 7.3,
       "race_startlist_quality_score": 797,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41587,7 +41577,8 @@
       "uid": "6e775497-a84e-4877-825e-a66d2f406bda",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41599,7 +41590,6 @@
       "profile_score": 299,
       "gradient_final_km": 10.4,
       "race_startlist_quality_score": 793,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41781,7 +41771,8 @@
       "uid": "d840921b-3443-439a-9ced-19958efc9007",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41793,7 +41784,6 @@
       "profile_score": 100,
       "gradient_final_km": 2.2,
       "race_startlist_quality_score": 790,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -41975,7 +41965,8 @@
       "uid": "dc08ea0d-8de1-4365-8cf1-b939ea6080aa",
       "stage_type": "RR",
       "stage_profile": 4,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -41987,7 +41978,6 @@
       "profile_score": 372,
       "gradient_final_km": 13.4,
       "race_startlist_quality_score": 785,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -42169,7 +42159,8 @@
       "uid": "38bf1dd6-74db-4a98-ba69-25404e02f847",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42181,7 +42172,6 @@
       "profile_score": 347,
       "gradient_final_km": 2.2,
       "race_startlist_quality_score": 778,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -42363,7 +42353,8 @@
       "uid": "5eb4704a-96b2-488d-a831-cf0d744e7184",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42375,7 +42366,6 @@
       "profile_score": 107,
       "gradient_final_km": 1.0,
       "race_startlist_quality_score": 720,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -42557,7 +42547,8 @@
       "uid": "94283898-5f83-41a8-8ee1-9eb1ee84607e",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42569,7 +42560,6 @@
       "profile_score": 139,
       "gradient_final_km": 1.3,
       "race_startlist_quality_score": 700,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -42751,7 +42741,8 @@
       "uid": "13185e88-8ed7-4be8-8b27-605ec8043576",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42763,7 +42754,6 @@
       "profile_score": 217,
       "gradient_final_km": 7.2,
       "race_startlist_quality_score": 699,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -42945,7 +42935,8 @@
       "uid": "dcb8aa91-e7c0-422c-b75d-64718ede2ff3",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -42957,7 +42948,6 @@
       "profile_score": 340,
       "gradient_final_km": 7.3,
       "race_startlist_quality_score": 699,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -43139,7 +43129,8 @@
       "uid": "5e76d47e-4516-4e9f-bb10-1944303cff57",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43151,7 +43142,6 @@
       "profile_score": 6,
       "gradient_final_km": 2.0,
       "race_startlist_quality_score": 684,
-      "race_profile": null,
       "startlist": [
         "sepp-kuss",
         "edoardo-affini",
@@ -43333,7 +43323,8 @@
       "uid": "480e9ab5-f275-49db-b48b-8958397c0be6",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 21
+      "stage_number": 21,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43345,7 +43336,6 @@
       "profile_score": 16,
       "gradient_final_km": 0.5,
       "race_startlist_quality_score": 872,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -43535,7 +43525,8 @@
       "uid": "efb7e1a4-d371-421c-95db-66d1016bf982",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 1
+      "stage_number": 1,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43547,7 +43538,6 @@
       "profile_score": 100,
       "gradient_final_km": 7.7,
       "race_startlist_quality_score": 872,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -43737,7 +43727,8 @@
       "uid": "ffb11f15-e883-4c5c-8119-b361deb65841",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 2
+      "stage_number": 2,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43749,7 +43740,6 @@
       "profile_score": 87,
       "gradient_final_km": 4.7,
       "race_startlist_quality_score": 856,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -43939,7 +43929,8 @@
       "uid": "279c063f-be3f-40ed-90cb-3cbc4b235eff",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 3
+      "stage_number": 3,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -43951,7 +43942,6 @@
       "profile_score": 85,
       "gradient_final_km": 2.1,
       "race_startlist_quality_score": 856,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -44141,7 +44131,8 @@
       "uid": "0a884f39-0a57-48eb-82dc-17b20d397473",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 4
+      "stage_number": 4,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44153,7 +44144,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.9,
       "race_startlist_quality_score": 851,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -44343,7 +44333,8 @@
       "uid": "55af216f-c9fc-40b5-845c-ba37024eaa8d",
       "stage_type": "TTT",
       "stage_profile": 1,
-      "stage_number": 5
+      "stage_number": 5,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44355,7 +44346,6 @@
       "profile_score": 239,
       "gradient_final_km": 5.7,
       "race_startlist_quality_score": 848,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -44545,7 +44535,8 @@
       "uid": "cb29792d-c04d-4b27-a461-371d9214f0b4",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 6
+      "stage_number": 6,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44557,7 +44548,6 @@
       "profile_score": 261,
       "gradient_final_km": 2.3,
       "race_startlist_quality_score": 842,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -44747,7 +44737,8 @@
       "uid": "af360f0c-d660-4e8c-b052-ef6c3878cef4",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 7
+      "stage_number": 7,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44759,7 +44750,6 @@
       "profile_score": 25,
       "gradient_final_km": 1.6,
       "race_startlist_quality_score": 839,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -44949,7 +44939,8 @@
       "uid": "d68e3213-571b-4ca0-a481-ec5dd2904e8e",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 8
+      "stage_number": 8,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -44961,7 +44952,6 @@
       "profile_score": 138,
       "gradient_final_km": 1.7,
       "race_startlist_quality_score": 833,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -45151,7 +45141,8 @@
       "uid": "0607c171-9c85-451b-927e-fce878a9f2b6",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 9
+      "stage_number": 9,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45163,7 +45154,6 @@
       "profile_score": 170,
       "gradient_final_km": 0.8,
       "race_startlist_quality_score": 831,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -45353,7 +45343,8 @@
       "uid": "e4e3d55a-cc98-4d9e-a281-813779838123",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 10
+      "stage_number": 10,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45365,7 +45356,6 @@
       "profile_score": 190,
       "gradient_final_km": 2.7,
       "race_startlist_quality_score": 827,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -45555,7 +45545,8 @@
       "uid": "bddc2f1a-750d-4e3d-8085-49a3a1505a7f",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 11
+      "stage_number": 11,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45567,7 +45558,6 @@
       "profile_score": 138,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 825,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -45757,7 +45747,8 @@
       "uid": "80e3882e-6d94-43bf-9091-0bb472a663ce",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 12
+      "stage_number": 12,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45769,7 +45760,6 @@
       "profile_score": 483,
       "gradient_final_km": 3.7,
       "race_startlist_quality_score": 821,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -45959,7 +45949,8 @@
       "uid": "f7a2f318-c3af-483c-9c02-d0ad6513cf2b",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 13
+      "stage_number": 13,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -45971,7 +45962,6 @@
       "profile_score": 399,
       "gradient_final_km": 9.0,
       "race_startlist_quality_score": 772,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -46161,7 +46151,8 @@
       "uid": "cd0487d0-4754-407f-a92d-1276c7109536",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 14
+      "stage_number": 14,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46173,7 +46164,6 @@
       "profile_score": 85,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 772,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -46363,7 +46353,8 @@
       "uid": "36236c13-8e1d-4a2e-9dca-d735b11845a2",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": 15
+      "stage_number": 15,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46375,7 +46366,6 @@
       "profile_score": 259,
       "gradient_final_km": 6.0,
       "race_startlist_quality_score": 768,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -46565,7 +46555,8 @@
       "uid": "2cd2e430-6127-4a96-ba1a-791ff0160e3a",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": 16
+      "stage_number": 16,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46577,7 +46568,6 @@
       "profile_score": 301,
       "gradient_final_km": 7.2,
       "race_startlist_quality_score": 763,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -46767,7 +46757,8 @@
       "uid": "bc09db23-9fc3-4df5-be40-ea5f0336d7c6",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 17
+      "stage_number": 17,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46779,7 +46770,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.9,
       "race_startlist_quality_score": 762,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -46969,7 +46959,8 @@
       "uid": "da21d72b-48b6-4b71-8b36-4d1cc09ada2a",
       "stage_type": "ITT",
       "stage_profile": 1,
-      "stage_number": 18
+      "stage_number": 18,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -46981,7 +46972,6 @@
       "profile_score": 22,
       "gradient_final_km": 3.2,
       "race_startlist_quality_score": 762,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -47171,7 +47161,8 @@
       "uid": "31f4c0a1-10d7-4f02-ad43-49125f703826",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": 19
+      "stage_number": 19,
+      "terrain_type": null
     },
     {
       "name": "vuelta-a-espana",
@@ -47183,7 +47174,6 @@
       "profile_score": 343,
       "gradient_final_km": 11.0,
       "race_startlist_quality_score": 762,
-      "race_profile": null,
       "startlist": [
         "joao-almeida",
         "juan-ayuso-pesquera",
@@ -47373,7 +47363,8 @@
       "uid": "d9e067fa-7896-40a3-99b7-aca38b8a874f",
       "stage_type": "RR",
       "stage_profile": 5,
-      "stage_number": 20
+      "stage_number": 20,
+      "terrain_type": null
     }
   ],
   "entries": [

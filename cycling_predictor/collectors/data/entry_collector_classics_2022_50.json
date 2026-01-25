@@ -12929,9 +12929,6 @@
       "year": 2022,
       "start_date": "2022-02-26",
       "end_date": "2022-02-26",
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "yves-lampaert",
         "bert-van-lerberghe",
@@ -13112,10 +13109,6 @@
       "year": 2022,
       "start_date": "2022-02-27",
       "end_date": "2022-02-27",
-      "race_profile": [
-        "sprint",
-        "cobbles"
-      ],
       "startlist": [
         "jasper-stuyven",
         "alexander-kamp",
@@ -13294,9 +13287,6 @@
       "year": 2022,
       "start_date": "2022-03-05",
       "end_date": "2022-03-05",
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "julian-alaphilippe",
         "kasper-asgreen",
@@ -13455,10 +13445,6 @@
       "year": 2022,
       "start_date": "2022-03-19",
       "end_date": "2022-03-19",
-      "race_profile": [
-        "sprint",
-        "hills"
-      ],
       "startlist": [
         "mads-pedersen",
         "gianluca-brambilla",
@@ -13634,9 +13620,6 @@
       "year": 2022,
       "start_date": "2022-03-23",
       "end_date": "2022-03-23",
-      "race_profile": [
-        "sprint"
-      ],
       "startlist": [
         "sam-bennett",
         "nils-politt",
@@ -13810,9 +13793,6 @@
       "year": 2022,
       "start_date": "2022-03-25",
       "end_date": "2022-03-25",
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "kasper-asgreen",
         "davide-ballerini",
@@ -13997,10 +13977,6 @@
       "year": 2022,
       "start_date": "2022-03-27",
       "end_date": "2022-03-27",
-      "race_profile": [
-        "sprint",
-        "cobbles"
-      ],
       "startlist": [
         "wout-van-aert",
         "tiesj-benoot",
@@ -14184,9 +14160,6 @@
       "year": 2022,
       "start_date": "2022-03-30",
       "end_date": "2022-03-30",
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "dylan-van-baarle",
         "thomas-pidcock",
@@ -14367,10 +14340,6 @@
       "year": 2022,
       "start_date": "2022-04-03",
       "end_date": "2022-04-03",
-      "race_profile": [
-        "cobbles",
-        "hills"
-      ],
       "startlist": [
         "kasper-asgreen",
         "yves-lampaert",
@@ -14547,9 +14516,6 @@
       "year": 2022,
       "start_date": "2022-04-06",
       "end_date": "2022-04-06",
-      "race_profile": [
-        "sprint"
-      ],
       "startlist": [
         "jasper-philipsen",
         "tim-merlier",
@@ -14696,9 +14662,6 @@
       "year": 2022,
       "start_date": "2022-04-17",
       "end_date": "2022-04-17",
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "philippe-gilbert",
         "florian-vermeersch",
@@ -14878,9 +14841,6 @@
       "year": 2022,
       "start_date": "2022-04-13",
       "end_date": "2022-04-13",
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "thomas-pidcock",
         "laurens-de-plus",
@@ -15029,9 +14989,6 @@
       "year": 2022,
       "start_date": "2022-04-10",
       "end_date": "2022-04-10",
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "tom-dumoulin",
         "jos-van-emden",
@@ -15211,9 +15168,6 @@
       "year": 2022,
       "start_date": "2022-04-20",
       "end_date": "2022-04-20",
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "julian-alaphilippe",
         "remco-evenepoel",
@@ -15398,9 +15352,6 @@
       "year": 2022,
       "start_date": "2022-04-24",
       "end_date": "2022-04-24",
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "marc-hirschi",
         "george-bennett",
@@ -15592,9 +15543,6 @@
       "profile_score": 49,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 715,
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "yves-lampaert",
         "bert-van-lerberghe",
@@ -15771,7 +15719,10 @@
       "uid": "9f26e22a-0516-4d4c-8b96-ea7ef5c86ef6",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "cobbles"
+      ]
     },
     {
       "name": "kuurne-brussel-kuurne",
@@ -15783,10 +15734,6 @@
       "profile_score": 45,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 718,
-      "race_profile": [
-        "sprint",
-        "cobbles"
-      ],
       "startlist": [
         "jasper-stuyven",
         "alexander-kamp",
@@ -15961,7 +15908,11 @@
       "uid": "9b985ac8-b5ad-4c15-b2a2-4849fa7fec0a",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "sprint",
+        "cobbles"
+      ]
     },
     {
       "name": "strade-bianche",
@@ -15973,9 +15924,6 @@
       "profile_score": 167,
       "gradient_final_km": 6.4,
       "race_startlist_quality_score": 656,
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "julian-alaphilippe",
         "kasper-asgreen",
@@ -16130,7 +16078,10 @@
       "uid": "9e7bba09-4186-44da-ba45-8f9c6dccada5",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "hills"
+      ]
     },
     {
       "name": "milano-sanremo",
@@ -16142,10 +16093,6 @@
       "profile_score": 63,
       "gradient_final_km": 0.4,
       "race_startlist_quality_score": 934,
-      "race_profile": [
-        "sprint",
-        "hills"
-      ],
       "startlist": [
         "mads-pedersen",
         "gianluca-brambilla",
@@ -16317,7 +16264,11 @@
       "uid": "83ec9321-6212-4cde-980e-514335c02576",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "sprint",
+        "hills"
+      ]
     },
     {
       "name": "classic-brugge-de-panne",
@@ -16329,9 +16280,6 @@
       "profile_score": 0,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 431,
-      "race_profile": [
-        "sprint"
-      ],
       "startlist": [
         "sam-bennett",
         "nils-politt",
@@ -16501,7 +16449,10 @@
       "uid": "c74d7536-4ccf-4a04-bba2-47eed8a320bf",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "sprint"
+      ]
     },
     {
       "name": "e3-harelbeke",
@@ -16513,9 +16464,6 @@
       "profile_score": 59,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 576,
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "kasper-asgreen",
         "davide-ballerini",
@@ -16696,7 +16644,10 @@
       "uid": "43f88425-bfc7-4c4d-b6fc-cfd933faa1e9",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "cobbles"
+      ]
     },
     {
       "name": "gent-wevelgem",
@@ -16708,10 +16659,6 @@
       "profile_score": 35,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 824,
-      "race_profile": [
-        "sprint",
-        "cobbles"
-      ],
       "startlist": [
         "wout-van-aert",
         "tiesj-benoot",
@@ -16891,7 +16838,11 @@
       "uid": "ebe1ed8b-af25-40c8-9f1c-6215e487ba7a",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "sprint",
+        "cobbles"
+      ]
     },
     {
       "name": "dwars-door-vlaanderen",
@@ -16903,9 +16854,6 @@
       "profile_score": 50,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 630,
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "dylan-van-baarle",
         "thomas-pidcock",
@@ -17082,7 +17030,10 @@
       "uid": "81725650-0aa8-4028-b597-0c6f069a13be",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "cobbles"
+      ]
     },
     {
       "name": "ronde-van-vlaanderen",
@@ -17094,10 +17045,6 @@
       "profile_score": 79,
       "gradient_final_km": 0.3,
       "race_startlist_quality_score": 747,
-      "race_profile": [
-        "cobbles",
-        "hills"
-      ],
       "startlist": [
         "kasper-asgreen",
         "yves-lampaert",
@@ -17270,7 +17217,11 @@
       "uid": "09305fda-6016-43ee-a315-8ca4e9072c84",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "cobbles",
+        "hills"
+      ]
     },
     {
       "name": "scheldeprijs",
@@ -17282,9 +17233,6 @@
       "profile_score": 1,
       "gradient_final_km": 0.2,
       "race_startlist_quality_score": 332,
-      "race_profile": [
-        "sprint"
-      ],
       "startlist": [
         "jasper-philipsen",
         "tim-merlier",
@@ -17427,7 +17375,10 @@
       "uid": "1d9c8ae6-9555-4e3e-babd-05f0ff7549a1",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "sprint"
+      ]
     },
     {
       "name": "paris-roubaix",
@@ -17439,9 +17390,6 @@
       "profile_score": 5,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 747,
-      "race_profile": [
-        "cobbles"
-      ],
       "startlist": [
         "philippe-gilbert",
         "florian-vermeersch",
@@ -17617,7 +17565,10 @@
       "uid": "a15bd49d-fc26-4e4b-a2d8-dc01ec87426b",
       "stage_type": "RR",
       "stage_profile": 1,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "cobbles"
+      ]
     },
     {
       "name": "brabantse-pijl",
@@ -17629,9 +17580,6 @@
       "profile_score": 71,
       "gradient_final_km": 3.4,
       "race_startlist_quality_score": 535,
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "thomas-pidcock",
         "laurens-de-plus",
@@ -17776,7 +17724,10 @@
       "uid": "c7327355-c8b7-42af-8033-b79a49ba03ed",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "hills"
+      ]
     },
     {
       "name": "amstel-gold-race",
@@ -17788,9 +17739,6 @@
       "profile_score": 112,
       "gradient_final_km": 0.0,
       "race_startlist_quality_score": 701,
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "tom-dumoulin",
         "jos-van-emden",
@@ -17966,7 +17914,10 @@
       "uid": "5048584c-edf6-420f-8871-4cdc72eb6777",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "hills"
+      ]
     },
     {
       "name": "la-fleche-wallonne",
@@ -17978,9 +17929,6 @@
       "profile_score": 173,
       "gradient_final_km": 11.5,
       "race_startlist_quality_score": 927,
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "julian-alaphilippe",
         "remco-evenepoel",
@@ -18161,7 +18109,10 @@
       "uid": "a071fc4d-24cc-4ce5-97f1-fe14acad82b2",
       "stage_type": "RR",
       "stage_profile": 3,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "hills"
+      ]
     },
     {
       "name": "liege-bastogne-liege",
@@ -18173,9 +18124,6 @@
       "profile_score": 182,
       "gradient_final_km": 0.1,
       "race_startlist_quality_score": 1069,
-      "race_profile": [
-        "hills"
-      ],
       "startlist": [
         "marc-hirschi",
         "george-bennett",
@@ -18356,7 +18304,10 @@
       "uid": "2ca48e43-a87c-4aac-85a5-847808fec88b",
       "stage_type": "RR",
       "stage_profile": 2,
-      "stage_number": null
+      "stage_number": null,
+      "terrain_type": [
+        "hills"
+      ]
     }
   ],
   "entries": [

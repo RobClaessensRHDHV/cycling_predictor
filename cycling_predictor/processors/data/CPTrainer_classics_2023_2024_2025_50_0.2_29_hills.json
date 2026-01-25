@@ -13549,9 +13549,6 @@
         "year": 2023,
         "start_date": "2023-02-25",
         "end_date": "2023-02-25",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "tiesj-benoot",
           "edoardo-affini",
@@ -13736,10 +13733,6 @@
         "year": 2023,
         "start_date": "2023-02-26",
         "end_date": "2023-02-26",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "fabio-jakobsen",
           "jannik-steimle",
@@ -13920,9 +13913,6 @@
         "year": 2023,
         "start_date": "2023-03-04",
         "end_date": "2023-03-04",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "samuel-gaze",
@@ -14106,10 +14096,6 @@
         "year": 2023,
         "start_date": "2023-03-18",
         "end_date": "2023-03-18",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": [
           "matej-mohoric",
           "nikias-arndt",
@@ -14294,9 +14280,6 @@
         "year": 2023,
         "start_date": "2023-03-22",
         "end_date": "2023-03-22",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "fabio-jakobsen",
           "tim-declercq",
@@ -14457,9 +14440,6 @@
         "year": 2023,
         "start_date": "2023-03-24",
         "end_date": "2023-03-24",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "wout-van-aert",
           "christophe-laporte",
@@ -14644,10 +14624,6 @@
         "year": 2023,
         "start_date": "2023-03-26",
         "end_date": "2023-03-26",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "biniam-girmay",
           "baptiste-planckaert",
@@ -14831,9 +14807,6 @@
         "year": 2023,
         "start_date": "2023-03-29",
         "end_date": "2023-03-29",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "jasper-philipsen",
           "quinten-hermans",
@@ -15018,10 +14991,6 @@
         "year": 2023,
         "start_date": "2023-04-02",
         "end_date": "2023-04-02",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "silvan-dillier",
@@ -15206,9 +15175,6 @@
         "year": 2023,
         "start_date": "2023-04-05",
         "end_date": "2023-04-05",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "alexander-kristoff",
           "marcus-sander-hansen",
@@ -15362,9 +15328,6 @@
         "year": 2023,
         "start_date": "2023-04-09",
         "end_date": "2023-04-09",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "dylan-van-baarle",
           "edoardo-affini",
@@ -15549,9 +15512,6 @@
         "year": 2023,
         "start_date": "2023-04-12",
         "end_date": "2023-04-12",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "michal-kwiatkowski",
           "leo-hayter",
@@ -15694,9 +15654,6 @@
         "year": 2023,
         "start_date": "2023-04-16",
         "end_date": "2023-04-16",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "michal-kwiatkowski",
           "thomas-pidcock",
@@ -15881,9 +15838,6 @@
         "year": 2023,
         "start_date": "2023-04-19",
         "end_date": "2023-04-19",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "michael-woods",
           "guillaume-boivin",
@@ -16068,9 +16022,6 @@
         "year": 2023,
         "start_date": "2023-04-23",
         "end_date": "2023-04-23",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "remco-evenepoel",
           "julian-alaphilippe",
@@ -16255,9 +16206,6 @@
         "year": 2024,
         "start_date": "2024-02-24",
         "end_date": "2024-02-24",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "dylan-van-baarle",
           "wout-van-aert",
@@ -16442,10 +16390,6 @@
         "year": 2024,
         "start_date": "2024-02-25",
         "end_date": "2024-02-25",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "tiesj-benoot",
           "wout-van-aert",
@@ -16629,9 +16573,6 @@
         "year": 2024,
         "start_date": "2024-03-02",
         "end_date": "2024-03-02",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "thomas-pidcock",
           "thymen-arensman",
@@ -16816,10 +16757,6 @@
         "year": 2024,
         "start_date": "2024-03-16",
         "end_date": "2024-03-16",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "silvan-dillier",
@@ -17004,9 +16941,6 @@
         "year": 2024,
         "start_date": "2024-03-20",
         "end_date": "2024-03-20",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "jasper-philipsen",
           "maurice-ballerstedt",
@@ -17176,9 +17110,6 @@
         "year": 2024,
         "start_date": "2024-03-22",
         "end_date": "2024-03-22",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "wout-van-aert",
           "per-strand-hagenes",
@@ -17363,10 +17294,6 @@
         "year": 2024,
         "start_date": "2024-03-24",
         "end_date": "2024-03-24",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "tiesj-benoot",
           "olav-kooij",
@@ -17549,9 +17476,6 @@
         "year": 2024,
         "start_date": "2024-03-27",
         "end_date": "2024-03-27",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "wout-van-aert",
           "tim-van-dijke",
@@ -17736,10 +17660,6 @@
         "year": 2024,
         "start_date": "2024-03-31",
         "end_date": "2024-03-31",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "axel-laurance",
@@ -17924,9 +17844,6 @@
         "year": 2024,
         "start_date": "2024-04-03",
         "end_date": "2024-04-03",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "jasper-philipsen",
           "simon-dehairs",
@@ -18086,9 +18003,6 @@
         "year": 2024,
         "start_date": "2024-04-07",
         "end_date": "2024-04-07",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "silvan-dillier",
@@ -18273,9 +18187,6 @@
         "year": 2024,
         "start_date": "2024-04-10",
         "end_date": "2024-04-10",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "dorian-godon",
           "rasmus-sojbergpedersen",
@@ -18434,9 +18345,6 @@
         "year": 2024,
         "start_date": "2024-04-14",
         "end_date": "2024-04-14",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "juan-ayuso-pesquera",
           "jan-christen",
@@ -18621,9 +18529,6 @@
         "year": 2024,
         "start_date": "2024-04-17",
         "end_date": "2024-04-17",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "marc-hirschi",
           "juan-ayuso-pesquera",
@@ -18808,9 +18713,6 @@
         "year": 2024,
         "start_date": "2024-04-21",
         "end_date": "2024-04-21",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "james-knox",
           "gil-gelders",
@@ -18995,9 +18897,6 @@
         "year": 2025,
         "start_date": "2025-03-01",
         "end_date": "2025-03-01",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "jan-tratnik",
           "roger-adria",
@@ -19182,10 +19081,6 @@
         "year": 2025,
         "start_date": "2025-03-02",
         "end_date": "2025-03-02",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "wout-van-aert",
           "tiesj-benoot",
@@ -19370,9 +19265,6 @@
         "year": 2025,
         "start_date": "2025-03-08",
         "end_date": "2025-03-08",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "tadej-pogacar",
           "filippo-baroncini",
@@ -19557,10 +19449,6 @@
         "year": 2025,
         "start_date": "2025-03-22",
         "end_date": "2025-03-22",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": [
           "jasper-philipsen",
           "silvan-dillier",
@@ -19745,9 +19633,6 @@
         "year": 2025,
         "start_date": "2025-03-26",
         "end_date": "2025-03-26",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "jasper-philipsen",
           "samuel-gaze",
@@ -19925,9 +19810,6 @@
         "year": 2025,
         "start_date": "2025-03-28",
         "end_date": "2025-03-28",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "tobias-bayer",
@@ -20112,10 +19994,6 @@
         "year": 2025,
         "start_date": "2025-03-30",
         "end_date": "2025-03-30",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": [
           "mads-pedersen",
           "daan-hoole",
@@ -20300,9 +20178,6 @@
         "year": 2025,
         "start_date": "2025-04-02",
         "end_date": "2025-04-02",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "matteo-jorgenson",
           "wout-van-aert",
@@ -20487,10 +20362,6 @@
         "year": 2025,
         "start_date": "2025-04-06",
         "end_date": "2025-04-06",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "gianni-vermeersch",
@@ -20675,9 +20546,6 @@
         "year": 2025,
         "start_date": "2025-04-09",
         "end_date": "2025-04-09",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": [
           "tim-merlier",
           "ayco-bastiaens",
@@ -20836,9 +20704,6 @@
         "year": 2025,
         "start_date": "2025-04-13",
         "end_date": "2025-04-13",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": [
           "mathieu-van-der-poel",
           "silvan-dillier",
@@ -21023,9 +20888,6 @@
         "year": 2025,
         "start_date": "2025-04-18",
         "end_date": "2025-04-18",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "remco-evenepoel",
           "pascal-eenkhoorn",
@@ -21171,9 +21033,6 @@
         "year": 2025,
         "start_date": "2025-04-20",
         "end_date": "2025-04-20",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "thomas-pidcock",
           "nickolas-zukowsky",
@@ -21358,9 +21217,6 @@
         "year": 2025,
         "start_date": "2025-04-23",
         "end_date": "2025-04-23",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "stephen-williams",
           "george-bennett",
@@ -21545,9 +21401,6 @@
         "year": 2025,
         "start_date": "2025-04-27",
         "end_date": "2025-04-27",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": [
           "tadej-pogacar",
           "felix-grossschartner",
@@ -21734,9 +21587,6 @@
         "year": 2023,
         "start_date": "2023-02-25",
         "end_date": "2023-02-25",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "9a90d649-36af-4b1d-91d8-58bf105c5644",
         "distance": 207.3,
@@ -21746,17 +21596,16 @@
         "race_startlist_quality_score": 675,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "kuurne-brussel-kuurne",
         "year": 2023,
         "start_date": "2023-02-26",
         "end_date": "2023-02-26",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "29c3f895-ba14-48d4-9650-89111b699aa4",
         "distance": 193.1,
@@ -21766,16 +21615,17 @@
         "race_startlist_quality_score": 608,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "strade-bianche",
         "year": 2023,
         "start_date": "2023-03-04",
         "end_date": "2023-03-04",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "cf110325-a8e3-4b99-9340-8251aeca38f0",
         "distance": 184.0,
@@ -21785,17 +21635,16 @@
         "race_startlist_quality_score": 686,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "milano-sanremo",
         "year": 2023,
         "start_date": "2023-03-18",
         "end_date": "2023-03-18",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": null,
         "uid": "450dabe8-56a1-4818-90d0-583ecffa4c5f",
         "distance": 294.0,
@@ -21805,16 +21654,17 @@
         "race_startlist_quality_score": 1047,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "hills"
+        ]
       },
       {
         "name": "classic-brugge-de-panne",
         "year": 2023,
         "start_date": "2023-03-22",
         "end_date": "2023-03-22",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "f178c841-5834-4729-8c1a-bbbf68adec05",
         "distance": 211.0,
@@ -21824,16 +21674,16 @@
         "race_startlist_quality_score": 463,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "e3-harelbeke",
         "year": 2023,
         "start_date": "2023-03-24",
         "end_date": "2023-03-24",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "8d7488c5-b093-42b2-8b7b-3fff77d986ba",
         "distance": 204.1,
@@ -21843,17 +21693,16 @@
         "race_startlist_quality_score": 853,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "gent-wevelgem",
         "year": 2023,
         "start_date": "2023-03-26",
         "end_date": "2023-03-26",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "1e9c64f8-91da-4dba-8537-5b90f678c0ed",
         "distance": 260.9,
@@ -21863,16 +21712,17 @@
         "race_startlist_quality_score": 897,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "dwars-door-vlaanderen",
         "year": 2023,
         "start_date": "2023-03-29",
         "end_date": "2023-03-29",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "92864ad7-372b-4beb-9e9b-85ea0ec1451b",
         "distance": 183.7,
@@ -21882,17 +21732,16 @@
         "race_startlist_quality_score": 851,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "ronde-van-vlaanderen",
         "year": 2023,
         "start_date": "2023-04-02",
         "end_date": "2023-04-02",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": null,
         "uid": "f1c9f041-1264-4e89-bd19-6d42586f76c8",
         "distance": 273.4,
@@ -21902,16 +21751,17 @@
         "race_startlist_quality_score": 918,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles",
+          "hills"
+        ]
       },
       {
         "name": "scheldeprijs",
         "year": 2023,
         "start_date": "2023-04-05",
         "end_date": "2023-04-05",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "cd1a0f13-b34d-4cb8-9a58-762a25a325da",
         "distance": 205.3,
@@ -21921,16 +21771,16 @@
         "race_startlist_quality_score": 358,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "paris-roubaix",
         "year": 2023,
         "start_date": "2023-04-09",
         "end_date": "2023-04-09",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "2f4b673c-516e-4deb-9a3d-51a3645b2f89",
         "distance": 256.6,
@@ -21940,16 +21790,16 @@
         "race_startlist_quality_score": 775,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "brabantse-pijl",
         "year": 2023,
         "start_date": "2023-04-12",
         "end_date": "2023-04-12",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "73826f2d-4eeb-4996-8174-1fcacc125b22",
         "distance": 205.1,
@@ -21959,16 +21809,16 @@
         "race_startlist_quality_score": 350,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "amstel-gold-race",
         "year": 2023,
         "start_date": "2023-04-16",
         "end_date": "2023-04-16",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "09ac2dbb-d37a-4643-a87d-597239bf33ce",
         "distance": 253.6,
@@ -21978,16 +21828,16 @@
         "race_startlist_quality_score": 766,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "la-fleche-wallonne",
         "year": 2023,
         "start_date": "2023-04-19",
         "end_date": "2023-04-19",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "023aefe0-11d4-4f0b-8f33-d7a03d39613b",
         "distance": 194.3,
@@ -21997,16 +21847,16 @@
         "race_startlist_quality_score": 825,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "liege-bastogne-liege",
         "year": 2023,
         "start_date": "2023-04-23",
         "end_date": "2023-04-23",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "7a502109-0ef0-420b-9f7b-c548dcf7b75b",
         "distance": 258.1,
@@ -22016,16 +21866,16 @@
         "race_startlist_quality_score": 1026,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "omloop-het-nieuwsblad",
         "year": 2024,
         "start_date": "2024-02-24",
         "end_date": "2024-02-24",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "78d4ba47-fee5-43d3-b5d3-14031b72dbc5",
         "distance": 202.2,
@@ -22035,17 +21885,16 @@
         "race_startlist_quality_score": 676,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "kuurne-brussel-kuurne",
         "year": 2024,
         "start_date": "2024-02-25",
         "end_date": "2024-02-25",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "ea59169f-5623-44fa-9ddf-f3762fce792a",
         "distance": 196.4,
@@ -22055,16 +21904,17 @@
         "race_startlist_quality_score": 619,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "strade-bianche",
         "year": 2024,
         "start_date": "2024-03-02",
         "end_date": "2024-03-02",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "804d7218-c5c1-410b-a49a-a358942749aa",
         "distance": 215.0,
@@ -22074,17 +21924,16 @@
         "race_startlist_quality_score": 775,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "milano-sanremo",
         "year": 2024,
         "start_date": "2024-03-16",
         "end_date": "2024-03-16",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": null,
         "uid": "06ac4ce4-5f68-47f9-a1f4-7850edb5b21f",
         "distance": 288.0,
@@ -22094,16 +21943,17 @@
         "race_startlist_quality_score": 941,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "hills"
+        ]
       },
       {
         "name": "classic-brugge-de-panne",
         "year": 2024,
         "start_date": "2024-03-20",
         "end_date": "2024-03-20",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "474b707f-bc8d-4015-8347-dda42797d233",
         "distance": 198.9,
@@ -22113,16 +21963,16 @@
         "race_startlist_quality_score": 375,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "e3-harelbeke",
         "year": 2024,
         "start_date": "2024-03-22",
         "end_date": "2024-03-22",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "1ffeb456-158e-439f-94aa-d810854adde1",
         "distance": 207.6,
@@ -22132,17 +21982,16 @@
         "race_startlist_quality_score": 734,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "gent-wevelgem",
         "year": 2024,
         "start_date": "2024-03-24",
         "end_date": "2024-03-24",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "74292c08-9a03-48f2-af54-a3e20890dce9",
         "distance": 253.1,
@@ -22152,16 +22001,17 @@
         "race_startlist_quality_score": 754,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "dwars-door-vlaanderen",
         "year": 2024,
         "start_date": "2024-03-27",
         "end_date": "2024-03-27",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "4b7a98e2-ccf2-4b20-b855-3b89e6d9a73d",
         "distance": 188.6,
@@ -22171,17 +22021,16 @@
         "race_startlist_quality_score": 719,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "ronde-van-vlaanderen",
         "year": 2024,
         "start_date": "2024-03-31",
         "end_date": "2024-03-31",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": null,
         "uid": "7e4aadb9-c7d1-4872-83b6-53e01c7ecf6d",
         "distance": 270.8,
@@ -22191,16 +22040,17 @@
         "race_startlist_quality_score": 752,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles",
+          "hills"
+        ]
       },
       {
         "name": "scheldeprijs",
         "year": 2024,
         "start_date": "2024-04-03",
         "end_date": "2024-04-03",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "8177745f-a487-4396-8abb-aa942a19185f",
         "distance": 205.3,
@@ -22210,16 +22060,16 @@
         "race_startlist_quality_score": 368,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "paris-roubaix",
         "year": 2024,
         "start_date": "2024-04-07",
         "end_date": "2024-04-07",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "088a72b9-c587-4b5e-8058-220f26de507e",
         "distance": 259.7,
@@ -22229,16 +22079,16 @@
         "race_startlist_quality_score": 658,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "brabantse-pijl",
         "year": 2024,
         "start_date": "2024-04-10",
         "end_date": "2024-04-10",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "6639a92b-a76f-4258-a14c-d21f88b68cca",
         "distance": 195.2,
@@ -22248,16 +22098,16 @@
         "race_startlist_quality_score": 389,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "amstel-gold-race",
         "year": 2024,
         "start_date": "2024-04-14",
         "end_date": "2024-04-14",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "ae7ed85d-5993-400d-852b-b7a437f0341f",
         "distance": 253.6,
@@ -22267,16 +22117,16 @@
         "race_startlist_quality_score": 884,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "la-fleche-wallonne",
         "year": 2024,
         "start_date": "2024-04-17",
         "end_date": "2024-04-17",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "eab09afd-c2c8-4b11-8301-bea943ff68f7",
         "distance": 198.6,
@@ -22286,16 +22136,16 @@
         "race_startlist_quality_score": 861,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "liege-bastogne-liege",
         "year": 2024,
         "start_date": "2024-04-21",
         "end_date": "2024-04-21",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "3d2ab555-447e-4382-abb2-99f2545471a5",
         "distance": 254.5,
@@ -22305,16 +22155,16 @@
         "race_startlist_quality_score": 999,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "omloop-het-nieuwsblad",
         "year": 2025,
         "start_date": "2025-03-01",
         "end_date": "2025-03-01",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "541c5804-c433-4b6c-b7a7-0431f5d8181f",
         "distance": 197.0,
@@ -22324,17 +22174,16 @@
         "race_startlist_quality_score": 718,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "kuurne-brussel-kuurne",
         "year": 2025,
         "start_date": "2025-03-02",
         "end_date": "2025-03-02",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "ba8e4a85-7cfd-45ad-b50d-6a66d5f6c739",
         "distance": 196.9,
@@ -22344,16 +22193,17 @@
         "race_startlist_quality_score": 689,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "strade-bianche",
         "year": 2025,
         "start_date": "2025-03-08",
         "end_date": "2025-03-08",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "2ab38096-d4af-4e1d-b2be-d4f631c60e99",
         "distance": 213.0,
@@ -22363,17 +22213,16 @@
         "race_startlist_quality_score": 699,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "milano-sanremo",
         "year": 2025,
         "start_date": "2025-03-22",
         "end_date": "2025-03-22",
-        "race_profile": [
-          "sprint",
-          "hills"
-        ],
         "startlist": null,
         "uid": "c0372676-d987-4de4-b872-0be43b96ea9b",
         "distance": 289.0,
@@ -22383,16 +22232,17 @@
         "race_startlist_quality_score": 969,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "hills"
+        ]
       },
       {
         "name": "classic-brugge-de-panne",
         "year": 2025,
         "start_date": "2025-03-26",
         "end_date": "2025-03-26",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "aad10b33-0250-438d-80a9-204bfda07575",
         "distance": 195.6,
@@ -22402,16 +22252,16 @@
         "race_startlist_quality_score": 509,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "e3-harelbeke",
         "year": 2025,
         "start_date": "2025-03-28",
         "end_date": "2025-03-28",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "edd33745-d666-4367-a806-44ff00201434",
         "distance": 208.8,
@@ -22421,17 +22271,16 @@
         "race_startlist_quality_score": 691,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "gent-wevelgem",
         "year": 2025,
         "start_date": "2025-03-30",
         "end_date": "2025-03-30",
-        "race_profile": [
-          "sprint",
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "52c611fe-bac2-4d92-b098-1910276ec65a",
         "distance": 250.3,
@@ -22441,16 +22290,17 @@
         "race_startlist_quality_score": 805,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint",
+          "cobbles"
+        ]
       },
       {
         "name": "dwars-door-vlaanderen",
         "year": 2025,
         "start_date": "2025-04-02",
         "end_date": "2025-04-02",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "d49dbe4b-6faf-47fd-bc7a-2c4be804ff2f",
         "distance": 184.2,
@@ -22460,17 +22310,16 @@
         "race_startlist_quality_score": 802,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "ronde-van-vlaanderen",
         "year": 2025,
         "start_date": "2025-04-06",
         "end_date": "2025-04-06",
-        "race_profile": [
-          "cobbles",
-          "hills"
-        ],
         "startlist": null,
         "uid": "a190d701-39ad-4b6e-a7f2-c3a81b00b43d",
         "distance": 268.9,
@@ -22480,16 +22329,17 @@
         "race_startlist_quality_score": 819,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles",
+          "hills"
+        ]
       },
       {
         "name": "scheldeprijs",
         "year": 2025,
         "start_date": "2025-04-09",
         "end_date": "2025-04-09",
-        "race_profile": [
-          "sprint"
-        ],
         "startlist": null,
         "uid": "c6312012-0bf3-44b4-bedb-4aaafb41e2ac",
         "distance": 202.8,
@@ -22499,16 +22349,16 @@
         "race_startlist_quality_score": 281,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "sprint"
+        ]
       },
       {
         "name": "paris-roubaix",
         "year": 2025,
         "start_date": "2025-04-13",
         "end_date": "2025-04-13",
-        "race_profile": [
-          "cobbles"
-        ],
         "startlist": null,
         "uid": "a507cd79-3ef5-4dd5-9e8d-e95d04ca3fa0",
         "distance": 259.2,
@@ -22518,16 +22368,16 @@
         "race_startlist_quality_score": 823,
         "stage_type": "RR",
         "stage_profile": 1,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "cobbles"
+        ]
       },
       {
         "name": "brabantse-pijl",
         "year": 2025,
         "start_date": "2025-04-18",
         "end_date": "2025-04-18",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "f29dd32a-d801-430a-b566-f8770bc901ec",
         "distance": 162.6,
@@ -22537,16 +22387,16 @@
         "race_startlist_quality_score": 398,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "amstel-gold-race",
         "year": 2025,
         "start_date": "2025-04-20",
         "end_date": "2025-04-20",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "159271cc-66ea-4292-a9e6-d3c898351217",
         "distance": 255.9,
@@ -22556,16 +22406,16 @@
         "race_startlist_quality_score": 954,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "la-fleche-wallonne",
         "year": 2025,
         "start_date": "2025-04-23",
         "end_date": "2025-04-23",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "d8dfd91d-6d10-4f9c-893a-7d030b3cca73",
         "distance": 205.1,
@@ -22575,16 +22425,16 @@
         "race_startlist_quality_score": 990,
         "stage_type": "RR",
         "stage_profile": 3,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       },
       {
         "name": "liege-bastogne-liege",
         "year": 2025,
         "start_date": "2025-04-27",
         "end_date": "2025-04-27",
-        "race_profile": [
-          "hills"
-        ],
         "startlist": null,
         "uid": "976afa1a-d40c-4d24-b249-bc51f0a9511d",
         "distance": 252.0,
@@ -22594,7 +22444,10 @@
         "race_startlist_quality_score": 1071,
         "stage_type": "RR",
         "stage_profile": 2,
-        "stage_number": null
+        "stage_number": null,
+        "terrain_type": [
+          "hills"
+        ]
       }
     ],
     "entries": [
