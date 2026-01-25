@@ -11,7 +11,7 @@ from procyclingstats import RiderResults
 CPRiderSkill = Literal['avg', 'flt', 'cob', 'hll', 'mtn', 'spr', 'itt', 'gc_', 'or_', 'ttl', 'tts', 'pr_']
 CPRaceCategory = Literal['classics', 'gts', 'giro', 'tour', 'vuelta']
 CPRaceYear = Literal[2021, 2022, 2023, 2024, 2025]
-CPRaceProfile = Literal['sprint', 'cobbles', 'hills']
+CPTerrainType = Literal['sprint', 'cobbles', 'hills']
 CPTStageType = Literal['RR', 'ITT', 'TTT']
 CPTStageProfile = Literal[1, 2, 3, 4, 5]
 
@@ -191,13 +191,11 @@ class CPRace(ABC):
             year: int = 0,
             start_date: date = None,
             end_date: date = None,
-            race_profile: Optional[CPRaceProfile] = None,
             startlist: List[str] = None):
         self.name = name
         self.year = year
         self.start_date = start_date
         self.end_date = end_date
-        self.race_profile = race_profile
         self.startlist = startlist
         self._uid = str(uuid4())
 
@@ -222,7 +220,6 @@ class CPRace(ABC):
             "year": self.year,
             "start_date": self.start_date.isoformat() if self.start_date else None,
             "end_date": self.end_date.isoformat() if self.end_date else None,
-            "race_profile": self.race_profile,
             "startlist": self.startlist,
             "uid": self.uid,
         }
@@ -234,7 +231,6 @@ class CPRace(ABC):
             year=data.get("year", 0),
             start_date=date.fromisoformat(data["start_date"]) if data.get("start_date") else None,
             end_date=date.fromisoformat(data["end_date"]) if data.get("end_date") else None,
-            race_profile=data.get("race_profile", None),
             startlist=data.get("startlist", None),
         )
         race._uid = data.get("uid", str(uuid4()))
@@ -250,13 +246,13 @@ class CPStage(CPRace):
             year: int = 0,
             start_date: date = None,
             end_date: date = None,
+            startlist: List[str] = None,
             distance: int = 0,
             vertical_meters: int = 0,
             profile_score: int = 0,
             gradient_final_km: float = 0.0,
             race_startlist_quality_score: int = 0,
-            race_profile: Optional[CPRaceProfile] = None,
-            startlist: List[str] = None,
+            terrain_type: Optional[CPTerrainType] = None,
             stage_type: Optional[CPTStageType] = None,
             stage_profile: Optional[CPTStageProfile] = None,
             stage_number: int = 0):
@@ -265,7 +261,6 @@ class CPStage(CPRace):
             year,
             start_date,
             end_date,
-            race_profile,
             startlist,
         )
 
@@ -274,6 +269,7 @@ class CPStage(CPRace):
         self.profile_score = profile_score
         self.gradient_final_km = gradient_final_km
         self.race_startlist_quality_score = race_startlist_quality_score
+        self.terrain_type = terrain_type
         self.stage_type = stage_type
         self.stage_profile = stage_profile
         self.stage_number = stage_number
@@ -286,6 +282,7 @@ class CPStage(CPRace):
             "profile_score": self.profile_score,
             "gradient_final_km": self.gradient_final_km,
             "race_startlist_quality_score": self.race_startlist_quality_score,
+            "terrain_type": self.terrain_type,
             "stage_type": self.stage_type,
             "stage_profile": self.stage_profile,
             "stage_number": self.stage_number,
@@ -299,12 +296,13 @@ class CPStage(CPRace):
             year=data.get("year", 0),
             start_date=date.fromisoformat(data["start_date"]) if data.get("start_date") else None,
             end_date=date.fromisoformat(data["end_date"]) if data.get("end_date") else None,
+            startlist=data.get("startlist", None),
             distance=data.get("distance", 0),
             vertical_meters=data.get("vertical_meters", 0),
             profile_score=data.get("profile_score", 0),
             gradient_final_km=data.get("gradient_final_km", 0.0),
             race_startlist_quality_score=data.get("race_startlist_quality_score", 0),
-            race_profile=data.get("race_profile", None),
+            terrain_type=data.get("terrain_type", None),
             stage_type=data.get("stage_type", None),
             stage_profile=data.get("stage_profile", None),
             stage_number=data.get("stage_number", 0),

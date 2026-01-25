@@ -26,7 +26,7 @@ CPRaceCategoryMap = {
     'vuelta': ['vuelta-a-espana'],
 }
 
-CPRaceProfileMap = {
+CPTerrainTypeMap = {
     'omloop-het-nieuwsblad': [
         'cobbles'
     ],
