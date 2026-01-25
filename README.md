@@ -1,9 +1,9 @@
 # CyclingPredictor
 
-CyclingPredictor is a machine learning project by Rob Claessens, designed to predict cycling race rankings.
-It leverages historical data from [ProCyclingStats](https://www.procyclingstats.com/), rider skill scores from 
-[CyclingOracle](https://www.cyclingoracle.com/) and machine learning techniques to estimate the performance of riders in
-various types of races (classics, grand tours, etc.).
+CyclingPredictor is a machine learning project by [Rob Claessens](https://www.linkedin.com/in/robclaessens/),
+designed to predict cycling race rankings. It leverages historical data from [ProCyclingStats](https://www.procyclingstats.com/), rider skill scores
+from [CyclingOracle](https://www.cyclingoracle.com/) and machine learning techniques to estimate the performance of riders in various types of 
+races (classics, grand tours, etc.).
 
 ## Architecture
 
@@ -36,7 +36,8 @@ Processors handle the data logic, training, and prediction workflows.
 - **CPPredictor**: Uses trained models to generate rank predictions for given stages.
 - **CPEnsemblePredictor**: A processor that takes multiple `CPPredictor` instances, delegating preprocessing and 
   aggregating results. It automatically handles non-overlapping results (e.g. for all GT stages) and combines 
-  overlapping results (e.g. for hybrid classics) using combined predictions.
+  overlapping results (e.g. for hybrid classics) using combined predictions.  *Note that this class isn't a descendant 
+  of `CPProcessor`*, but because of its functionality is still considered a processor.
 - **CPSelector**: Employs optimization techniques (like a Knapsack algorithm using OR-Tools) to select an optimal team 
   based on predicted scores and budget constraints. *Note that this class isn't a descendant of `CPProcessor`*,
   but because of its functionality is still considered a processor.
