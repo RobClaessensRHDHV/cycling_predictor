@@ -335,6 +335,7 @@ class CPEntry:
     )
 
     _stage_sample_keys = (
+        'distance',
         'vertical_meters',
         'profile_score',
         'gradient_final_km',
