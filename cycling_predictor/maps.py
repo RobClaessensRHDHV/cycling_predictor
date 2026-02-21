@@ -1,3 +1,6 @@
+import math
+
+
 CPRaceCategoryMap = {
     'classics': [
         'omloop-het-nieuwsblad',
@@ -214,11 +217,12 @@ CPRiderInfoMap = {
 }
 
 CPClassicPointsMap = {
-    1: 100,
-    2: 90,
-    3: 80,
-    4: 70,
-    5: 64,
+    # Provide top 5 with additional points to simulate captain points
+    1: math.ceil(100 * 1.5),
+    2: math.ceil(90 * 1.4),
+    3: math.ceil(80 * 1.3),
+    4: math.ceil(70 * 1.2),
+    5: math.ceil(64 * 1.1),
     6: 60,
     7: 56,
     8: 52,
