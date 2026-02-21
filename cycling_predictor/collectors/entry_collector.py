@@ -182,6 +182,7 @@ class CPEntryCollector(CPBaseCollector):
             form = rider.get_form(stage)
             rank = rider.get_rank(stage)
 
+            # If rank is available and within max_rank, create entry for training
             if rank and (rank <= self.max_rank or self.max_rank == -1):
                 # Create Entry
                 entry = CPEntry(
@@ -194,6 +195,20 @@ class CPEntryCollector(CPBaseCollector):
 
                 self._add_entry(entry)
                 return entry
+
+            # If rank not available and stage is to be raced, create entry with rank None for prediction
+            elif rank is None and stage.start_date and stage.start_date >= datetime.now().date():
+                entry = CPEntry(
+                    rider=rider,
+                    stage=stage,
+                    rank=None,
+                    rider_age=age,
+                    rider_form=form,
+                )
+
+                self._add_entry(entry)
+                return entry
+
 
     @abstractmethod
     def get_entries(self):
