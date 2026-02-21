@@ -9,8 +9,8 @@ from procyclingstats import RiderResults
 
 
 CPRiderSkill = Literal['avg', 'flt', 'cob', 'hll', 'mtn', 'spr', 'itt', 'gc_', 'or_', 'ttl', 'tts', 'pr_']
-CPRaceCategory = Literal['classics', 'gts', 'giro', 'tour', 'vuelta']
-CPRaceYear = Literal[2021, 2022, 2023, 2024, 2025]
+CPRaceCategory = Literal['classics', 'gts', 'giro', 'tour', 'vuelta', 'paris-nice', 'tirreno-adriatico']
+CPRaceYear = Literal[2021, 2022, 2023, 2024, 2025, 2026]
 CPTerrainType = Literal['sprint', 'cobbles', 'hills']
 CPTStageType = Literal['RR', 'ITT', 'TTT']
 CPTStageProfile = Literal[1, 2, 3, 4, 5]
