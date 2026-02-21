@@ -384,55 +384,42 @@ if __name__ == "__main__":
     scraper = cloudscraper.create_scraper()
     requests.get = scraper.get
 
-    # Get rider collection
-    with open('data/rider_collector_classics_2024_2025.json', 'r') as fp:
-        _rider_collector = CPRiderCollector.loads(json.load(fp))
-    # with open('data/rider_collector_giro_tour_vuelta_2025.json', 'r') as fp:
-    #     _rider_collector = CPRiderCollector.loads(json.load(fp))
+    # Get classic collector
+    with open('data/entry_collector_classics_2022_50.json', 'r') as fp:
+        _classic_collector = CPClassicEntryCollector.loads(json.load(fp))
 
-    # Classic collection
-    _classic_collector = CPClassicEntryCollector(
-        categories=['classics'],
-        # years=[2023, 2024, 2025],
-        years=[2025],
-        riders=_rider_collector.riders,
-        max_rank=50,
-    )
-    _classic_collector.get_entries()
+    # Collect entries
+    _collect_classics = False
+    if _collect_classics:
 
-    print('Races:')
-    for _race in _classic_collector.races:
-        print(_race)
+        # Classic collection
+        _classic_collector = CPClassicEntryCollector(
+            categories=['classics'],
+            # years=[2023, 2024, 2025],
+            years=[2026],
+            fallback_year=2025,
+            riders=_classic_collector.riders,
+            max_rank=50,
+        )
+        _classic_collector.get_entries()
 
-    print('Entries:')
-    for _entry in _classic_collector.entries:
-        print(_entry)
+        # Dump classic collector
+        _classic_collector.dump()
 
-    # Dump classic collector
-    _classic_collector.dump()
+    else:
 
-    # # GT collection
-    # _stage_collector = CPGTEntryCollector(
-    #     # categories=['tour'],
-    #     categories=['giro', 'tour', 'vuelta'],
-    #     # years=[2025],
-    #     years=[2023, 2024, 2025],
-    #     riders=_rider_collector.riders,
-    #     max_rank=100,
-    # )
-    # _stage_collector.get_entries()
-    #
-    # print('Races:')
-    # for _race in _stage_collector.races:
-    #     print(_race)
-    #
-    # print('Stages:')
-    # for _stage in _stage_collector.stages:
-    #     print(_stage)
-    #
-    # print('Entries:')
-    # for _entry in _stage_collector.entries:
-    #     print(_entry)
-    #
-    # # Dump stage collector
-    # _stage_collector.dump()
+        # GT collection
+        _stage_collector = CPGTEntryCollector(
+            categories=['paris-nice'],
+            # categories=['tirreno-adriatico'],
+            # years=[2023, 2024, 2025],
+            years=[2026],
+            riders=_classic_collector.riders,
+            max_rank=50,
+            stage_number_start=7,
+            stage_number_end=7,
+        )
+        _stage_collector.get_entries()
+
+        # Dump stage collector
+        _stage_collector.dump()
