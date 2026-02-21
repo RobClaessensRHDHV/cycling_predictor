@@ -99,7 +99,9 @@ class CPEntryCollector(CPBaseCollector):
         if stage not in self.stages:
             self.stages.append(stage)
 
-    def _get_stage(self, race: CPRace, name: str, year: int, number: int = None, raise_error: bool = False) -> CPStage:
+    def _get_stage(
+            self, race: CPRace, name: str, year: int, number: int = None, add_stage: bool = True,
+            raise_error: bool = False) -> CPStage:
 
         for stage in self.stages:
             if stage.name == name and stage.year == year and stage.stage_number == number:
@@ -152,7 +154,9 @@ class CPEntryCollector(CPBaseCollector):
             stage_number=number,
         )
 
-        self._add_stage(stage)
+        if add_stage:
+            self._add_stage(stage)
+
         return stage
 
     def _add_entry(self, entry: CPEntry):
@@ -288,8 +292,11 @@ class CPClassicEntryCollector(CPEntryCollector):
             categories: List[CPRaceCategory],
             years: List[CPRaceYear],
             riders: List[CPRider],
-            max_rank: int = -1):
+            max_rank: int = -1,
+            fallback_year: Optional[CPRaceYear] = None,
+    ):
         super().__init__(categories, years, riders, max_rank)
+        self.fallback_year = fallback_year
 
     def get_entries(self):
         for rider in self.riders:
@@ -298,6 +305,16 @@ class CPClassicEntryCollector(CPEntryCollector):
                     for race_name in CPRaceCategoryMap[race_type]:
                         race = self._get_race(race_name, year)
                         stage = self._get_stage(race, race_name, year)
+
+                        # If fallback year is specified, overwrite missing stage properties if found
+                        if self.fallback_year:
+                            fallback_stage = self._get_stage(race, race_name, self.fallback_year, add_stage=False)
+                            for key in CPEntry._stage_sample_keys:
+                                if not getattr(stage, key, None) and getattr(fallback_stage, key, None):
+                                    setattr(stage, key, getattr(fallback_stage, key))
+                                    print(f"Set {key} of {stage.name} {stage.year} with {getattr(fallback_stage, key)} "
+                                          f"from {self.fallback_year}")
+
                         if race and stage:
                             entry = self._get_entry(rider, stage)
 
