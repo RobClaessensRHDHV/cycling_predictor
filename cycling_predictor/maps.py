@@ -24,6 +24,8 @@ CPRaceCategoryMap = {
     'giro': ['giro-d-italia'],
     'tour': ['tour-de-france'],
     'vuelta': ['vuelta-a-espana'],
+    'paris-nice': ['paris-nice'],
+    'tirreno-adriatico': ['tirreno-adriatico'],
 }
 
 CPTerrainTypeMap = {
