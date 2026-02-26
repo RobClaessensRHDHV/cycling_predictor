@@ -83,6 +83,26 @@ CPTerrainTypeMap = {
     ],
 }
 
+CPAbbreviationMap = {
+    'omloop-het-nieuwsblad': 'OHN',
+    'kuurne-brussel-kuurne': 'KBK',
+    'strade-bianche': 'SB',
+    'milano-sanremo': 'MSR',
+    'classic-brugge-de-panne': 'BDP',
+    'e3-harelbeke': 'E3',
+    'gent-wevelgem': 'GW',
+    'dwars-door-vlaanderen': 'DDV',
+    'ronde-van-vlaanderen': 'RVV',
+    'scheldeprijs': 'SP',
+    'paris-roubaix': 'PR',
+    'brabantse-pijl': 'BP',
+    'amstel-gold-race': 'AGR',
+    'la-fleche-wallonne': 'LFW',
+    'liege-bastogne-liege': 'LBL',
+    'paris-nice': 'PN',
+    'tirreno-adriatico': 'TA',
+}
+
 CPRiderInfoMap = {
     'anders-halland-johannessen': {
         'weight': 65.0
