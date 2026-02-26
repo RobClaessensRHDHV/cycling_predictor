@@ -67,9 +67,11 @@ class CPPredictor(CPProcessor):
 
         return self.scaler.transform(samples)
 
-    def predict(self):
+    def predict(self, verbose: Optional[bool] = True):
         """
         Predict with the model using the preprocessed data.
+
+        :param verbose: Whether to print the training results.
         """
 
         if self.dataloader is None:
@@ -98,24 +100,33 @@ class CPPredictor(CPProcessor):
                 group_sizes.append(stages.count(stage))
 
         # Predict per stage, using the model
-        predictions = self.model.predict(samples, group_sizes, targets, stages, riders)
+        predictions = self.model.predict(samples, group_sizes, targets, stages, riders, verbose)
         return predictions
 
 
 if __name__ == "__main__":
 
+    from cycling_predictor.collectors import CPEntryCollector
     from cycling_predictor.processors import CPTrainer
 
+    # Load collector
+    _collector = CPEntryCollector.load(r'..\collectors\data\CPClassicEntryCollector_classics_2026.json')
+    # _collector = CPEntryCollector.load(r'..\collectors\data\CPGTEntryCollector_paris_nice_tirreno_adriatico_2026.json')
+
     # Load trainer
-    _trainer = CPTrainer.load(r'data\CPTrainer_giro_tour_vuelta_2023_2024_2025_100_0.2_15.json')
+    _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_20_RR_sprint.json')
+    # _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_15_RR_cobbles.json')
+    # _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_29_RR_hills.json')
+    # _trainer = CPTrainer.load(r'data\CPTrainer_paris_nice_tirreno_adriatico_2023_2024_2025_50_0.2_32_RR_1.json')
+    # _trainer = CPTrainer.load(r'data\CPTrainer_paris_nice_tirreno_adriatico_2023_2024_2025_50_0.2_11_RR_5.json')
 
     # Set up predictor with trained model
     _predictor = CPPredictor(
-        collector=_trainer.collector,
+        collector=_collector,
         rider_feature_filter=_trainer.rider_feature_filter,
         stage_feature_filter=_trainer.stage_feature_filter,
         interactions=_trainer.interactions,
-        stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (1,), 'stage_type': ('RR',)},
+        stage_filter=_trainer.stage_filter,
         scaler=_trainer.scaler,
         model=_trainer.model,
     )
@@ -124,4 +135,7 @@ if __name__ == "__main__":
     _predictor.preprocess()
 
     # Predict
-    _predictor.predict()
+    predictions = _predictor.predict()
+
+    # Dump predictor
+    _predictor.dump()
