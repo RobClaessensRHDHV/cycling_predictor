@@ -85,7 +85,7 @@ class CPPrediction:
             for rank, rider in enumerate(self.rider_prediction[:k] or list(), start=1):
 
                 # If result is available, print actual rank between parentheses
-                if self.result is not None:
+                if self.result is not None and any(self.result):
                     print(f"#{rank}: {rider.name}".ljust(40) +
                           f"(#{self.rider_result.index(rider) + 1 if rider in self.rider_result else 'N/A'})")
                 else:
