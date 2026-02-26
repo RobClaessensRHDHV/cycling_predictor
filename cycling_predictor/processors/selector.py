@@ -177,6 +177,74 @@ class CPSelector:
             print("The problem does not have an optimal solution.")
             return 0.0, 0.0
 
+    def print_selection_table(self) -> None:
+        """
+        Print selected riders' participation across races in a table.
+        """
+        if not self.selection:
+            return
+
+        # Sort predictions by start_date if available
+        sorted_predictions = sorted(self.predictions,
+                                    key=lambda p: p.stage.start_date if p.stage and p.stage.start_date else date.min)
+
+        race_labels = [CPAbbreviationMap.get(p.stage.name, p.stage.name[:5]) for p in sorted_predictions]
+        header = f"{'Rider':<30} | " + " | ".join(f"{r:^5}" for r in race_labels) + " | Total"
+        print(f"\n{header}\n{'-' * len(header)}")
+
+        race_totals = [0] * len(sorted_predictions)
+        for rider in self.selection:
+            row_data = []
+            for i, p in enumerate(sorted_predictions):
+                is_competing = any(r.name == rider.name for r in p.riders)
+                row_data.append("x" if is_competing else " ")
+                if is_competing: race_totals[i] += 1
+            print(f"{rider.name:<30} | " + " | ".join(f"{v:^5}" for v in row_data) + f" | {sum(1 for v in row_data if v == 'x'):^5}")
+
+        print(f"{'-' * len(header)}")
+        print(f"{'Total':<30} | " + " | ".join(f"{t:^5}" for t in race_totals) + f" | {sum(race_totals):^5}")
+
+    def print_prediction_table(self) -> None:
+        """
+        Print selected riders' predicted rank and points across races in a table.
+        """
+        if not self.selection:
+            return
+
+        # Sort predictions by start_date if available
+        sorted_predictions = sorted(self.predictions,
+                                    key=lambda p: p.stage.start_date if p.stage and p.stage.start_date else date.min)
+
+        race_labels = [CPAbbreviationMap.get(p.stage.name, p.stage.name[:5]) for p in sorted_predictions]
+        header = f"{'Rider':<30} | " + " | ".join(f"{r:^8}" for r in race_labels) + " | Total"
+        print(f"\n{header}\n{'-' * len(header)}")
+
+        race_totals = [0] * len(sorted_predictions)
+        for rider in self.selection:
+            row_data = []
+            rider_total_points = 0
+            for i, p in enumerate(sorted_predictions):
+
+                # Find rider in prediction
+                rank = None
+                for idx, r in enumerate(p.riders):
+                    if r.name == rider.name:
+                        rank = int(p.prediction[idx])
+                        break
+                
+                if rank:
+                    points = CPClassicPointsMap.get(rank, 0)
+                    row_data.append(f"{rank} ({points})")
+                    rider_total_points += points
+                    race_totals[i] += points
+                else:
+                    row_data.append(" ")
+            
+            print(f"{rider.name:<30} | " + " | ".join(f"{v:^8}" for v in row_data) + f" | {rider_total_points:^5}")
+
+        print(f"{'-' * len(header)}")
+        print(f"{'Total':<30} | " + " | ".join(f"{t:^8}" for t in race_totals) + f" | {sum(race_totals):^5}")
+
 
 if __name__ == "__main__":
 
