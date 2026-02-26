@@ -12,7 +12,6 @@ from procyclingstats import Race, Stage
 from cycling_predictor.collectors import CPBaseCollector
 from cycling_predictor.classes import CPRider, CPRace, CPStage, CPEntry, CPRaceCategory, CPRaceYear
 from cycling_predictor.maps import *
-from cycling_predictor.collectors.rider_collector import CPRiderCollector
 
 
 class CPEntryCollector(CPBaseCollector):
@@ -43,10 +42,10 @@ class CPEntryCollector(CPBaseCollector):
     @property
     def dump_fn(self) -> str:
         if self.max_rank == -1:
-            return (f"{self.__class__.__name__}_{"_".join(self.categories)}_"
+            return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
                     f"{"_".join(str(year) for year in self.years)}.json")
         else:
-            return (f"{self.__class__.__name__}_{"_".join(self.categories)}_"
+            return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
                     f"{"_".join(str(year) for year in self.years)}_{self.max_rank}.json")
 
     def _add_race(self, race: CPRace):
@@ -60,7 +59,7 @@ class CPEntryCollector(CPBaseCollector):
                 return race
 
         try:
-            race_dict = Race(f"race/{name}/{year}").parse()
+            race_dict = Race(f"race/{name}/{year}").parse(exceptions_to_ignore=(IndexError, AttributeError,))
         except requests.exceptions.SSLError:
             print(f"SSL error during retrieving race results {name} {year}")
             if raise_error:
@@ -110,10 +109,14 @@ class CPEntryCollector(CPBaseCollector):
         try:
             # If number, GT stage
             if number:
-                stage_dict = Stage(f"race/{name}/{year}/stage-{number}/result").parse()
+                stage_dict = Stage(f"race/{name}/{year}/stage-{number}/result").parse(
+                    exceptions_to_ignore=(IndexError, AttributeError, ValueError,
+                                          procyclingstats.errors.ExpectedParsingError))
             # Else, classic race
             else:
-                stage_dict = Stage(f"race/{name}/{year}/result").parse()
+                stage_dict = Stage(f"race/{name}/{year}/result").parse(
+                    exceptions_to_ignore=(IndexError, AttributeError, ValueError,
+                                          procyclingstats.errors.ExpectedParsingError))
         except requests.exceptions.SSLError:
             print(f"SSL error during retrieving race results {name} {year}")
             if raise_error:
@@ -315,6 +318,7 @@ class CPClassicEntryCollector(CPEntryCollector):
 
     def get_entries(self):
         for rider in self.riders:
+            print(f"Collecting entries for rider {rider.name}... ({self.riders.index(rider) + 1}/{len(self.riders)})")
             for race_type in self.categories:
                 for year in self.years:
                     for race_name in CPRaceCategoryMap[race_type]:
@@ -325,7 +329,7 @@ class CPClassicEntryCollector(CPEntryCollector):
                         if self.fallback_year:
                             fallback_stage = self._get_stage(race, race_name, self.fallback_year, add_stage=False)
                             for key in CPEntry._stage_sample_keys:
-                                if not getattr(stage, key, None) and getattr(fallback_stage, key, None):
+                                if getattr(stage, key, None) is None and getattr(fallback_stage, key, None) is not None:
                                     setattr(stage, key, getattr(fallback_stage, key))
                                     print(f"Set {key} of {stage.name} {stage.year} with {getattr(fallback_stage, key)} "
                                           f"from {self.fallback_year}")
@@ -353,6 +357,7 @@ class CPGTEntryCollector(CPEntryCollector):
 
     def get_entries(self):
         for rider in self.riders:
+            print(f"Collecting entries for rider {rider.name}... ({self.riders.index(rider) + 1}/{len(self.riders)})")
             for race_type in self.categories:
                 for year in self.years:
                     for race_name in CPRaceCategoryMap[race_type]:
@@ -380,16 +385,18 @@ class CPGTEntryCollector(CPEntryCollector):
 
 if __name__ == "__main__":
 
+    from cycling_predictor.collectors.rider_collector import CPRiderCollector
+
     # Monkey patch requests with cloudscraper to bypass Cloudflare protections
     scraper = cloudscraper.create_scraper()
     requests.get = scraper.get
 
-    # Get classic collector
-    with open('data/entry_collector_classics_2022_50.json', 'r') as fp:
-        _classic_collector = CPClassicEntryCollector.loads(json.load(fp))
+    # Get rider collector
+    with open('data/rider_collector_2026.json', 'r') as fp:
+        _rider_collector = CPRiderCollector.loads(json.load(fp))
 
     # Collect entries
-    _collect_classics = False
+    _collect_classics = True
     if _collect_classics:
 
         # Classic collection
@@ -398,8 +405,8 @@ if __name__ == "__main__":
             # years=[2023, 2024, 2025],
             years=[2026],
             fallback_year=2025,
-            riders=_classic_collector.riders,
-            max_rank=50,
+            riders=_rider_collector.riders,
+            # max_rank=50,
         )
         _classic_collector.get_entries()
 
@@ -410,12 +417,11 @@ if __name__ == "__main__":
 
         # GT collection
         _stage_collector = CPGTEntryCollector(
-            categories=['paris-nice'],
-            # categories=['tirreno-adriatico'],
+            categories=['paris-nice', 'tirreno-adriatico'],
             # years=[2023, 2024, 2025],
             years=[2026],
-            riders=_classic_collector.riders,
-            max_rank=50,
+            riders=_rider_collector.riders,
+            # max_rank=50,
             stage_number_start=7,
             stage_number_end=7,
         )
