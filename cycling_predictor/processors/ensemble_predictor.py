@@ -27,26 +27,36 @@ class CPEnsemblePredictor:
         for predictor in self.predictors:
             predictor.preprocess(rider_feature_noise=rider_feature_noise)
 
-    def predict(self, normalize: bool = False) -> List[CPPrediction]:
+    def predict(self, n: int = 1, rider_feature_noise: Optional[float] = None, normalize: bool = False,
+                verbose: bool = True) -> List[CPPrediction]:
         """
         Collects results from all child predictors and merges them.
 
+        :param n: Number of predictions to be made, default is 1. With n > 1, a Monte Carlo style approach can be taken,
+            combined with rider feature noise during preprocessing.
+        :param rider_feature_noise: Optional noise to add to rider features for augmentation (only used if n > 1).
         :param normalize: Whether to normalize raw scores when combining predictions.
+        :param verbose: Whether to print the prediction results.
         :return: List of combined predictions.
         """
         # Collect all predictions from children
         prediction_dict: Dict[str, List[CPPrediction]] = dict()
         
         for predictor in self.predictors:
-            child_predictions = predictor.predict()
-            
-            for child_prediction in child_predictions:
-                if child_prediction.stage:
-                    stage_uid = child_prediction.stage.uid
-                    if prediction_dict.get(stage_uid):
-                        prediction_dict[stage_uid].append(child_prediction)
-                    else:
-                        prediction_dict[stage_uid] = [child_prediction]
+            for i in range(max(1, n)):
+                if i > 0:
+                    predictor.preprocess(rider_feature_noise=rider_feature_noise)
+
+                # Do not print all child predictions to avoid clutter
+                child_predictions = predictor.predict(verbose=False)
+
+                for child_prediction in child_predictions:
+                    if child_prediction.stage:
+                        stage_uid = child_prediction.stage.uid
+                        if prediction_dict.get(stage_uid):
+                            prediction_dict[stage_uid].append(child_prediction)
+                        else:
+                            prediction_dict[stage_uid] = [child_prediction]
 
         # Iterate through collected stages and finalize
         predictions = list()
@@ -54,14 +64,17 @@ class CPEnsemblePredictor:
             # If only one prediction, directly pass along
             if len(stage_predictions) == 1:
                 predictions.append(stage_predictions[0])
+                if verbose:
+                    stage_predictions[0].print()
             # Otherwise, combine predictions
             else:
-                predictions.append(self._combine_predictions(stage_predictions, normalize=normalize))
+                predictions.append(self._combine_predictions(stage_predictions, normalize=normalize, verbose=verbose))
 
         return sorted(predictions, key=lambda p: (p.stage.start_date if p.stage else None))
 
     @staticmethod
-    def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False) -> CPPrediction:
+    def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False, verbose: bool = True) \
+            -> CPPrediction:
         """
         Combines multiple predictions for the same stage.
         If models provide raw scores, it uses relevance scores.
@@ -69,6 +82,7 @@ class CPEnsemblePredictor:
 
         :param predictions: List of predictions to combine.
         :param normalize: Whether to normalize raw scores when combining predictions.
+        :param verbose: Whether to print the combined prediction results.
         :return: Combined prediction.
         """
         reference_prediction = predictions[0]
@@ -96,13 +110,19 @@ class CPEnsemblePredictor:
         combined_ranking = rankdata(-consensus_scores, method='ordinal')
 
         # Return combined prediction, storing consensus scores as well
-        return CPPrediction(
+        combined_prediction = CPPrediction(
             prediction=combined_ranking,
             scores=consensus_scores,
             result=reference_prediction.result,
             stage=reference_prediction.stage,
             riders=reference_prediction.riders
         )
+
+        # Print prediction object if verbose
+        if verbose:
+            combined_prediction.print()
+
+        return combined_prediction
 
 
 if __name__ == "__main__":
