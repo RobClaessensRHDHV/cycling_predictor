@@ -100,6 +100,7 @@ class CPRider:
             if raise_error:
                 raise
 
+    # TODO: Compute a per-profile form, which would be much more predictive!
     def get_form(self, race: 'CPRace', form_days: Optional[int] = 120, initial_data: bool = False):
         rider_form = 0
         for res in self.results.get(race.year, list()):
@@ -404,7 +405,7 @@ class CPEntry:
         # Get sample tensor from rider and race data based on given keys
         sample = ([getattr(self.rider, k, 0) for k in self._rider_sample_keys if k not in (rider_feature_filter or [])] +
                   [getattr(self.stage, k, 0) for k in self._stage_sample_keys if k not in (stage_feature_filter or [])] +
-                  [getattr(self, k, 0) for k in self._entry_sample_keys])
+                  [getattr(self, k, 0) for k in self._entry_sample_keys if k not in (rider_feature_filter or [])])
 
         target = self.rank or 0
 
