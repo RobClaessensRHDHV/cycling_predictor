@@ -148,6 +148,10 @@ class CPPrediction:
             "result": self.result.tolist() if self.result is not None else None,
             "stage": self.stage.dumps() if self.stage else None,
             "riders": [rider.dumps() for rider in self.riders],
+            "rider_prediction": {i: rider.name for i, rider in enumerate(self.rider_prediction, start=1)}
+                if self.rider_prediction else None,
+            "rider_result": {i: rider.name for i, rider in enumerate(self.rider_result, start=1)}
+                if self.rider_result else None,
         }
 
     @classmethod
@@ -168,9 +172,9 @@ class CPPrediction:
         if not fp:
             if self.stage:
                 if self.stage.stage_number:
-                    fp = f'data/prediction_{self.stage.name}_stage{self.stage.stage_number}_{self.stage.year}.json'
+                    fp = f'data/prediction_{self.stage.name.replace('-', '_')}_stage{self.stage.stage_number}_{self.stage.year}.json'
                 else:
-                    fp = f'data/prediction_{self.stage.name}_{self.stage.year}.json'
+                    fp = f'data/prediction_{self.stage.name.replace('-', '_')}_{self.stage.year}.json'
             else:
                 fp = f'data/prediction_{self.uid}.json'
 
