@@ -10,9 +10,9 @@
   "riders": [
     {
       "name": "dylan-van-baarle",
-      "team": "team-visma-lease-a-bike",
+      "team": "soudal-quick-step",
       "category": "dom",
-      "cost": 2.0,
+      "cost": 0.75,
       "birthdate": "1992-05-21",
       "height": 1.89,
       "weight": 78.0,
