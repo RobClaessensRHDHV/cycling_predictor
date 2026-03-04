@@ -12,9 +12,9 @@
     "riders": [
       {
         "name": "dylan-van-baarle",
-        "team": "team-visma-lease-a-bike",
+        "team": "soudal-quick-step",
         "category": "dom",
-        "cost": 2.0,
+        "cost": 0.75,
         "birthdate": "1992-05-21",
         "height": 1.89,
         "weight": 78.0,
@@ -13575,19 +13575,18 @@
           "cees-bol",
           "aurelien-paret-peintre",
           "stefan-bissegger",
+          "johan-jacobs",
           "remi-cavagna",
           "ewen-costiou",
           "david-gaudu",
           "jefferson-cepeda-hernandez",
-          "cian-uijtdebroeks",
           "michel-hessmann",
           "ivan-romeo",
-          "nelson-oliveira",
           "toms-skujins",
-          "mathias-vacek",
           "lennard-kamna",
           "soren-kragh-andersen",
           "mattias-skjelmose-jensen",
+          "mathias-vacek",
           "juan-ayuso-pesquera",
           "marc-soler",
           "pavel-sivakov",
@@ -13600,22 +13599,24 @@
           "kasper-asgreen",
           "michael-valgren-andersen",
           "vincenzo-albanese",
-          "damiano-caruso",
           "phil-bauhaus",
+          "damiano-caruso",
           "lenny-martinez",
           "louis-rouland",
+          "piet-allegaert",
           "milan-fretin",
           "alex-kirsch",
           "benjamin-thomas-2",
           "ion-izagirre",
           "bryan-coquard",
           "jensen-plowright",
-          "maurice-ballerstedt",
           "aaron-dockx",
+          "maurice-ballerstedt",
           "oscar-onley",
           "carlos-rodriguez-cano",
           "dorian-godon",
           "kevin-vauquelin",
+          "luca-van-boven",
           "vito-braet",
           "biniam-girmay",
           "riley-sheehan",
@@ -13626,8 +13627,8 @@
           "laurence-pithie",
           "mick-van-dijke",
           "alberto-dainese",
-          "valentin-paret-peintre",
           "jasper-stuyven",
+          "valentin-paret-peintre",
           "yves-lampaert",
           "luke-durbridge",
           "michael-matthews",
@@ -13636,14 +13637,14 @@
           "max-poole",
           "edoardo-affini",
           "jonas-vingegaard",
-          "victor-campenaerts",
-          "axel-zingle",
           "bruno-armirail",
-          "andreas-leknessund",
+          "axel-zingle",
+          "victor-campenaerts",
           "rasmus-tiller",
-          "harold-tejada",
+          "andreas-leknessund",
           "mike-teunissen",
           "nicolas-vinokurov",
+          "harold-tejada",
           "sergio-higuita",
           "fabio-christen",
           "david-de-la-cruz",
@@ -13656,7 +13657,7 @@
           "emilien-jeanniere",
           "joris-delbove"
         ],
-        "uid": "b679b200-cfae-47e7-88d8-f195987cdf53"
+        "uid": "f654651e-6093-423c-9645-37f6cd67e3e4"
       },
       {
         "name": "tirreno-adriatico",
@@ -13668,70 +13669,76 @@
           "filippo-conca",
           "alan-hatherly",
           "arjen-livyns",
-          "diego-ulissi",
           "christian-scaroni",
           "clement-champoussin",
           "lorenzo-fortunato",
+          "diego-ulissi",
           "jan-tratnik",
           "jai-hindley",
           "tim-van-dijke",
           "giulio-pellizzari",
           "danny-van-poppel",
           "primoz-roglic",
-          "tord-gudmestad",
-          "tobias-lund-andresen",
           "paul-lapeira",
           "gregor-muhlberger",
           "felix-gall",
+          "tord-gudmestad",
+          "tobias-lund-andresen",
+          "simone-consonni",
           "edward-theuns",
           "jonathan-milan",
           "jan-christen",
           "isaac-del-toro",
           "attila-valter",
           "pello-bilbao",
-          "santiago-buitrago-sanchez",
           "antonio-tiberi",
+          "santiago-buitrago-sanchez",
           "madis-mihkels",
           "ben-healy",
           "richard-carapaz",
           "pablo-castrillo-zapater",
-          "ethan-hayter",
+          "ivan-garcia-cortina",
           "paul-magnier",
+          "ethan-hayter",
+          "laurenz-rex",
           "ilan-van-wilder",
           "luca-mozzato",
-          "stefan-kung",
           "julian-alaphilippe",
           "michael-storer",
+          "valentin-madouas",
           "lorenzo-germani",
           "bastien-tronchon",
-          "valentin-madouas",
           "clement-berthet",
-          "frank-van-den-broek",
+          "john-degenkolb",
           "mattia-gaffuri",
-          "filippo-fiorelli",
-          "wout-van-aert",
-          "matteo-jorgenson",
-          "davide-piganzoli",
+          "frank-van-den-broek",
           "timo-kielich",
+          "davide-piganzoli",
+          "matteo-jorgenson",
+          "wout-van-aert",
+          "filippo-fiorelli",
           "alessandro-pinarello",
+          "georg-zimmermann",
           "huub-artz",
           "jenno-berckmoes",
-          "georg-zimmermann",
-          "arnaud-de-lie",
-          "lennert-van-eetvelt",
           "jasper-de-buyst",
-          "filippo-ganna",
+          "lennert-van-eetvelt",
+          "arnaud-de-lie",
           "egan-bernal",
+          "filippo-ganna",
           "thymen-arensman",
+          "alfred-wright",
           "martin-marcellusi",
-          "stefano-oldani",
-          "alex-molenaar",
           "jakub-otruba",
+          "alex-molenaar",
+          "stefano-oldani",
           "jonas-abrahamsen",
-          "mathieu-van-der-poel",
-          "kaden-groves"
+          "emiel-verstrynge",
+          "tibor-del-grosso",
+          "kaden-groves",
+          "mathieu-van-der-poel"
         ],
-        "uid": "fa7d0c0b-92a1-4339-a143-7821f0d66b6b"
+        "uid": "efa3eee6-ed45-4591-aa6a-11adc3a959a9"
       }
     ],
     "stages": [
@@ -13745,19 +13752,18 @@
           "cees-bol",
           "aurelien-paret-peintre",
           "stefan-bissegger",
+          "johan-jacobs",
           "remi-cavagna",
           "ewen-costiou",
           "david-gaudu",
           "jefferson-cepeda-hernandez",
-          "cian-uijtdebroeks",
           "michel-hessmann",
           "ivan-romeo",
-          "nelson-oliveira",
           "toms-skujins",
-          "mathias-vacek",
           "lennard-kamna",
           "soren-kragh-andersen",
           "mattias-skjelmose-jensen",
+          "mathias-vacek",
           "juan-ayuso-pesquera",
           "marc-soler",
           "pavel-sivakov",
@@ -13770,22 +13776,24 @@
           "kasper-asgreen",
           "michael-valgren-andersen",
           "vincenzo-albanese",
-          "damiano-caruso",
           "phil-bauhaus",
+          "damiano-caruso",
           "lenny-martinez",
           "louis-rouland",
+          "piet-allegaert",
           "milan-fretin",
           "alex-kirsch",
           "benjamin-thomas-2",
           "ion-izagirre",
           "bryan-coquard",
           "jensen-plowright",
-          "maurice-ballerstedt",
           "aaron-dockx",
+          "maurice-ballerstedt",
           "oscar-onley",
           "carlos-rodriguez-cano",
           "dorian-godon",
           "kevin-vauquelin",
+          "luca-van-boven",
           "vito-braet",
           "biniam-girmay",
           "riley-sheehan",
@@ -13796,8 +13804,8 @@
           "laurence-pithie",
           "mick-van-dijke",
           "alberto-dainese",
-          "valentin-paret-peintre",
           "jasper-stuyven",
+          "valentin-paret-peintre",
           "yves-lampaert",
           "luke-durbridge",
           "michael-matthews",
@@ -13806,14 +13814,14 @@
           "max-poole",
           "edoardo-affini",
           "jonas-vingegaard",
-          "victor-campenaerts",
-          "axel-zingle",
           "bruno-armirail",
-          "andreas-leknessund",
+          "axel-zingle",
+          "victor-campenaerts",
           "rasmus-tiller",
-          "harold-tejada",
+          "andreas-leknessund",
           "mike-teunissen",
           "nicolas-vinokurov",
+          "harold-tejada",
           "sergio-higuita",
           "fabio-christen",
           "david-de-la-cruz",
@@ -13826,10 +13834,10 @@
           "emilien-jeanniere",
           "joris-delbove"
         ],
-        "uid": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "uid": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "distance": 138.7,
-        "vertical_meters": 3329,
-        "profile_score": 318,
+        "vertical_meters": 3149,
+        "profile_score": 211,
         "gradient_final_km": 6.1,
         "race_startlist_quality_score": 577,
         "terrain_types": null,
@@ -13847,75 +13855,81 @@
           "filippo-conca",
           "alan-hatherly",
           "arjen-livyns",
-          "diego-ulissi",
           "christian-scaroni",
           "clement-champoussin",
           "lorenzo-fortunato",
+          "diego-ulissi",
           "jan-tratnik",
           "jai-hindley",
           "tim-van-dijke",
           "giulio-pellizzari",
           "danny-van-poppel",
           "primoz-roglic",
-          "tord-gudmestad",
-          "tobias-lund-andresen",
           "paul-lapeira",
           "gregor-muhlberger",
           "felix-gall",
+          "tord-gudmestad",
+          "tobias-lund-andresen",
+          "simone-consonni",
           "edward-theuns",
           "jonathan-milan",
           "jan-christen",
           "isaac-del-toro",
           "attila-valter",
           "pello-bilbao",
-          "santiago-buitrago-sanchez",
           "antonio-tiberi",
+          "santiago-buitrago-sanchez",
           "madis-mihkels",
           "ben-healy",
           "richard-carapaz",
           "pablo-castrillo-zapater",
-          "ethan-hayter",
+          "ivan-garcia-cortina",
           "paul-magnier",
+          "ethan-hayter",
+          "laurenz-rex",
           "ilan-van-wilder",
           "luca-mozzato",
-          "stefan-kung",
           "julian-alaphilippe",
           "michael-storer",
+          "valentin-madouas",
           "lorenzo-germani",
           "bastien-tronchon",
-          "valentin-madouas",
           "clement-berthet",
-          "frank-van-den-broek",
+          "john-degenkolb",
           "mattia-gaffuri",
-          "filippo-fiorelli",
-          "wout-van-aert",
-          "matteo-jorgenson",
-          "davide-piganzoli",
+          "frank-van-den-broek",
           "timo-kielich",
+          "davide-piganzoli",
+          "matteo-jorgenson",
+          "wout-van-aert",
+          "filippo-fiorelli",
           "alessandro-pinarello",
+          "georg-zimmermann",
           "huub-artz",
           "jenno-berckmoes",
-          "georg-zimmermann",
-          "arnaud-de-lie",
-          "lennert-van-eetvelt",
           "jasper-de-buyst",
-          "filippo-ganna",
+          "lennert-van-eetvelt",
+          "arnaud-de-lie",
           "egan-bernal",
+          "filippo-ganna",
           "thymen-arensman",
+          "alfred-wright",
           "martin-marcellusi",
-          "stefano-oldani",
-          "alex-molenaar",
           "jakub-otruba",
+          "alex-molenaar",
+          "stefano-oldani",
           "jonas-abrahamsen",
-          "mathieu-van-der-poel",
-          "kaden-groves"
+          "emiel-verstrynge",
+          "tibor-del-grosso",
+          "kaden-groves",
+          "mathieu-van-der-poel"
         ],
-        "uid": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "uid": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "distance": 142.0,
-        "vertical_meters": 1137,
-        "profile_score": 19,
+        "vertical_meters": 1135,
+        "profile_score": 25,
         "gradient_final_km": 0.4,
-        "race_startlist_quality_score": 777,
+        "race_startlist_quality_score": 822,
         "terrain_types": null,
         "stage_type": "RR",
         "stage_profile": 1,
@@ -13925,882 +13939,938 @@
     "entries": [
       {
         "rider": "bf0f645b-4f1a-4163-b75d-2603bf24db1f",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 31,
         "rider_form": 0
       },
       {
         "rider": "ff6875fc-5b9e-42bc-9ab2-3bd498fa78ed",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 36,
         "rider_form": 4.55
       },
       {
         "rider": "97f3b935-e546-4bd1-9899-fd6129b7087b",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
-        "rider_form": 0
+        "rider_form": 255.16666666666666
       },
       {
         "rider": "fdaafcbf-76ae-4485-ae2d-954d4ffef48c",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "4925357b-7cac-48ce-a411-34ea462e686d",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 33,
         "rider_form": 4.949999999999999
       },
       {
         "rider": "ea052755-047d-4146-abf0-9322b94c6c68",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 31,
-        "rider_form": 2.3
+        "rider_form": 9.366666666666667
       },
       {
         "rider": "8b6d8e34-ebda-464b-b8fa-b98d32d710f7",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 34,
         "rider_form": 2.15
       },
       {
         "rider": "3eabc360-98b3-4e37-bfed-ad757ea3e018",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 0,
         "rider_form": 212.93333333333334
       },
       {
+        "rider": "4caf261d-4238-47b1-b203-6ad216947b73",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 26,
+        "rider_form": 150.20833333333331
+      },
+      {
         "rider": "a9521f81-0cc8-49c8-bd88-2d28d7c4078a",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 33,
-        "rider_form": 1.8113333333333332
+        "rider_form": 105.11133333333332
       },
       {
         "rider": "8c46f117-21c0-4f6b-9d01-3bb470f3a7b5",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
-        "rider_form": 3.833333333333333
+        "rider_form": 154.0
       },
       {
         "rider": "0a1fd0d5-2857-4584-8fc5-311a2e96f210",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 30,
-        "rider_form": 31.333333333333332
+        "rider_form": 84.83333333333333
+      },
+      {
+        "rider": "71930914-d591-4c7d-b6fb-24728df8458f",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 26,
+        "rider_form": 4.85
       },
       {
         "rider": "a369e84b-9bf6-4204-9df8-e66a2726ec94",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
-        "rider_form": 5.0
+        "rider_form": 14.741666666666667
+      },
+      {
+        "rider": "42e74bb6-b4c6-423e-8dcb-0af62d8f119b",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
+        "rank": null,
+        "rider_age": 31,
+        "rider_form": 0
       },
       {
         "rider": "da6293d5-0389-4c90-adb5-a5249c4f7954",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
         "rider_form": 3.958333333333333
       },
       {
         "rider": "e449d085-a68b-48c8-93ec-f6c2156b2bd6",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 34,
         "rider_form": 0
       },
       {
-        "rider": "974f5a0d-2b2e-450b-bb09-d7644807a205",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
-        "rank": null,
-        "rider_age": 32,
-        "rider_form": 6.937499999999999
-      },
-      {
         "rider": "8c162a6e-4264-4c40-abe5-72d5212d2c8f",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 24,
-        "rider_form": 4.475
+        "rider_form": 6.241666666666667
       },
       {
         "rider": "faa900a8-b0f4-4a19-ad88-fce5420e3fc9",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 33,
         "rider_form": 0
       },
       {
         "rider": "75b0c1aa-e1e1-4c61-a2ce-4574b04659aa",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 33,
-        "rider_form": 1.9500000000000002
+        "rider_form": 16.083333333333332
       },
       {
         "rider": "634e2a3d-fcd5-47c5-8475-37b0b1be0e43",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
         "rider_form": 188.05
       },
       {
         "rider": "7d08170d-3a57-4f3c-9f97-9c9abececc9c",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
+        "rank": null,
+        "rider_age": 34,
+        "rider_form": 7.066666666666666
+      },
+      {
+        "rider": "adf15bb6-9425-4149-bd46-3b28af925efe",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 34,
         "rider_form": 0
       },
       {
-        "rider": "adf15bb6-9425-4149-bd46-3b28af925efe",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "rider": "870699c6-7515-4ceb-aa8d-d3b584bcfede",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
-        "rider_age": 34,
+        "rider_age": 30,
+        "rider_form": 25.20833333333333
+      },
+      {
+        "rider": "223ca3e3-0057-46f7-a137-0a361396337e",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
+        "rank": null,
+        "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "9f63a44d-1d4f-4de3-9e12-3a76e8132043",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
         "rider_form": 12.375
       },
       {
         "rider": "ae3e85f0-2f87-43c1-a624-02599e58c2a4",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 34,
         "rider_form": 2.5
       },
       {
         "rider": "dd99fc9c-398d-47a4-a55b-f5eb35c019e9",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 24,
         "rider_form": 63.70833333333333
       },
       {
         "rider": "0247fdbe-0bd1-42a2-9bcc-54e21e90a53b",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 34,
         "rider_form": 0
       },
       {
         "rider": "688b3557-5e01-433c-85b1-66483711d6a9",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 32,
         "rider_form": 0
       },
       {
+        "rider": "b9071cda-958b-42df-900a-6c893654754c",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
+        "rank": null,
+        "rider_age": 26,
+        "rider_form": 7.066666666666666
+      },
+      {
         "rider": "c1abd89a-5d9e-45a7-9595-41971ac2d5ec",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
         "rider_form": 35.833333333333336
       },
       {
         "rider": "7bb1a857-98db-4d48-9f00-ab58c68ed629",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 12.933333333333334
       },
       {
         "rider": "d711b6b5-5877-425a-8565-954ca68d5041",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 36,
-        "rider_form": 4.521999999999999
+        "rider_form": 154.08866666666665
       },
       {
         "rider": "62af5818-eb16-4e31-af49-8b590f1d787d",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 30,
-        "rider_form": 0
+        "rider_form": 23.65
       },
       {
         "rider": "c28b7f21-aa29-4e63-bc78-4437458558ba",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
         "rider_form": 56.0
       },
       {
         "rider": "f1e560ba-8f7d-4783-aad4-daeda73b447e",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
-        "rider_form": 35.00833333333333
+        "rider_form": 139.65833333333333
       },
       {
         "rider": "4f14a729-754a-406e-986c-5cb1fdec7e39",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
         "rider_form": 15.833333333333332
       },
       {
         "rider": "97c97a97-ee4e-4e3f-b2b8-7fd66b35b515",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 9.066666666666666
       },
       {
         "rider": "6575d98f-2d9f-486e-9627-30adb6775c71",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
-        "rider_form": 2.225
+        "rider_form": 14.641666666666666
       },
       {
         "rider": "2b6c6388-1df3-47a0-b15c-33ad6e9e1ee3",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 22,
         "rider_form": 20.56666666666667
       },
       {
         "rider": "21f57fe5-f928-4c87-8e3b-ac94417fedb7",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 31,
         "rider_form": 0
       },
       {
         "rider": "5ccb1681-c31b-46eb-828f-3fe88b46d552",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
-        "rider_form": 0
+        "rider_form": 1.75
       },
       {
         "rider": "7e157b1e-8b19-44bc-a8cd-79df82035e1d",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
-        "rider_form": 126.66666666666667
+        "rider_form": 162.0
+      },
+      {
+        "rider": "2e413bca-206a-4573-b10f-90772a1f98b8",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 37,
+        "rider_form": 0
       },
       {
         "rider": "6405df7f-5701-473e-bb70-94fd95474aaf",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 31,
         "rider_form": 1.7874999999999999
       },
       {
         "rider": "f7778d7b-918a-456f-9b4c-23ef244a7f3a",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
         "rider_form": 64.08333333333333
       },
       {
         "rider": "cb6e3332-4ff6-45fd-b958-519f9a3ed6c8",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 31,
-        "rider_form": 26.355333333333334
+        "rider_form": 114.68866666666666
       },
       {
         "rider": "71be44d2-5f38-4134-9240-70bc00d75400",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
         "rider_form": 43.675
       },
       {
         "rider": "a54aaa82-a89b-4093-a7fd-26fc3d39e4c2",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
-        "rider_form": 0
+        "rider_form": 11.524999999999999
       },
       {
         "rider": "ddea36f7-aecc-45d9-9e23-41c947998996",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 24,
         "rider_form": 83.33333333333334
       },
       {
         "rider": "1f4a5988-b34a-489f-a654-e4da9d189094",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 28,
         "rider_form": 125.16666666666666
       },
       {
         "rider": "96dc34a5-f11d-4e9f-ab1e-648fdf9e893f",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
         "rider_form": 117.41666666666666
       },
       {
         "rider": "955da723-2125-4e26-8ea0-56f2362f1741",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
-        "rider_form": 167.5583333333333
+        "rider_form": 255.89166666666662
       },
       {
         "rider": "f96ef9f0-edca-465a-821a-7f7f187286c8",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 23,
         "rider_form": 20.125
       },
       {
         "rider": "afbd9229-238d-47ea-accc-566559773681",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 32,
-        "rider_form": 0
+        "rider_form": 4.541666666666667
       },
       {
         "rider": "135f31c4-0392-4059-98cb-a41417c983ec",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
-        "rider_form": 0
+        "rider_form": 5.25
       },
       {
         "rider": "4e7a672b-96cc-4a97-b31d-f332715d49c7",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "05daf53f-363d-475d-9850-732036e50877",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "b8aaf195-0c14-43c3-8233-9fa7b837411e",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 24,
         "rider_form": 4.075
       },
       {
         "rider": "cca69ae6-5441-48fe-9d97-86131116aa30",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 22,
-        "rider_form": 41.66666666666667
+        "rider_form": 290.1666666666667
       },
       {
         "rider": "2399279d-5d94-4256-adfc-9133dc962ccf",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 24,
         "rider_form": 174.325
       },
       {
         "rider": "07f10ffd-fa76-4094-81c4-b152d91bc02f",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
-        "rider_form": 0
-      },
-      {
-        "rider": "d24ebe4e-6541-46ba-835f-c5113c86dc8b",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
-        "rank": null,
-        "rider_age": 37,
-        "rider_form": 7.688666666666666
+        "rider_form": 21.0
       },
       {
         "rider": "f1838118-d4a9-40a4-b7ce-85fc09c24016",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 27,
         "rider_form": 0
       },
       {
         "rider": "8af6352b-eff7-4c29-8f8d-20f97f7e5869",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 36,
         "rider_form": 2.5
       },
       {
         "rider": "bac12ae5-3d1b-4c37-b283-f22acde648ad",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 21,
-        "rider_form": 90.5
+        "rider_form": 139.5
       },
       {
         "rider": "9bc3ee03-140c-400a-ba2c-d17daecf7294",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 27,
         "rider_form": 15.5
       },
       {
         "rider": "fe9a8167-3a33-4019-a5dd-463b9f9206df",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 21,
-        "rider_form": 291.8333333333333
+        "rider_form": 445.8833333333334
       },
       {
         "rider": "d6803630-ef1c-4d5f-bb87-9e692cac679f",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 22,
         "rider_form": 539.6666666666667
       },
       {
         "rider": "4a284d48-ef0b-4c56-bc2f-82d713924376",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 31,
-        "rider_form": 0
+        "rider_form": 350.0
       },
       {
         "rider": "52e6f88a-0767-493d-8e64-e8df56309f51",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
-        "rider_form": 513.8333333333333
+        "rider_form": 653.5833333333334
       },
       {
         "rider": "1cd1641f-bded-4e49-b005-09cea20b8af4",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 32,
         "rider_form": 13.958333333333334
       },
       {
         "rider": "a213daa6-a104-4b2a-a80b-2fb49bda0309",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 32,
         "rider_form": 11.311333333333332
       },
       {
         "rider": "6394937d-a05f-463d-93f8-587d7d5a38ed",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 30,
-        "rider_form": 0
+        "rider_form": 2.675
       },
       {
         "rider": "6de94805-aa15-415f-8ee7-1482509c6c54",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
-        "rider_form": 14.450000000000001
+        "rider_form": 41.941666666666656
       },
       {
         "rider": "408f849e-2dd1-46b8-b075-b674f5f8be4c",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 26,
         "rider_form": 19.569333333333333
       },
       {
         "rider": "06a82826-3537-40b4-b44a-d8a97f9dc5bb",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 29,
         "rider_form": 20.208333333333332
       },
       {
         "rider": "583efb2e-011f-47d4-9862-d94fcec4ddd2",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
         "rider_form": 22.95
       },
       {
         "rider": "8550ce8d-90ea-4a9c-bca2-741c4e0f1e21",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 35,
         "rider_form": 80.29166666666666
       },
       {
         "rider": "3bc0aa8f-f907-4ce4-84a6-ccad8508ea0c",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 26,
-        "rider_form": 0
+        "rider_form": 14.133333333333333
       },
       {
         "rider": "77eb8768-3a8f-433d-a9f8-ff9e3dcba612",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
-        "rider_form": 0
+        "rider_form": 288.8333333333333
       },
       {
         "rider": "57978491-99a9-44cd-a3a7-2bbe10c27b9e",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
         "rider_form": 65.98033333333333
       },
       {
         "rider": "03cf1da7-c586-48a9-8948-ab68bfa0d0e1",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 27,
-        "rider_form": 6.25
+        "rider_form": 11.7
       },
       {
         "rider": "04f4fafd-0d05-4ac7-921e-8d354c7c9a89",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 36,
-        "rider_form": 51.275
+        "rider_form": 168.20000000000002
       },
       {
         "rider": "1f3a1c24-8f72-4535-bcc3-862cda7d31ed",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
         "rider_form": 0.26875
       },
       {
         "rider": "bfa81191-9da8-4352-ab54-59ee96db86ef",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 31,
         "rider_form": 77.5
       },
       {
+        "rider": "07173845-fa4e-400c-be19-0bc2a3f0f729",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 31,
+        "rider_form": 3.8499999999999996
+      },
+      {
         "rider": "0bb33262-3268-40de-a23b-756b8540daa0",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 23,
-        "rider_form": 357.5833333333333
+        "rider_form": 541.9166666666666
       },
       {
         "rider": "b667199b-85cb-4f1a-8429-3ab52d7b4bab",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 24,
         "rider_form": 69.41666666666667
       },
       {
         "rider": "6d8306ac-159c-4aa3-9f65-b3d77de22c19",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 26,
         "rider_form": 5.583333333333334
       },
       {
         "rider": "65bc55dd-442f-4b73-b297-ac69cef39167",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 30,
         "rider_form": 32.083333333333336
       },
       {
         "rider": "8e1de8b1-fef6-4e55-9780-9fb9ece7bf5d",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 22,
         "rider_form": 359.23033333333336
       },
       {
         "rider": "1a1c7539-7b9b-411b-be55-c037f9eb5c80",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
         "rider_form": 161.41666666666666
       },
       {
         "rider": "20151f05-906e-452b-9d19-7a9cb86f9d0f",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 24,
         "rider_form": 7.166666666666666
       },
       {
         "rider": "85351eaf-8bd0-4115-8bbc-b9c37351f58c",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 27,
-        "rider_form": 0
+        "rider_form": 1.75
       },
       {
         "rider": "ed6d3e29-1081-47dd-aa1c-f37b46fc491b",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 23,
         "rider_form": 3.125
       },
       {
         "rider": "4ec3eadc-f029-4f5b-9272-dd708e2c43ee",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
-        "rider_form": 0
+        "rider_form": 71.33333333333333
       },
       {
         "rider": "b196b816-8b6f-4639-bd7d-1f476b2089c0",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 30,
-        "rider_form": 31.266666666666666
+        "rider_form": 86.94166666666666
       },
       {
         "rider": "27b8987b-c11b-4a65-b0af-ade744a011ec",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 26,
         "rider_form": 153.79166666666669
       },
       {
         "rider": "bb0b3d92-a0b8-4691-80d1-1fc910afc90e",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 253.54166666666669
       },
       {
         "rider": "6ac8bf33-4046-4a38-81d8-403c240bde34",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
         "rider_form": 261.375
       },
       {
         "rider": "f40b1227-6c09-477a-b266-698873d41084",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 116.54166666666667
       },
       {
         "rider": "44c4c755-adf8-4d7f-a9c5-c62ac698e0db",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
-        "rider_form": 0
+        "rider_form": 92.79166666666666
       },
       {
         "rider": "5b0ea7b9-328b-40bf-8bda-17ab92efa3d9",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 36,
         "rider_form": 31.0
       },
       {
         "rider": "2be07f55-1fb8-40b9-862c-7e076c3f9a5f",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 37,
         "rider_form": 80.83333333333333
       },
       {
         "rider": "5c7250d5-829c-4458-b245-cbf97dfbccc1",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 25,
         "rider_form": 73.33333333333334
       },
       {
         "rider": "b37b57b1-2651-478e-a0f0-fc752e16497b",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 132.95
       },
       {
         "rider": "8ff11101-b634-408e-8172-ed6c25893bcf",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
-        "rider_form": 62.85
+        "rider_form": 289.93333333333334
       },
       {
         "rider": "192d0884-6897-47e1-80d7-a8b0768eb748",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 27,
         "rider_form": 19.583333333333332
       },
       {
         "rider": "9855c05c-617a-4f65-b22d-d776472671cc",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 29,
         "rider_form": 29.125
       },
       {
         "rider": "09aa3cfd-334d-40e4-9fd1-42df7f07cfa6",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 31,
         "rider_form": 0
       },
       {
         "rider": "3ff5cc9b-2f9b-4e0d-9fa0-e668fe6a92b7",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 0,
         "rider_form": 123.425
       },
       {
         "rider": "fb740d71-676f-4a7a-adae-64cbf4935972",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 29,
-        "rider_form": 77.66666666666666
+        "rider_form": 138.91666666666666
       },
       {
         "rider": "98cb8645-8da7-4a60-8976-0493d4003eaa",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 24,
-        "rider_form": 549.9166666666667
+        "rider_form": 677.0833333333334
       },
       {
         "rider": "f73aed10-652c-4829-81b4-2f14afefacaa",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "99bc3379-a171-438e-a843-8b1c6c43b7f4",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
         "rider_form": 225.95833333333334
       },
       {
         "rider": "1cb4c96e-9629-4f4c-875b-50e7c613fe5f",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 30,
         "rider_form": 50.666666666666664
       },
       {
         "rider": "b9a25c67-698d-4ae9-90a9-e85316a05b02",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 29,
         "rider_form": 0
       },
       {
         "rider": "12458e63-3209-453c-ad6b-77175da6826e",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 33,
-        "rider_form": 85.875
+        "rider_form": 196.29166666666666
       },
       {
         "rider": "a02b73ff-ae31-495b-a714-3e2681dd3175",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 24,
-        "rider_form": 12.333333333333332
+        "rider_form": 33.53333333333333
+      },
+      {
+        "rider": "6b5710fe-32dd-4847-9554-62d2a37f8f82",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 24,
+        "rider_form": 0
       },
       {
         "rider": "5a3cbd73-c266-4d78-8138-4a2e9b6a6564",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 33.86666666666667
       },
       {
         "rider": "411bf91d-61be-4b92-ab31-b3aeb89a3693",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 30,
         "rider_form": 17.516666666666666
       },
       {
         "rider": "2e246d27-b1e2-4adc-9dea-6d16a3f79442",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 23,
         "rider_form": 0
       },
       {
         "rider": "6cb82b3e-11ca-4ca5-80c2-0e3badab8f17",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 38,
         "rider_form": 22.666666666666668
       },
       {
         "rider": "f1e8d19e-7f53-4087-bb00-82ce94820704",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 31,
         "rider_form": 0
       },
       {
         "rider": "96637678-2453-4cc7-9778-268e3970672c",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 27,
         "rider_form": 0
       },
       {
+        "rider": "c62765ae-4ffa-4bb7-9f1d-f01e6f5b8796",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
+        "rank": null,
+        "rider_age": 22,
+        "rider_form": 0
+      },
+      {
         "rider": "4dd31a5c-762c-4bc2-a9fc-2621277a2aa9",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 24,
         "rider_form": 4.324999999999999
       },
       {
         "rider": "102bd86e-db43-41f9-b896-732d8c225c8e",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 26,
         "rider_form": 58.03333333333333
       },
       {
         "rider": "0d8258f3-f1ae-40fb-8a94-a60c861288a4",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 28,
         "rider_form": 3.01875
       },
       {
         "rider": "9e6efcfd-cb97-4864-ac25-e276a0dc4ff8",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 28,
         "rider_form": 7.927666666666666
       },
       {
         "rider": "9ebea9ee-3f29-464f-9d0c-02e225643472",
-        "stage": "10621d50-4ee3-41ab-9f9d-61fd454b898d",
+        "stage": "8aa68098-553f-4fa5-9572-98d4fe466869",
         "rank": null,
         "rider_age": 22,
         "rider_form": 106.16666666666666
       },
       {
         "rider": "0b3ea684-b955-4db4-aea3-431020e4de28",
-        "stage": "24132cd7-7f4f-4cfb-a8b1-37aa643ffab7",
+        "stage": "eab61056-71af-4b69-98c6-ba963acc5b2d",
         "rank": null,
         "rider_age": 25,
         "rider_form": 69.70833333333333
