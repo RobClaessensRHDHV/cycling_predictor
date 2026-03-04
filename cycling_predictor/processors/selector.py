@@ -272,7 +272,7 @@ if __name__ == "__main__":
     _ensemble_predictor.preprocess(rider_feature_noise=0.1)
 
     # Predict
-    _predictions = _ensemble_predictor.predict(n=100, rider_feature_noise=0.1, normalize=False)
+    _predictions = _ensemble_predictor.predict(n=1000, rider_feature_noise=0.1, normalize=True)
 
     # Create selector
     _selector = CPSelector(
