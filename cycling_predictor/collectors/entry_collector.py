@@ -349,11 +349,15 @@ class CPGTEntryCollector(CPEntryCollector):
             riders: List[CPRider],
             max_rank: int = -1,
             stage_number_start: int = 1,
-            stage_number_end: int = 21):
+            stage_number_end: int = 21,
+            # TODO: Make more specific? To deal with several races and years!
+            dropouts: Dict[int, List[str]] = None,
+    ):
         super().__init__(categories, years, riders, max_rank)
 
         self.stage_number_start: int = stage_number_start
         self.stage_number_end: int = stage_number_end
+        self.dropouts: Dict[int, List[str]] = dropouts or dict()
 
     def get_entries(self):
         for rider in self.riders:
@@ -362,7 +366,13 @@ class CPGTEntryCollector(CPEntryCollector):
                 for year in self.years:
                     for race_name in CPRaceCategoryMap[race_type]:
                         race = self._get_race(race_name, year)
-                        for stage_number in range(self.stage_number_start, self.stage_number_end + 1):
+
+                        # Determine max stage for this rider, considering a possible dropout
+                        max_stage = next((int(stage) for stage, dropout_riders in self.dropouts.items()
+                                          if rider.name in dropout_riders), self.stage_number_end)
+
+                        # Loop over stages
+                        for stage_number in range(self.stage_number_start, max_stage + 1):
                             stage = self._get_stage(race, race_name, year, stage_number)
                             if race and stage:
                                 entry = self._get_entry(rider, stage)
@@ -372,6 +382,7 @@ class CPGTEntryCollector(CPEntryCollector):
         data.update({
             "stage_number_start": self.stage_number_start,
             "stage_number_end": self.stage_number_end,
+            "dropouts": self.dropouts,
         })
         return data
 
@@ -380,6 +391,7 @@ class CPGTEntryCollector(CPEntryCollector):
         collector = super(CPGTEntryCollector, cls).loads(data, cls)
         collector.stage_number_start = data.get("stage_number_start", 1)
         collector.stage_number_end = data.get("stage_number_end", 21)
+        collector.dropouts = data.get("dropouts", {})
         return collector
 
 
@@ -424,6 +436,12 @@ if __name__ == "__main__":
             # max_rank=50,
             stage_number_start=7,
             stage_number_end=7,
+            dropouts={
+                2: ['lennert-van-eetvelt'],
+                4: ['juan-ayuso-pesquera', 'daan-hoole', 'brandon-mcnulty', 'torstein-traeen'],
+                5: ['fernando-gaviria'],
+                6: ['corbin-strong']
+            },
         )
         _stage_collector.get_entries()
 
