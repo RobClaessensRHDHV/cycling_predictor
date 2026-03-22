@@ -12345,6 +12345,28 @@
       "uid": "84037218-c192-4967-9cad-1b70a143d6af"
     },
     {
+      "name": "jonas-vingegaard",
+      "team": "team-visma-lease-a-bike",
+      "category": "dom",
+      "cost": 1.0,
+      "birthdate": "1996-12-10",
+      "height": 1.75,
+      "weight": 58.0,
+      "avg": 97,
+      "flt": 75,
+      "cob": 20,
+      "hll": 91,
+      "mtn": 99,
+      "spr": 62,
+      "itt": 90,
+      "gc_": 97,
+      "or_": 20,
+      "ttl": 84,
+      "tts": 91,
+      "pr_": 89,
+      "uid": "84037218-c192-4967-9cad-1b70a143d6aa"
+    },
+    {
       "name": "daniel-skerl",
       "team": "bahrain-victorious",
       "category": "dom",
