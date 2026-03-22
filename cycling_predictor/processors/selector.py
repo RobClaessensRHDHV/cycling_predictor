@@ -19,11 +19,12 @@ class CPSelector:
         self.scores = None
         self.selection = None
 
-    def score(self, include_team_points: bool = False) -> None:
+    def score(self, include_team_points: bool = False, include_past_races: bool = False) -> None:
         """
         Score riders based on stored predictions and Scorito logic.
 
         :param include_team_points: Whether to include additional points for teammates of top 3 riders.
+        :param include_past_races: Whether to include points from past races.
         """
         self.scores = {rider.name: 0 for rider in self.riders}
         
@@ -38,6 +39,10 @@ class CPSelector:
                 points = 0
                 if predicted_rank in CPClassicPointsMap:
                     points = CPClassicPointsMap[predicted_rank]
+
+                    # Exclude races that have already taken place
+                    if not include_past_races and prediction.stage.start_date < date.today():
+                        continue
 
                     # Temporarily only include top 10 for classic-brugge-de-panne, scheldeprijs and brabantse-pijl,
                     # as these only have few participants registered yet, same for stages of PN & TA
