@@ -6,6 +6,7 @@ import numpy as np
 from scipy.stats import spearmanr
 
 from cycling_predictor.classes import CPStage, CPRider
+from cycling_predictor.maps import CPCOPointsMap, CPCOFactorMap
 
 
 class CPPrediction:
@@ -139,6 +140,47 @@ class CPPrediction:
 
         # Compute Spearman's rank correlation coefficient for actual top-k riders
         return spearmanr(y_pre, y_res).correlation
+
+    def co_score(self) -> Optional[float]:
+        """
+        Compute the quality score for the prediction.
+        A rider in the top-10 of the prediction generates points if they finish in the top-20.
+        Points are multiplied by a factor depending on the predicted rank.
+
+        :return: Quality score for the prediction.
+        """
+        if self.result is None:
+            return None
+
+        score = 0.0
+
+        # Get indices of top 10 predicted riders (rankings are 1-based, prediction indices are 0-based)
+        # prediction array contains ranks (1 to N) for each rider index.
+        # So np.argsort(self.prediction) gives indices of riders in order of their predicted rank.
+        top_10_pred_indices = np.argsort(self.prediction)[:10]
+
+        for i, rider_idx in enumerate(top_10_pred_indices):
+
+            predicted_rank = i + 1
+
+            # Get actual rank for this rider
+            # result array contains ranks (1 to N) for each rider index.
+            actual_rank = self.result[rider_idx]
+
+            if actual_rank in CPCOPointsMap:
+                factor = CPCOFactorMap.get(predicted_rank, 1.0)
+                points = CPCOPointsMap[actual_rank]
+                score += points * factor
+            else:
+                factor = 0
+                points = 0
+
+            print(f"{self.riders[int(rider_idx)].name} - "
+                  f"pred. {predicted_rank} ({factor}x) - "
+                  f"res. {actual_rank} ({points}): "
+                  f"{points * factor:.3f}")
+
+        return score
 
     def dumps(self):
         return {

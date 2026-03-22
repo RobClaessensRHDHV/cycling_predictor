@@ -259,3 +259,41 @@ CPClassicPointsMap = {
     19: 8,
     20: 4,
 }
+
+CPCOPointsMap = {
+    1: 15,
+    2: 10,
+    3: 7,
+    4: 5,
+    5: 4,
+    6: 3,
+    7: 3,
+    8: 3,
+    9: 3,
+    10: 3,
+    11: 2,
+    12: 2,
+    13: 2,
+    14: 2,
+    15: 2,
+    16: 1,
+    17: 1,
+    18: 1,
+    19: 1,
+    20: 1,
+}
+
+CPCOFactorMap = {
+    1: 3.0,
+    2: 2.5,
+    3: 2.0,
+    4: 1.5,
+    5: 1.5,
+    6: 1.0,
+    7: 1.0,
+    8: 1.0,
+    9: 1.0,
+    10: 1.0,
+}
+
+CPOMaxScore = sum(CPCOFactorMap.get(rank) * points for rank, points in CPCOPointsMap.items() if rank <= 10)
