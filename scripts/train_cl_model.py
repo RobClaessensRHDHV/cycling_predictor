@@ -121,7 +121,7 @@ else:
 
 # Get prediction entry collector
 _prediction_entry_collector = CPGTEntryCollector.load(
-    '..\\cycling_predictor\\collectors\\data\\CPClassicEntryCollector_classics_2022_50.json')
+    '..\\cycling_predictor\\collectors\\data\\CPClassicEntryCollector_classics_2026_update.json')
 # _prediction_entry_collector = CPGTEntryCollector.load(
 #     '..\\cycling_predictor\\collectors\\data\\CPGTEntryCollector_paris_nice_tirreno_adriatico_2022_50.json')
 

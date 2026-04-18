@@ -404,7 +404,7 @@ if __name__ == "__main__":
     requests.get = scraper.get
 
     # Get rider collector
-    with open('data/rider_collector_2026.json', 'r') as fp:
+    with open('data/rider_collector_2026_update.json', 'r') as fp:
         _rider_collector = CPRiderCollector.loads(json.load(fp))
 
     # Collect entries
@@ -423,7 +423,7 @@ if __name__ == "__main__":
         _classic_collector.get_entries()
 
         # Dump classic collector
-        _classic_collector.dump()
+        _classic_collector.dump('data/CPClassicEntryCollector_classics_2026_update.json')
 
     else:
 

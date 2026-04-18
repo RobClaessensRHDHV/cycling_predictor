@@ -256,9 +256,12 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
     # Load predictors
-    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint.json')
-    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles.json')
-    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills.json')
+    # _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint.json')
+    # _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles.json')
+    # _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills.json')
+    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint_update.json')
+    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles_update.json')
+    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills_update.json')
     _pn_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_5.json')
     _ta_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_1.json')
 
@@ -285,15 +288,30 @@ if __name__ == "__main__":
         predictions=_predictions,
     )
 
+    # Optionally dump specific prediction
+    dump_predictions = ('amstel-gold-race',)
+    for _prediction in _predictions:
+        if _prediction.stage.name in dump_predictions:
+            _prediction.dump()
+
     # Score riders
-    _selector.score()
+    _selector.score(include_past_races=False)
+
+    # Sort riders by score and print top 50, include cost
+    sorted_riders = sorted(_selector.scores.items(), key=lambda x: x[1], reverse=True)
+    print("\nTop 50 Riders by Score:")
+    print("Rank  Rider".ljust(40), "Score  Cost  Score/Cost")
+    for i, (rider_name, score) in enumerate(sorted_riders[:50], start=1):
+        rider_cost = next((r.cost for r in _selector.riders if r.name == rider_name), None)
+        rider_score_per_cost = score / rider_cost if rider_cost else 0
+        print(f"{i}. {rider_name.ljust(40)} {score} pts  €{rider_cost}  {rider_score_per_cost:.2f} pts/€")
 
     # Select team
     _max_score, _cost = _selector.select(
         budget=45.0,
         team_limit=4,
         total_riders=20,
-        exclude_riders=('remco-evenepoel', 'mads-pedersen', 'tim-merlier'),
+        exclude_riders=('mads-pedersen', 'tim-merlier'),
         min_riders_per_race=3,
         min_riders_scoring_per_race=3,
         use_full_budget=True,

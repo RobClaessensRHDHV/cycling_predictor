@@ -52,7 +52,7 @@ class CPPredictor(CPProcessor):
     def dump_fn(self) -> str:
         collector_fn = self.collector.dump_fn.split('_', 1)[1]
         return (f"{self.__class__.__name__}_{Path(collector_fn).stem}_"
-                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
+                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}_update.json")
 
     def scale(self, samples: np.ndarray) -> np.ndarray:
         """
@@ -110,13 +110,13 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPTrainer
 
     # Load collector
-    _collector = CPEntryCollector.load(r'..\collectors\data\CPClassicEntryCollector_classics_2026.json')
+    _collector = CPEntryCollector.load(r'..\collectors\data\CPClassicEntryCollector_classics_2026_update.json')
     # _collector = CPEntryCollector.load(r'..\collectors\data\CPGTEntryCollector_paris_nice_tirreno_adriatico_2026.json')
 
     # Load trainer
-    _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_20_RR_sprint.json')
+    # _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_20_RR_sprint.json')
     # _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_15_RR_cobbles.json')
-    # _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_29_RR_hills.json')
+    _trainer = CPTrainer.load(r'data\CPTrainer_classics_2023_2024_2025_50_0.2_29_RR_hills.json')
     # _trainer = CPTrainer.load(r'data\CPTrainer_paris_nice_tirreno_adriatico_2023_2024_2025_50_0.2_32_RR_1.json')
     # _trainer = CPTrainer.load(r'data\CPTrainer_paris_nice_tirreno_adriatico_2023_2024_2025_50_0.2_11_RR_5.json')
 
