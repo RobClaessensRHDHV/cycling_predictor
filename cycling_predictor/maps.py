@@ -51,6 +51,7 @@ CPTerrainTypeMap = {
     ],
     'e3-harelbeke': [
         'cobbles',
+        'hills',
     ],
     'gent-wevelgem': [
         'sprint',
