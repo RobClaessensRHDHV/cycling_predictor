@@ -5,7 +5,7 @@ from uuid import uuid4
 
 import requests
 import procyclingstats
-from procyclingstats import RiderResults
+from procyclingstats import RiderResults, Stage
 
 
 CPRiderSkill = Literal['avg', 'flt', 'cob', 'hll', 'mtn', 'spr', 'itt', 'gc_', 'or_', 'ttl', 'tts', 'pr_']
@@ -14,6 +14,10 @@ CPRaceYear = Literal[2021, 2022, 2023, 2024, 2025, 2026]
 CPTerrainType = Literal['sprint', 'cobbles', 'hills']
 CPTStageType = Literal['RR', 'ITT', 'TTT']
 CPTStageProfile = Literal[1, 2, 3, 4, 5]
+
+
+# Module-level cache for stages, could be done more elegantly, but does the job
+_stage_cache = dict()
 
 
 class CPRider:
@@ -100,35 +104,79 @@ class CPRider:
             if raise_error:
                 raise
 
-    # TODO: Compute a per-profile form, which would be much more predictive!
-    def get_form(self, race: 'CPRace', form_days: Optional[int] = 120, initial_data: bool = False):
-        rider_form = 0
-        for res in self.results.get(race.year, list()):
+    def get_forms(self, stage: 'CPStage', form_days: Optional[int] = 60):
+        rider_form, rider_form_flt, rider_form_hll, rider_form_mtn = 0, 0, 0, 0
+        for res in self.results.get(stage.year, list()):
 
             # Possibly increment form
-            if res['uci_points'] and not (initial_data and race.name in res['stage_url']):
+            # TODO: Possibly enable to exclude GT stages of the same GT
+            #  (not (initial_data and race.name in res['stage_url']))
+            if res['uci_points'] and stage.name not in res['stage_url']:
 
                 # Calculate number of days between result and race
                 result_date = date.fromisoformat(res['date'])
 
-                if race.start_date and result_date:
-                    num_days = (race.start_date - result_date).days
+                if stage.start_date and result_date:
+                    num_days = (stage.start_date - result_date).days
                 else:
                     num_days = 0
-                    print(f"Number of days cannot be determined for {race}!\n"
-                          f"Race date {race.start_date}, result date {result_date}")
+                    print(f"Number of days cannot be determined for {stage}!\n"
+                          f"Race date {stage.start_date}, result date {result_date}")
 
                 # If result is within amount of days, add UCI points with linear decay
                 if 0 < num_days < form_days:
-                    rider_form += res['uci_points'] * (1 - (num_days / form_days))
 
-        return rider_form
+                    # Retrieve result stage
+                    if res_stage := _stage_cache.get(res['stage_url']):
+                        pass
+                    else:
+                        res_stage = Stage(res['stage_url']).parse(
+                            exceptions_to_ignore=(IndexError, AttributeError, ValueError,
+                                                  procyclingstats.errors.ExpectedParsingError))
+                        _stage_cache[res['stage_url']] = res_stage
+
+                    # Compute added form
+                    if isinstance(res_stage['race_startlist_quality_score'], tuple):
+                        startlist_quality = res_stage['race_startlist_quality_score'][-1]
+                    elif res_stage['race_startlist_quality_score'] is None:
+                        print(f"Startlist quality score is None for stage {res['stage_name']} ({res['stage_url']}).")
+                        startlist_quality = 0
+                    else:
+                        startlist_quality = res_stage['race_startlist_quality_score']
+
+                    # TODO: Check whether compensation for startlist quality is actually beneficial for model performance
+                    # Include bonus for startlist quality, with a linear multiplier starting at quality > 500
+                    res_form = res['uci_points'] * (1 - (num_days / form_days)) * (1 + max(startlist_quality - 500, 0) / 1e3)
+
+                    # Add form to overall form
+                    rider_form += res_form
+
+                    # Add form to corresponding profile
+                    if res['stage_url'].endswith("/points"):
+                        rider_form_flt += res_form
+                    elif res['stage_url'].endswith("/kom") or res['stage_url'].endswith("/gc"):
+                        rider_form_hll += res_form
+                        rider_form_mtn += res_form
+                    elif res_stage['profile_icon'] == 'p1':
+                         rider_form_flt += res_form
+                    elif res_stage['profile_icon'] in ("p2", "p3"):
+                        rider_form_hll += res_form
+                    elif res_stage['profile_icon'] in ("p4", "p5"):
+                        rider_form_mtn += res_form
+
+        return rider_form, rider_form_flt, rider_form_hll, rider_form_mtn
+
 
     def get_rank(self, race: 'CPRace'):
+        if not self.results:
+            return None
+
         for res in self.results.get(race.year, list()):
             # NOTE: Check if distance is defined, otherwise results could be from classifications
             if res['distance'] and res['date'] == race.start_date.isoformat():
                 return res['rank']
+
+        return None
 
     def dumps(self):
         return {
@@ -346,6 +394,9 @@ class CPEntry:
     _entry_sample_keys = (
         'rider_age',
         'rider_form',
+        'rider_form_flt',
+        'rider_form_hll',
+        'rider_form_mtn',
     )
 
     def __init__(
@@ -355,12 +406,18 @@ class CPEntry:
         rank: Optional[int] = None,
         rider_age: int = 0,
         rider_form: float = 0.0,
+        rider_form_flt: float = 0.0,
+        rider_form_hll: float = 0.0,
+        rider_form_mtn: float = 0.0,
     ):
         self.rider = rider
         self.stage = stage
         self.rank = rank
         self.rider_age = rider_age
         self.rider_form = rider_form
+        self.rider_form_flt = rider_form_flt
+        self.rider_form_hll = rider_form_hll
+        self.rider_form_mtn = rider_form_mtn
         self._uid = str(uuid4())
 
     def __repr__(self):
@@ -385,6 +442,9 @@ class CPEntry:
             "rank": self.rank,
             "rider_age": self.rider_age,
             "rider_form": self.rider_form,
+            "rider_form_flt": self.rider_form_flt,
+            "rider_form_hll": self.rider_form_hll,
+            "rider_form_mtn": self.rider_form_mtn,
         }
 
     @classmethod
@@ -395,6 +455,9 @@ class CPEntry:
             rank=data.get("rank", None),
             rider_age=data.get("rider_age", 0),
             rider_form=data.get("rider_form", 0.0),
+            rider_form_flt=data.get("rider_form_flt", 0.0),
+            rider_form_hll=data.get("rider_form_hll", 0.0),
+            rider_form_mtn=data.get("rider_form_mtn", 0.0),
         )
         entry._uid = data.get("uid", str(uuid4()))
         return entry

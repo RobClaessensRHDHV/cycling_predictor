@@ -182,7 +182,7 @@ class CPEntryCollector(CPBaseCollector):
 
             # Retrieve results, compute form, get rank
             rider.get_results(stage.year, raise_error=raise_error)
-            form = rider.get_form(stage)
+            form, form_flt, form_hll, form_mtn = rider.get_forms(stage)
             rank = rider.get_rank(stage)
 
             # If rank is available and within max_rank, create entry for training
@@ -194,6 +194,9 @@ class CPEntryCollector(CPBaseCollector):
                     rank=rank,
                     rider_age=age,
                     rider_form=form,
+                    rider_form_flt=form_flt,
+                    rider_form_hll=form_hll,
+                    rider_form_mtn=form_mtn,
                 )
 
                 self._add_entry(entry)
@@ -207,6 +210,9 @@ class CPEntryCollector(CPBaseCollector):
                     rank=None,
                     rider_age=age,
                     rider_form=form,
+                    rider_form_flt=form_flt,
+                    rider_form_hll=form_hll,
+                    rider_form_mtn=form_mtn,
                 )
 
                 self._add_entry(entry)

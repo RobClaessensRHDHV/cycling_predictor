@@ -208,6 +208,7 @@ class CPProcessor(ABC):
         # NOTE: Not recommended to apply in general, but useful for experimentation / validation
         if rider_feature_noise:
             for i, fn in enumerate(self.feature_names):
+                # TODO: Probably include 'form' features in augmentation
                 if fn in CPEntry._rider_sample_keys:
                     samples[:, i] += np.random.normal(scale=rider_feature_noise, size=samples.shape[0])
 
