@@ -20,6 +20,8 @@ def evaluate_race_predictions():
         'prediction_dwars_door_vlaanderen_2026.json',
         'prediction_ronde_van_vlaanderen_2026.json',
         'prediction_scheldeprijs_2026.json',
+        'prediction_paris_roubaix_2026.json',
+        'prediction_brabantse_pijl_2026.json',
     ]
 
     # Initiate dict to store rider results
