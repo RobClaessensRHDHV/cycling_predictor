@@ -14,6 +14,12 @@ def evaluate_race_predictions():
         'prediction_paris_nice_stage7_2026.json',
         'prediction_tirreno_adriatico_stage7_2026.json',
         'prediction_milano_sanremo_2026.json',
+        'prediction_classic_brugge_de_panne_2026.json',
+        'prediction_e3_harelbeke_2026.json',
+        'prediction_gent_wevelgem_2026.json',
+        'prediction_dwars_door_vlaanderen_2026.json',
+        'prediction_ronde_van_vlaanderen_2026.json',
+        'prediction_scheldeprijs_2026.json',
     ]
 
     # Initiate dict to store rider results
