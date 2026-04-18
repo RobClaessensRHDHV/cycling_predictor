@@ -404,46 +404,18 @@ if __name__ == "__main__":
     requests.get = scraper.get
 
     # Get rider collector
-    with open('data/rider_collector_2026_update.json', 'r') as fp:
+    with open('data/rider_collector_2026.json', 'r') as fp:
         _rider_collector = CPRiderCollector.loads(json.load(fp))
 
-    # Collect entries
-    _collect_classics = True
-    if _collect_classics:
+    # GT collection
+    _stage_collector = CPGTEntryCollector(
+        categories=['gts'],
+        years=[2023, 2024, 2025],
+        # years=[2026],
+        riders=_rider_collector.riders,
+        max_rank=100,
+    )
+    _stage_collector.get_entries()
 
-        # Classic collection
-        _classic_collector = CPClassicEntryCollector(
-            categories=['classics'],
-            # years=[2023, 2024, 2025],
-            years=[2026],
-            fallback_year=2025,
-            riders=_rider_collector.riders,
-            # max_rank=50,
-        )
-        _classic_collector.get_entries()
-
-        # Dump classic collector
-        _classic_collector.dump('data/CPClassicEntryCollector_classics_2026_update.json')
-
-    else:
-
-        # GT collection
-        _stage_collector = CPGTEntryCollector(
-            categories=['paris-nice', 'tirreno-adriatico'],
-            # years=[2023, 2024, 2025],
-            years=[2026],
-            riders=_rider_collector.riders,
-            # max_rank=50,
-            stage_number_start=7,
-            stage_number_end=7,
-            dropouts={
-                2: ['lennert-van-eetvelt'],
-                4: ['juan-ayuso-pesquera', 'daan-hoole', 'brandon-mcnulty', 'torstein-traeen'],
-                5: ['fernando-gaviria'],
-                6: ['corbin-strong']
-            },
-        )
-        _stage_collector.get_entries()
-
-        # Dump stage collector
-        _stage_collector.dump()
+    # Dump stage collector
+    _stage_collector.dump()
