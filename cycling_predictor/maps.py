@@ -235,6 +235,29 @@ CPRiderInfoMap = {
         'height': 1.84,
         'weight': 66.0
     },
+    'aleksandr-vlasov': {
+        'height': 1.86,
+        'weight': 68.0,
+        'birthdate': '1996-04-21'
+    },
+    'biniam-girmay': {
+        'height': 1.84,
+        'weight': 70.0,
+        'birthdate': '2000-04-02'
+    },
+    'alessandro-pinarello': {
+        'height': 1.75,
+        'weight': 62.0
+    },
+    'nicolo-buratti': {
+        'height': 1.85,
+        'weight': 67.0
+    },
+    'yevgeniy-fedorov': {
+        'height': 1.93,
+        'weight': 80.0,
+        'birthdate': '2000-02-16'
+    },
 }
 
 CPClassicPointsMap = {
