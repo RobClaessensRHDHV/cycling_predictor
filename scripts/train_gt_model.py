@@ -9,13 +9,14 @@ from cycling_predictor.processors import CPTrainer, CPPredictor
 
 # Get entry collector
 _entry_collector = CPGTEntryCollector.load(
-    '../cycling_predictor/collectors/data/entry_collector_giro_tour_vuelta_2023_2024_2025_100.json')
+    '../cycling_predictor/collectors/data/CPGTEntryCollector_gts_2023_2024_2025_100.json'
+)
 
 # Set up trainer (RR1)
 trainer = CPTrainer(
     collector=_entry_collector,
-    rider_feature_filter=('pr_', 'tts', 'ttl', 'cob', 'mtn', 'gc_'),
-    stage_feature_filter=('race_startlist_quality_score',),
+    rider_feature_filter=('cob', 'mtn', 'gc_'),
+    stage_feature_filter=(),
     interactions={
         ('spr', 'gradient_final_km'): op.sub,
     },
@@ -25,8 +26,8 @@ trainer = CPTrainer(
 # # Set up trainer (RR2 & RR3)
 # trainer = CPTrainer(
 #     collector=_entry_collector,
-#     rider_feature_filter=('pr_', 'tts', 'ttl', 'cob', 'mtn', 'gc_'),
-#     stage_feature_filter=('race_startlist_quality_score',),
+#     rider_feature_filter=('cob', 'mtn', 'gc_'),
+#     stage_feature_filter=(),
 #     interactions={
 #         ('spr', 'gradient_final_km'): op.sub,
 #         ('hll', 'profile_score'): op.add,
@@ -38,13 +39,11 @@ trainer = CPTrainer(
 # # Set up trainer (RR4 & RR5)
 # trainer = CPTrainer(
 #     collector=_entry_collector,
-#     rider_feature_filter=('pr_', 'tts', 'ttl', 'flt', 'cob'),
-#     stage_feature_filter=('race_startlist_quality_score',),
+#     rider_feature_filter=('cob'),
+#     stage_feature_filter=(),
 #     interactions={
 #         # TODO: Check interaction after normalization
 #         ('spr', 'gradient_final_km'): op.sub,
-#         ('hll', 'profile_score'): op.add,
-#         ('hll', 'vertical_meters'): op.add,
 #         ('mtn', 'profile_score'): op.add,
 #         ('mtn', 'vertical_meters'): op.add,
 #     },
@@ -95,11 +94,8 @@ xgb_model = XGBModel(
 trainer.model = xgb_model
 
 # Train model
-random_state = 16   # Best RR1
-# random_state = 22   # Best RR1/2
-# random_state = 7    # Best RR2/3
-# random_state = 9    # Best RR4/5
-# random_state = range(1, 51)
+# random_state = x   # Best RR1
+random_state = range(1, 51)
 if isinstance(random_state, int):
     trainer.config = {'random_state': random_state}
     trainer.train()
@@ -134,15 +130,20 @@ else:
     print(f"Avg SR20: {np.mean(sr20s):.3f} ± {np.std(sr20s):.3f}")
     print(f"Max SR20: {max(sr20s):.3f}")
 
+# Get prediction entry collector
+_prediction_entry_collector = CPGTEntryCollector.load(
+    '../cycling_predictor/collectors/data/CPGTEntryCollector_giro_2026_100.json'
+)
+
 # Set up predictor with trained model
 predictor = CPPredictor(
-    collector=_entry_collector,
+    collector=_prediction_entry_collector,
     rider_feature_filter=trainer.rider_feature_filter,
     stage_feature_filter=trainer.stage_feature_filter,
     interactions=trainer.interactions,
-    stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (1,), 'stage_type': ('RR',)},
-    # stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (2, 3,), 'stage_type': ('RR',)},
-    # stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (4, 5,), 'stage_type': ('RR',)},
+    stage_filter={'stage_profile': (1,), 'stage_type': ('RR',)},
+    # stage_filter={'stage_profile': (2, 3,), 'stage_type': ('RR',)},
+    # stage_filter={'stage_profile': (4, 5,), 'stage_type': ('RR',)},
     scaler=trainer.scaler,
     model=trainer.model,
 )
