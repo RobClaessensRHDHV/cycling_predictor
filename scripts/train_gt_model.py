@@ -15,8 +15,24 @@ _entry_collector = CPGTEntryCollector.load(
 # Setup profile
 profile = 'RR1'
 
+# Setup stage filter
+match profile:
+    case 'RR1':
+        stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
+    case 'RR2_RR3':
+        stage_filter = {'stage_profile': (2, 3,), 'stage_type': ('RR',)}
+    case 'RR4_RR5':
+        stage_filter = {'stage_profile': (4, 5,), 'stage_type': ('RR',)}
+    case _:
+        raise ValueError(f"Unknown profile: {profile}")
+
+# TODO: Wrap in a function to run hyperparameter tuning for different hyperparameters
+#  - Split validation data first (20%)
+#  - Train on training (60%) and test (20%) data with varying splits (including in tuning)
+#  - Find stable regions in hyperparameter space, to avoid overfitting to specific random states
 # Setup trainer
 match profile:
+    # TODO: 'entry_feature_filter' to exclude irrelevant form features
     case 'RR1':
         trainer = CPTrainer(
             collector=_entry_collector,
@@ -25,7 +41,7 @@ match profile:
             interactions={
                 ('spr', 'gradient_final_km'): op.sub,
             },
-            stage_filter={'stage_profile': (1,), 'stage_type': ('RR',)},
+            stage_filter=stage_filter,
         )
 
     case 'RR2_RR3':
@@ -38,7 +54,7 @@ match profile:
                 ('hll', 'profile_score'): op.add,
                 ('hll', 'vertical_meters'): op.add,
             },
-            stage_filter={'stage_profile': (2, 3,), 'stage_type': ('RR',)},
+            stage_filter=stage_filter,
         )
 
     case 'RR4_RR5':
@@ -52,7 +68,7 @@ match profile:
                 ('mtn', 'profile_score'): op.add,
                 ('mtn', 'vertical_meters'): op.add,
             },
-            stage_filter={'stage_profile': (4, 5,), 'stage_type': ('RR',)},
+            stage_filter=stage_filter,
         )
 
     case _:
@@ -88,7 +104,6 @@ match profile:
         )
 
     case 'RR4_RR5':
-        # RR4/5
         xgb_model = XGBModel(
             config={
                 'k': 10,
@@ -144,17 +159,6 @@ else:
 _prediction_entry_collector = CPGTEntryCollector.load(
     '../cycling_predictor/collectors/data/CPGTEntryCollector_giro_2026_100.json'
 )
-
-# Set up stage filter
-match profile:
-    case 'RR1':
-        stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
-    case 'RR2_RR3':
-        stage_filter = {'stage_profile': (2, 3,), 'stage_type': ('RR',)}
-    case 'RR4_RR5':
-        stage_filter = {'stage_profile': (4, 5,), 'stage_type': ('RR',)}
-    case _:
-        raise ValueError(f"Unknown profile: {profile}")
 
 # Set up predictor with trained model
 predictor = CPPredictor(
