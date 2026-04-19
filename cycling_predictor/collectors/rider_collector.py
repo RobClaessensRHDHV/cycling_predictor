@@ -168,14 +168,11 @@ if __name__ == "__main__":
     scraper = cloudscraper.create_scraper()
     requests.get = scraper.get
 
-    # _collector = CPRiderCollector(
-    #     categories=['giro', 'tour', 'vuelta'],
-    #     years=[2025]
-    # )
     _collector = CPRiderCollector(
-        categories=['classics'],
-        years=[2024, 2025]
+        categories=['gts'],
+        years=[2023, 2024, 2025],
     )
+
     _collector.get_riders()
     _collector.get_co_rider_data()
     for _rider in _collector.riders:
