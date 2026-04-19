@@ -410,7 +410,7 @@ if __name__ == "__main__":
     requests.get = scraper.get
 
     # Get rider collector
-    with open('data/rider_collector_2026.json', 'r') as fp:
+    with open('data/RiderCollector_gts_2023_2024_2025.json', 'r') as fp:
         _rider_collector = CPRiderCollector.loads(json.load(fp))
 
     # GT collection

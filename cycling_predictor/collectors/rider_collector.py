@@ -150,7 +150,7 @@ class CPRiderCollector(CPBaseCollector):
     def dump(self, fp: Optional[str] = None):
         data = self.dumps()
         if not fp:
-            fp = f'data/rider_collector_{"_".join(self.categories)}_{"_".join(str(year) for year in self.years)}.json'
+            fp = f'data/{self.__class__.__name__}_{"_".join(self.categories)}_{"_".join(str(year) for year in self.years)}.json'
 
         with open(fp, 'w+') as f:
             json.dump(data, f, indent=2)
