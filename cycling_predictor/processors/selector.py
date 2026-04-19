@@ -289,13 +289,13 @@ if __name__ == "__main__":
     )
 
     # Optionally dump specific prediction
-    dump_predictions = ('amstel-gold-race',)
+    dump_predictions = ('la-fleche-wallonne',)
     for _prediction in _predictions:
         if _prediction.stage.name in dump_predictions:
             _prediction.dump()
 
     # Score riders
-    _selector.score(include_past_races=False)
+    _selector.score(include_past_races=True)
 
     # Sort riders by score and print top 50, include cost
     sorted_riders = sorted(_selector.scores.items(), key=lambda x: x[1], reverse=True)
