@@ -289,7 +289,7 @@ if __name__ == "__main__":
     )
 
     # Optionally dump specific prediction
-    dump_predictions = ('la-fleche-wallonne',)
+    dump_predictions = ('liege-bastogne-liege',)
     for _prediction in _predictions:
         if _prediction.stage.name in dump_predictions:
             _prediction.dump()

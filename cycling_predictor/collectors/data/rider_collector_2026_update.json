@@ -1565,7 +1565,7 @@
       "uid": "a3e76733-6465-4ddb-b476-4527cf244605"
     },
     {
-      "name": "thomas-pidcock",
+      "name": "tom-pidcock",
       "team": "ineos-grenadiers",
       "category": "dom",
       "cost": 3.0,
@@ -4667,7 +4667,7 @@
       "uid": "b8aaf195-0c14-43c3-8233-9fa7b837411e"
     },
     {
-      "name": "romain-gregoire1",
+      "name": "romain-gregoire",
       "team": "groupama-fdj",
       "category": "dom",
       "cost": 1.5,
@@ -13562,18 +13562,18 @@
       "birthdate": "2006-09-24",
       "height": 1.86,
       "weight": 64.0,
-      "avg": 86,
-      "flt": 64,
+      "avg": 89,
+      "flt": 69,
       "cob": 20,
       "hll": 91,
-      "mtn": 77,
-      "spr": 38,
-      "itt": 72,
-      "gc_": 64,
+      "mtn": 84,
+      "spr": 37,
+      "itt": 82,
+      "gc_": 82,
       "or_": 91,
       "ttl": 70,
-      "tts": 47,
-      "pr_": 63,
+      "tts": 92,
+      "pr_": 84,
       "uid": "ff42d83b-9042-4606-bc80-7b734bbb4099"
     },
     {
