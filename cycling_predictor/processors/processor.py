@@ -23,6 +23,7 @@ class CPProcessor(ABC):
             collector: CPEntryCollector,
             rider_feature_filter: Optional[Tuple[str, ...]] = None,
             stage_feature_filter: Optional[Tuple[str, ...]] = None,
+            entry_feature_filter: Optional[Tuple[str, ...]] = None,
             interactions: Optional[Dict[Tuple[str, ...], op]] = None,
             rider_filter: Optional[Dict[str, Any]] = None,
             stage_filter: Optional[Dict[str, Any]] = None,
@@ -33,6 +34,7 @@ class CPProcessor(ABC):
         :param collector: Entry collector from which data will be retrieved.
         :param rider_feature_filter: Tuple of rider features to exclude.
         :param stage_feature_filter: Tuple of stage features to exclude.
+        :param entry_feature_filter: Tuple of entry features to exclude.
         :param interactions: Interaction features to create.
         :param rider_filter: Filter for riders to include.
         :param stage_filter: Filter for stages to include.
@@ -43,6 +45,7 @@ class CPProcessor(ABC):
         self.collector = collector
         self.rider_feature_filter = rider_feature_filter
         self.stage_feature_filter = stage_feature_filter
+        self.entry_feature_filter = entry_feature_filter
         self.interactions = interactions
         self.rider_filter = rider_filter
         self.stage_filter = stage_filter
@@ -76,6 +79,18 @@ class CPProcessor(ABC):
         self._validate_interactions()
 
     @property
+    def entry_feature_filter(self) -> Optional[Tuple[str, ...]]:
+        try:
+            return self.__entry_feature_filter
+        except AttributeError:
+            return None
+
+    @entry_feature_filter.setter
+    def entry_feature_filter(self, entry_feature_filter: Optional[Tuple[str, ...]] = None) -> None:
+        self.__entry_feature_filter = entry_feature_filter
+        self._validate_interactions()
+
+    @property
     def interactions(self) -> Optional[Dict[Tuple[str, str], op]]:
         try:
             return self.__interactions
@@ -89,7 +104,8 @@ class CPProcessor(ABC):
 
     def _validate_interactions(self):
         features = [fn for fn in (CPEntry._rider_sample_keys + CPEntry._stage_sample_keys + CPEntry._entry_sample_keys)
-                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()))]
+                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()) + (
+                    self.entry_feature_filter or tuple()))]
 
         # Validate interactions
         if self.interactions:
@@ -122,7 +138,8 @@ class CPProcessor(ABC):
     @property
     def feature_names(self) -> Tuple[str, ...]:
         features = [fn for fn in (CPEntry._rider_sample_keys + CPEntry._stage_sample_keys + CPEntry._entry_sample_keys)
-                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()))]
+                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()) + (
+                    self.entry_feature_filter or tuple()))]
 
         for (f1, f2), operation in self.interactions.items():
             features.append(f"{f1}_{operation.__name__}_{f2}")
@@ -176,7 +193,8 @@ class CPProcessor(ABC):
 
             entries = self.collector.get_entries_per_stage(stage)
             for entry in entries:
-                sample, target, stage_uid, rider_uid = entry.to_data(self.rider_feature_filter, self.stage_feature_filter)
+                sample, target, stage_uid, rider_uid = entry.to_data(
+                    self.rider_feature_filter, self.stage_feature_filter, self.entry_feature_filter)
                 samples.append(sample)
                 targets.append(target)
                 stages.append(stage_uid)
@@ -233,6 +251,7 @@ class CPProcessor(ABC):
             "collector": self.collector.dumps(),
             "rider_feature_filter": self.rider_feature_filter,
             "stage_feature_filter": self.stage_feature_filter,
+            "entry_feature_filter": self.entry_feature_filter,
             "interactions": {
                 '-'.join(k): v.__name__ for k, v in self.interactions.items()
             },
@@ -263,6 +282,7 @@ class CPProcessor(ABC):
             collector=CPEntryCollector.loads(data['collector']),
             rider_feature_filter=tuple(data['rider_feature_filter']) if data['rider_feature_filter'] else None,
             stage_feature_filter=tuple(data['stage_feature_filter']) if data['stage_feature_filter'] else None,
+            entry_feature_filter=tuple(data['entry_feature_filter']) if data['entry_feature_filter'] else None,
             interactions={tuple(k.split('-')): getattr(op, v) for k, v in data['interactions'].items()},
             rider_filter=data['rider_filter'],
             stage_filter=data['stage_filter'],

@@ -185,6 +185,11 @@ class CPEntryCollector(CPBaseCollector):
             form, form_flt, form_hll, form_mtn = rider.get_forms(stage)
             rank = rider.get_rank(stage)
 
+            # One-hot encoding for GTs
+            is_giro = int('giro' in stage.name)
+            is_tour = int('tour' in stage.name)
+            is_vuelta = int('vuelta' in stage.name)
+
             # If rank is available and within max_rank, create entry for training
             if rank and (rank <= self.max_rank or self.max_rank == -1):
                 # Create Entry
@@ -197,6 +202,9 @@ class CPEntryCollector(CPBaseCollector):
                     rider_form_flt=form_flt,
                     rider_form_hll=form_hll,
                     rider_form_mtn=form_mtn,
+                    is_giro=is_giro,
+                    is_tour=is_tour,
+                    is_vuelta=is_vuelta,
                 )
 
                 self._add_entry(entry)
@@ -213,6 +221,9 @@ class CPEntryCollector(CPBaseCollector):
                     rider_form_flt=form_flt,
                     rider_form_hll=form_hll,
                     rider_form_mtn=form_mtn,
+                    is_giro=is_giro,
+                    is_tour=is_tour,
+                    is_vuelta=is_vuelta,
                 )
 
                 self._add_entry(entry)

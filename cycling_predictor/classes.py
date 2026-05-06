@@ -397,6 +397,9 @@ class CPEntry:
         'rider_form_flt',
         'rider_form_hll',
         'rider_form_mtn',
+        'is_giro',
+        'is_tour',
+        'is_vuelta',
     )
 
     def __init__(
@@ -409,6 +412,9 @@ class CPEntry:
         rider_form_flt: float = 0.0,
         rider_form_hll: float = 0.0,
         rider_form_mtn: float = 0.0,
+        is_giro: int = 0,
+        is_tour: int = 0,
+        is_vuelta: int = 0,
     ):
         self.rider = rider
         self.stage = stage
@@ -418,6 +424,9 @@ class CPEntry:
         self.rider_form_flt = rider_form_flt
         self.rider_form_hll = rider_form_hll
         self.rider_form_mtn = rider_form_mtn
+        self.is_giro = is_giro
+        self.is_tour = is_tour
+        self.is_vuelta = is_vuelta
         self._uid = str(uuid4())
 
     def __repr__(self):
@@ -445,6 +454,9 @@ class CPEntry:
             "rider_form_flt": self.rider_form_flt,
             "rider_form_hll": self.rider_form_hll,
             "rider_form_mtn": self.rider_form_mtn,
+            "is_giro": self.is_giro,
+            "is_tour": self.is_tour,
+            "is_vuelta": self.is_vuelta,
         }
 
     @classmethod
@@ -458,17 +470,20 @@ class CPEntry:
             rider_form_flt=data.get("rider_form_flt", 0.0),
             rider_form_hll=data.get("rider_form_hll", 0.0),
             rider_form_mtn=data.get("rider_form_mtn", 0.0),
+            is_giro=data.get("is_giro", 0),
+            is_tour=data.get("is_tour", 0),
+            is_vuelta=data.get("is_vuelta", 0),
         )
         entry._uid = data.get("uid", str(uuid4()))
         return entry
 
-    def to_data(self, rider_feature_filter: Optional[Set[str]] = None, stage_feature_filter: Optional[Set[str]] = None) \
-            -> Optional[Tuple[Any, ...]]:
+    def to_data(self, rider_feature_filter: Optional[Set[str]] = None, stage_feature_filter: Optional[Set[str]] = None,
+                entry_feature_filter: Optional[Set[str]] = None) -> Optional[Tuple[Any, ...]]:
         # Combine rider and race data in a sample tensor, and target tensor (rank)
         # Get sample tensor from rider and race data based on given keys
         sample = ([getattr(self.rider, k, 0) for k in self._rider_sample_keys if k not in (rider_feature_filter or [])] +
                   [getattr(self.stage, k, 0) for k in self._stage_sample_keys if k not in (stage_feature_filter or [])] +
-                  [getattr(self, k, 0) for k in self._entry_sample_keys if k not in (rider_feature_filter or [])])
+                  [getattr(self, k, 0) for k in self._entry_sample_keys if k not in (entry_feature_filter or [])])
 
         target = self.rank or 0
 

@@ -20,6 +20,7 @@ class CPTrainer(CPProcessor):
             collector: CPEntryCollector,
             rider_feature_filter: Optional[Tuple[str, ...]] = None,
             stage_feature_filter: Optional[Tuple[str, ...]] = None,
+            entry_feature_filter: Optional[Tuple[str, ...]] = None,
             interactions: Optional[Dict[Tuple[str, str], op]] = None,
             rider_filter: Optional[Dict[str, Any]] = None,
             stage_filter: Optional[Dict[str, Any]] = None,
@@ -30,6 +31,7 @@ class CPTrainer(CPProcessor):
         :param collector: Entry collector from which data will be retrieved.
         :param rider_feature_filter: Tuple of rider features to exclude.
         :param stage_feature_filter: Tuple of stage features to exclude.
+        :param entry_feature_filter: Tuple of entry features to exclude.
         :param interactions: Interaction features to create.
         :param rider_filter: Filter for riders to include.
         :param stage_filter: Filter for stages to include.
@@ -41,6 +43,7 @@ class CPTrainer(CPProcessor):
             collector=collector,
             rider_feature_filter=rider_feature_filter,
             stage_feature_filter=stage_feature_filter,
+            entry_feature_filter=entry_feature_filter,
             interactions=interactions,
             rider_filter=rider_filter,
             stage_filter=stage_filter,
