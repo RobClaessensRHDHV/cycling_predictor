@@ -54,6 +54,13 @@ class CPProcessor(ABC):
         self.config = config
         self.dataloader: Optional[DataLoader] = None
 
+        # Private attributes set during collecting and batching
+        self._samples = None
+        self._targets = None
+        self._stages = None
+        self._riders = None
+        self._batches = None
+
     @property
     def rider_feature_filter(self) -> Optional[Tuple[str, ...]]:
         try:
@@ -169,9 +176,60 @@ class CPProcessor(ABC):
         :param rider_feature_noise: Optional noise to add to rider features for augmentation.
         :return:
         """
-        samples, targets, stages, riders = list(), list(), list(), list()
 
+        # Collect samples, targets and stages
+        samples, targets, stages, riders = self.collect()
+
+        # TODO: Possibly also do interactions after normalization
+        # Include interactions in samples, applied on numpy arrays
+        if self.interactions:
+            for (f1, f2), operation in self.interactions.items():
+                if f1 in self.feature_names and f2 in self.feature_names:
+                    idx1 = self.feature_names.index(f1)
+                    idx2 = self.feature_names.index(f2)
+                    if operation == op.truediv and f2 in self.config.get('MIN_DENOMINATOR', {}):
+                        interaction_feature = operation(
+                            samples[:, idx1], np.clip(samples[:, idx2], self.config.get('MIN_DENOMINATOR')[f2], None)
+                        ).reshape(-1, 1)
+                    else:
+                        interaction_feature = operation(samples[:, idx1], samples[:, idx2]).reshape(-1, 1)
+                    samples = np.hstack((samples, interaction_feature))
+                    print(f"Added interaction feature: {f1} {operation.__name__} {f2}")
+                else:
+                    print(f"Skipping interaction feature for {f1} and {f2} as one or both features are missing.")
+
+        # Normalize samples
+        samples = self.scale(samples)
+
+        # Slightly augment rider features of samples with some noise in order to prevent (or test) overfitting on riders
+        # NOTE: Not recommended to apply in general, but useful for experimentation / validation
+        if rider_feature_noise:
+            for i, fn in enumerate(self.feature_names):
+                # TODO: Probably include 'form' features in augmentation
+                if fn in CPEntry._rider_sample_keys:
+                    samples[:, i] += np.random.normal(scale=rider_feature_noise, size=samples.shape[0])
+
+        # Overwrite processed samples (create additional attribute later?)
+        self._samples = samples
+
+        # Create batches
+        self.batch()
+
+        # Create DataLoader
+        dataset = CyclingDataset(samples, targets, stages, riders)
+        self.dataloader = DataLoader(dataset, batch_size=batch_size or len(dataset))
+
+        print(f"Created dataloader with {len(dataset)} samples of {len(set(stages))} stages and {len(set(riders))} riders.")
+
+    def collect(self):
+        """
+        Collect all samples, targets, and stages from the collector, applying filters and feature selection.
+        Stores results in self._samples, self._targets, self._stages.
+        """
+        samples, targets, stages, riders = list(), list(), list(), list()
         for stage in self.collector.stages:
+
+            # Apply stage filter if present
             skip_stage = False
             if self.stage_filter:
                 for key, value in self.stage_filter.items():
@@ -200,41 +258,41 @@ class CPProcessor(ABC):
                 stages.append(stage_uid)
                 riders.append(rider_uid)
 
-        # TODO: Possibly also do interactions after normalization
-        # Include interactions in samples, applied on numpy arrays
-        samples = np.array(samples)
-        if self.interactions:
-            for (f1, f2), operation in self.interactions.items():
-                if f1 in self.feature_names and f2 in self.feature_names:
-                    idx1 = self.feature_names.index(f1)
-                    idx2 = self.feature_names.index(f2)
-                    if operation == op.truediv and f2 in self.config.get('MIN_DENOMINATOR', {}):
-                        interaction_feature = operation(
-                            samples[:, idx1], np.clip(samples[:, idx2], self.config.get('MIN_DENOMINATOR')[f2], None)
-                        ).reshape(-1, 1)
-                    else:
-                        interaction_feature = operation(samples[:, idx1], samples[:, idx2]).reshape(-1, 1)
-                    samples = np.hstack((samples, interaction_feature))
-                    print(f"Added interaction feature: {f1} {operation.__name__} {f2}")
-                else:
-                    print(f"Skipping interaction feature for {f1} and {f2} as one or both features are missing.")
+        self._samples = np.asarray(samples)
+        self._targets = np.asarray(targets)
+        self._stages = stages
+        self._riders = riders
 
-        # Normalize samples
-        samples = self.scale(samples)
+        return np.array(samples), np.array(targets), stages, riders
 
-        # Slightly augment rider features of samples with some noise in order to prevent (or test) overfitting on riders
-        # NOTE: Not recommended to apply in general, but useful for experimentation / validation
-        if rider_feature_noise:
-            for i, fn in enumerate(self.feature_names):
-                # TODO: Probably include 'form' features in augmentation
-                if fn in CPEntry._rider_sample_keys:
-                    samples[:, i] += np.random.normal(scale=rider_feature_noise, size=samples.shape[0])
+    def batch(self):
+        """
+        Returns a list of batches, each batch is a dict with keys:
+        - 'samples': np.ndarray
+        - 'targets': np.ndarray
+        - 'stage': stage UID
+        Batches are grouped by stage.
+        Stores the result in self._batches for reuse.
+        """
+        if self._samples is None:
+            raise ValueError("You must call collect() before batch().")
 
-        # Create DataLoader
-        dataset = CyclingDataset(samples, targets, stages, riders)
-        self.dataloader = DataLoader(dataset, batch_size=batch_size or len(dataset))
+        batches = list()
+        stage_index_mapping = dict()
+        for idx, stage in enumerate(self._stages):
+            if stage not in stage_index_mapping:
+                stage_index_mapping[stage] = []
+            stage_index_mapping[stage].append(idx)
 
-        print(f"Created dataloader with {len(dataset)} samples of {len(set(stages))} stages and {len(set(riders))} riders.")
+        # Create batches
+        for stage, indices in stage_index_mapping.items():
+            batch_samples = self._samples[indices]
+            batch_targets = self._targets[indices]
+            batch_riders = [self._riders[i] for i in indices] if hasattr(self, '_riders') else None
+            batch = CyclingDataset(batch_samples, batch_targets, [stage], batch_riders)
+            batches.append(batch)
+
+        self._batches = batches
 
     def plot(self):
         """

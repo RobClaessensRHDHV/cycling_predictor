@@ -81,67 +81,35 @@ class CPTrainer(CPProcessor):
 
     def train(self, verbose: bool = True):
         """
-        Train the model using the preprocessed data.
+        Train the model using the preprocessed, batched data.
 
         :param verbose: Whether to print training results.
         """
-
-        if self.dataloader is None:
-            raise ValueError("DataLoader is not initialized. Please run preprocess() first.")
         if self.model is None:
             raise ValueError("Model is not initialized. Please assign a model first.")
 
-        # Retrieve data (assuming one batch?)
-        data = next(iter(self.dataloader))
-        samples = data['samples']
-        targets = data['targets']
-        stages = data['stages']
+        # Preprocess data
+        self.preprocess()
 
         # Get set of stages and train_test_split
-        unique_stages = list(dict.fromkeys(stages))
+        unique_stages = list(dict.fromkeys(self._stages))
         unique_train_stages, unique_test_stages = train_test_split(
             unique_stages,
             test_size=self.config.get('test_size'),
             random_state=self.config.get('random_state'))
 
-        # Collect samples and targets
-        train_samples, train_targets, train_stages, test_samples, test_targets, test_stages = \
-            list(), list(), list(), list(), list(), list()
-        for sample, target, stage in zip(samples, targets, stages):
-            if stage in unique_train_stages:
-                train_samples.append(sample.numpy())
-                train_targets.append(target.item())
-                train_stages.append(stage)
-            else:
-                test_samples.append(sample.numpy())
-                test_targets.append(target.item())
-                test_stages.append(stage)
+        # Assign batches to train/test
+        train_batches = [batch for batch in self._batches if batch.stages[0] in unique_train_stages]
+        test_batches = [batch for batch in self._batches if batch.stages[0] in unique_test_stages]
 
-        # Sort samples, targets and stages, based on stages
-        train_stages = [self.collector.get_stage(s) or s for s in train_stages]
-        training_data = list(zip(train_samples, train_targets, train_stages))
-        training_data.sort(key=lambda x: getattr(x[2], 'start_date', x[2]))
-        train_samples, train_targets, train_stages = zip(*training_data)
+        # Flatten train/test samples and targets
+        x_train = np.vstack([batch.samples for batch in train_batches])
+        y_train = np.concatenate([batch.targets for batch in train_batches])
+        train_group_sizes = [len(batch.targets) for batch in train_batches]
 
-        test_stages = [self.collector.get_stage(s) or s for s in test_stages]
-        testing_data = list(zip(test_samples, test_targets, test_stages))
-        testing_data.sort(key=lambda x: getattr(x[2], 'start_date', x[2]))
-        test_samples, test_targets, test_stages = zip(*testing_data)
-
-        # Convert to numpy arrays
-        x_train = np.vstack(train_samples)
-        y_train = np.array(train_targets)
-        train_group_sizes = list()
-        for i, stage in enumerate(train_stages):
-            if i == 0 or stage != train_stages[i - 1]:
-                train_group_sizes.append(train_stages.count(stage))
-
-        x_test = np.vstack(test_samples)
-        y_test = np.array(test_targets)
-        test_group_sizes = list()
-        for i, stage in enumerate(test_stages):
-            if i == 0 or stage != test_stages[i - 1]:
-                test_group_sizes.append(test_stages.count(stage))
+        x_test = np.vstack([batch.samples for batch in test_batches])
+        y_test = np.concatenate([batch.targets for batch in test_batches])
+        test_group_sizes = [len(batch.targets) for batch in test_batches]
 
         # Train the model
         self.model.train(x_train, train_group_sizes, y_train, verbose=verbose)
