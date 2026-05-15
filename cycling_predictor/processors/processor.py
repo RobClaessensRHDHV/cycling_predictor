@@ -158,15 +158,18 @@ class CPProcessor(ABC):
     def dump_fn(self) -> str:
         return f"{self.__class__.__name__}.json"
 
-    @abstractmethod
-    def scale(self, samples: np.ndarray) -> np.ndarray:
+    def scale(self, samples: np.ndarray) ->np.ndarray:
         """
-        Scale samples using the provided scaler.
+        Scale samples using the scaler.
 
         :param samples: Samples to scale.
         :return: Scaled samples.
         """
-        pass
+        if self.scaler is None:
+            self.scaler = StandardScaler()
+            return self.scaler.fit_transform(samples)
+        else:
+            return self.scaler.transform(samples)
 
     def preprocess(self, batch_size: Optional[int] = 0, rider_feature_noise: Optional[float] = None) -> None:
         """
@@ -249,7 +252,15 @@ class CPProcessor(ABC):
             if skip_stage:
                 continue
 
+            # Collect entries for this stage
             entries = self.collector.get_entries_per_stage(stage)
+
+            # If less than 20 entries, skip stage
+            if len(entries) < 20:
+                print(f"Skipping stage {stage} due to insufficient entries ({len(entries)}).")
+                continue
+
+            # Store samples, targets, and stages for this stage
             for entry in entries:
                 sample, target, stage_uid, rider_uid = entry.to_data(
                     self.rider_feature_filter, self.stage_feature_filter, self.entry_feature_filter)

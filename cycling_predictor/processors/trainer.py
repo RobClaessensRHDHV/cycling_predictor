@@ -66,19 +66,6 @@ class CPTrainer(CPProcessor):
                 f"{self.config.get('test_size')}_{self.config.get('random_state')}_"
                 f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val]) if self.stage_filter else list()}.json")
 
-    def scale(self, samples: np.ndarray) ->np.ndarray:
-        """
-        Scale the samples using the scaler.
-
-        :param samples: Samples to scale.
-        :return: Scaled samples.
-        """
-        if self.scaler is None:
-            self.scaler = StandardScaler()
-            return self.scaler.fit_transform(samples)
-        else:
-            return self.scaler.transform(samples)
-
     def train(self, verbose: bool = True):
         """
         Train the model using the preprocessed, batched data.

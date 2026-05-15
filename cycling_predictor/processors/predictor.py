@@ -68,7 +68,7 @@ class CPPredictor(CPProcessor):
         if self.scaler is None:
             raise ValueError("Scaler is not initialized. Please assign a scaler first.")
 
-        return self.scaler.transform(samples)
+        return super().scale(samples)
 
     def predict(self, verbose: Optional[bool] = True):
         """
