@@ -376,6 +376,25 @@ class CPGTEntryCollector(CPEntryCollector):
         self.stage_number_end: int = stage_number_end
         self.dropouts: Dict[int, List[str]] = dropouts or dict()
 
+    @property
+    def dump_fn(self) -> str:
+        if self.max_rank == -1:
+            if self.stage_number_start != 1 or self.stage_number_end != 21:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_"
+                        f"stage_{self.stage_number_start}_{self.stage_number_end}.json")
+            else:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}.json")
+        else:
+            if self.stage_number_start != 1 or self.stage_number_end != 21:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_"
+                        f"stage_{self.stage_number_start}_{self.stage_number_end}_{self.max_rank}.json")
+            else:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_{self.max_rank}.json")
+
     def get_entries(self):
         for rider in self.riders:
             print(f"Collecting entries for rider {rider.name}... ({self.riders.index(rider) + 1}/{len(self.riders)})")
