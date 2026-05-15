@@ -258,6 +258,34 @@ CPRiderInfoMap = {
         'weight': 80.0,
         'birthdate': '2000-02-16'
     },
+    'mathys-rondel': {
+        'height': 1.80,
+        'weight': 65.0,
+    },
+    'jardi-christiaan-van-der-lee': {
+        'height': 1.85,
+        'weight': 68.0,
+    },
+    'luca-paletti': {
+        'height': 1.84,
+        'weight': 66.0,
+    },
+    'axel-huens': {
+        'height': 1.80,
+        'weight': 66.0,
+    },
+    'robert-donaldson': {
+        'height': 1.89,
+        'weight': 72.0,
+    },
+    'matyas-kopecky': {
+        'height': 1.88,
+        'weight': 72.0,
+    },
+    'sakarias-koller-loland': {
+        'height': 1.80,
+        'weight': 65.0,
+    }
 }
 
 CPClassicPointsMap = {
@@ -282,6 +310,74 @@ CPClassicPointsMap = {
     18: 12,
     19: 8,
     20: 4,
+}
+
+CPGTPointsMap = {
+    # Provide top 5 with additional points to simulate classification points
+    1: math.ceil(50 * 1.25),
+    2: math.ceil(44 * 1.2),
+    3: math.ceil(40 * 1.15),
+    4: math.ceil(36 * 1.1),
+    5: math.ceil(32 * 1.05),
+    6: 30,
+    7: 28,
+    8: 26,
+    9: 24,
+    10: 22,
+    11: 20,
+    12: 18,
+    13: 16,
+    14: 14,
+    15: 12,
+    16: 10,
+    17: 8,
+    18: 6,
+    19: 4,
+    20: 2,
+}
+
+CPGTGCPointsMap = {
+    1: 100,
+    2: 80,
+    3: 60,
+    4: 50,
+    5: 40,
+    6: 36,
+    7: 32,
+    8: 28,
+    9: 24,
+    10: 22,
+    11: 20,
+    12: 18,
+    13: 16,
+    14: 14,
+    15: 12,
+    16: 10,
+    17: 8,
+    18: 6,
+    19: 4,
+    20: 2,
+}
+
+CPGTSprintPointsMap = {
+    1: 80,
+    2: 60,
+    3: 40,
+    4: 30,
+    5: 20,
+    6: 10,
+    7: 8,
+    8: 6,
+    9: 4,
+    10: 2,
+}
+
+CPGTYouthPointsMap = {
+    1: 60,
+    2: 40,
+    3: 30,
+    4: 20,
+    5: 10,
 }
 
 CPCOPointsMap = {
