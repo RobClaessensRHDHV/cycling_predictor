@@ -1,7 +1,5 @@
 from typing import Optional, Dict, Any
-
-import numpy as np
-from sklearn.preprocessing import StandardScaler
+from pathlib import Path
 
 from cycling_predictor.processors.kfold_processor import KFoldProcessor
 from cycling_predictor.processors.trainer import CPTrainer
@@ -38,28 +36,15 @@ class KFoldTrainer(KFoldProcessor):
             model=model,
             config=config,
         )
-        self.trainers = []
+        self.trainers = None
 
     @property
     def dump_fn(self) -> str:
-        # TODO: Update dump_fn
         collector_fn = self.collector.dump_fn.split('_', 1)[1]
-        return (f"{self.__class__.__name__}_{collector_fn.split('.')[0]}_"
-                f"{self.config.get('test_size', 'NA')}_{self.config.get('random_state', 'NA')}_"
-                f"{self.model.__class__.__name__}.json")
-
-    def scale(self, samples: np.ndarray) ->np.ndarray:
-        """
-        Scale the samples using the scaler. If no scaler is available yet, fit a new StandardScaler.
-
-        :param samples: Samples to scale.
-        :return: Scaled samples.
-        """
-        if self.scaler is None:
-            self.scaler = StandardScaler()
-            return self.scaler.fit_transform(samples)
-        else:
-            return self.scaler.transform(samples)
+        return (f"{self.__class__.__name__}_{Path(collector_fn).stem}_"
+                f"{self.config.get('test_size')}_{self.config.get('random_state')}_"
+                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val])
+                if self.stage_filter else list()}.json")
 
     def train(self, n_folds=5, verbose=True):
         """
@@ -216,7 +201,6 @@ if __name__ == "__main__":
         case _:
             raise ValueError(f"Unknown profile: {profile}")
 
-    # TODO: Implement a KFoldTuner and redo tuning, only allowing higher regularization to prevent overfitting
     # Initialize KFoldTrainer
     _trainer = KFoldTrainer(
         collector=_entry_collector,
@@ -224,7 +208,7 @@ if __name__ == "__main__":
         entry_feature_filter=_entry_feature_filter,
         interactions=_interactions,
         stage_filter=_stage_filter,
-        model=_xgb_model
+        model=_xgb_model,
     )
 
     # Run KFold training
@@ -232,7 +216,7 @@ if __name__ == "__main__":
 
     # Create predictors for the prediction collector
     _predictors = list()
-    for _fold_trainer in _trainer.trainers:
+    for i, _fold_trainer in enumerate(_trainer.trainers, 1):
         _predictor = CPPredictor(
             collector=_prediction_entry_collector,
             rider_feature_filter=_fold_trainer.rider_feature_filter,
@@ -245,6 +229,7 @@ if __name__ == "__main__":
         )
         _predictor.preprocess()
         _predictor.predict()
+        _predictor.dump(f"data/{Path(_predictor.dump_fn).stem}_F{i}.json")
         _predictors.append(_predictor)
 
     # Ensemble prediction using CPEnsemblePredictor
