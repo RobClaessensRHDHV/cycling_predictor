@@ -18,14 +18,13 @@ class CPEnsemblePredictor:
         """
         self.predictors = predictors
 
-    def preprocess(self, rider_feature_noise: Optional[float] = None) -> None:
+    def preprocess(self) -> None:
         """
         Delegates preprocessing to all child predictors.
-
-        :param rider_feature_noise: Optional noise to add to rider features for augmentation.
+        Rider feature noise can only be applied during prediction.
         """
         for predictor in self.predictors:
-            predictor.preprocess(rider_feature_noise=rider_feature_noise)
+            predictor.preprocess()
 
     def predict(self, n: int = 1, rider_feature_noise: Optional[float] = None, normalize: bool = False,
                 verbose: bool = True) -> List[CPPrediction]:
@@ -44,8 +43,7 @@ class CPEnsemblePredictor:
         
         for predictor in self.predictors:
             for i in range(max(1, n)):
-                if i > 0:
-                    predictor.preprocess(rider_feature_noise=rider_feature_noise)
+                predictor.preprocess(rider_feature_noise=rider_feature_noise)
 
                 # Do not print all child predictions to avoid clutter
                 child_predictions = predictor.predict(verbose=False)
