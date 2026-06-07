@@ -32,6 +32,7 @@ class CPPrediction:
         self.result = result
         self.stage = stage
         self.riders = riders
+        self.gauss_factor = 0.0
         self._uid = str(uuid4())
 
     def __repr__(self):
