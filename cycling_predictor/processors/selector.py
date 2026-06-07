@@ -344,7 +344,8 @@ class CPSelector:
                         break
                 
                 if rank:
-                    points = CPClassicPointsMap.get(rank, 0)
+                    # TODO: Make generic for classics & GTs
+                    points = CPGTPointsMap.get(rank, 0)
                     row_data.append(f"{rank} ({points})")
                     rider_total_points += points
                     race_totals[i] += points
@@ -362,23 +363,40 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
     # Load predictors
-    # _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint.json')
-    # _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles.json')
-    # _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills.json')
-    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint_update.json')
-    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles_update.json')
-    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills_update.json')
-    _pn_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_5.json')
-    _ta_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_1.json')
+    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F1_gauss.json')
+    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F2_gauss.json')
+    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F3_gauss.json')
+    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F1_gauss.json')
+    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F2_gauss.json')
+    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F3_gauss.json')
+    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F1_gauss.json')
+    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F2_gauss.json')
+    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F3_gauss.json')
+    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F1_gauss.json')
+    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F2_gauss.json')
+    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F3_gauss.json')
+    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F1_gauss.json')
+    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F2_gauss.json')
+    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F3_gauss.json')
 
     # Set up ensemble predictor
     _ensemble_predictor = CPEnsemblePredictor(
         predictors=[
-            _sprint_predictor,
-            _cobbles_predictor,
-            _hills_predictor,
-            _pn_predictor,
-            _ta_predictor,
+            _rr1_predictor_1,
+            _rr1_predictor_2,
+            _rr1_predictor_3,
+            _rr2_predictor_1,
+            _rr2_predictor_2,
+            _rr2_predictor_3,
+            _rr3_predictor_1,
+            # _rr3_predictor_2,
+            _rr3_predictor_3,
+            _rr4_predictor_1,
+            _rr4_predictor_2,
+            _rr4_predictor_3,
+            _rr5_predictor_1,
+            _rr5_predictor_2,
+            _rr5_predictor_3,
         ]
     )
 
@@ -386,26 +404,26 @@ if __name__ == "__main__":
     _ensemble_predictor.preprocess(rider_feature_noise=0.1)
 
     # Predict
-    _predictions = _ensemble_predictor.predict(n=1000, rider_feature_noise=0.1, normalize=True)
+    _predictions = _ensemble_predictor.predict(n=100, rider_feature_noise=0.1, normalize=True, gate=True)
 
     # Create selector
     _selector = CPSelector(
-        riders=_sprint_predictor.collector.riders,
+        riders=_rr5_predictor_1.collector.riders,
         predictions=_predictions,
     )
 
     # Optionally dump specific prediction
-    dump_predictions = ('amstel-gold-race',)
+    dump_stages = (1, 2, 3)
     for _prediction in _predictions:
-        if _prediction.stage.name in dump_predictions:
+        if _prediction.stage.stage_number in dump_stages:
             _prediction.dump()
 
     # Score riders
-    _selector.score(include_past_races=False)
+    _selector.score_gts()
 
     # Sort riders by score and print top 50, include cost
     sorted_riders = sorted(_selector.scores.items(), key=lambda x: x[1], reverse=True)
-    print("\nTop 50 Riders by Score:")
+    print("\nTop 50 riders by score:")
     print("Rank  Rider".ljust(40), "Score  Cost  Score/Cost")
     for i, (rider_name, score) in enumerate(sorted_riders[:50], start=1):
         rider_cost = next((r.cost for r in _selector.riders if r.name == rider_name), None)
@@ -414,12 +432,12 @@ if __name__ == "__main__":
 
     # Select team
     _max_score, _cost = _selector.select(
-        budget=45.0,
+        budget=42.0,
         team_limit=4,
         total_riders=20,
-        exclude_riders=('mads-pedersen', 'tim-merlier'),
-        min_riders_per_race=3,
-        min_riders_scoring_per_race=3,
+        # min_riders_per_race=3,
+        min_riders_scoring_per_race=5,
+        max_sprinters=6,
         use_full_budget=True,
     )
 
