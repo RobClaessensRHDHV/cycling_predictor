@@ -283,21 +283,6 @@ if __name__ == "__main__":
                 ('mtn', 'vertical_meters'): op.add,
             }
 
-        case 'RR':
-
-            # Setup filters and interactions
-            _stage_filter = {'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'pr_', 'tts', 'ttl')
-            _stage_feature_filter = ()
-            _entry_feature_filter = ()
-            _interactions = {
-                ('spr', 'gradient_final_km'): op.sub,
-                ('hll', 'profile_score'): op.add,
-                ('hll', 'vertical_meters'): op.add,
-                ('mtn', 'profile_score'): op.add,
-                ('mtn', 'vertical_meters'): op.add,
-            }
-
         case 'ITT1_ITT2':
 
             # Setup filters and interactions
