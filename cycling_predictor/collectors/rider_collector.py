@@ -169,8 +169,8 @@ if __name__ == "__main__":
     requests.get = scraper.get
 
     _collector = CPRiderCollector(
-        categories=['gts'],
-        years=[2023, 2024, 2025],
+        categories=['tour'],
+        years=[2026],
     )
 
     _collector.get_riders()
