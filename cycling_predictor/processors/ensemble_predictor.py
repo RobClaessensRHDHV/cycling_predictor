@@ -1,4 +1,5 @@
 from typing import Dict, List, Optional
+from math import exp
 
 import numpy as np
 from scipy.stats import rankdata
@@ -18,17 +19,16 @@ class CPEnsemblePredictor:
         """
         self.predictors = predictors
 
-    def preprocess(self, rider_feature_noise: Optional[float] = None) -> None:
+    def preprocess(self) -> None:
         """
         Delegates preprocessing to all child predictors.
-
-        :param rider_feature_noise: Optional noise to add to rider features for augmentation.
+        Rider feature noise can only be applied during prediction.
         """
         for predictor in self.predictors:
-            predictor.preprocess(rider_feature_noise=rider_feature_noise)
+            predictor.preprocess()
 
     def predict(self, n: int = 1, rider_feature_noise: Optional[float] = None, normalize: bool = False,
-                verbose: bool = True) -> List[CPPrediction]:
+                gate: bool = False, verbose: bool = True) -> List[CPPrediction]:
         """
         Collects results from all child predictors and merges them.
 
@@ -36,6 +36,7 @@ class CPEnsemblePredictor:
             combined with rider feature noise during preprocessing.
         :param rider_feature_noise: Optional noise to add to rider features for augmentation (only used if n > 1).
         :param normalize: Whether to normalize raw scores when combining predictions.
+        :param gate: Whether to use Gaussian gating when combining predictions.
         :param verbose: Whether to print the prediction results.
         :return: List of combined predictions.
         """
@@ -44,14 +45,27 @@ class CPEnsemblePredictor:
         
         for predictor in self.predictors:
             for i in range(max(1, n)):
-                if i > 0:
-                    predictor.preprocess(rider_feature_noise=rider_feature_noise)
+                predictor.preprocess(rider_feature_noise=rider_feature_noise)
 
                 # Do not print all child predictions to avoid clutter
                 child_predictions = predictor.predict(verbose=False)
 
                 for child_prediction in child_predictions:
                     if child_prediction.stage:
+
+                        # Compute and set Gauss factor if gating is enabled
+                        if gate:
+
+                            # Retrieve profile score
+                            profile_score = child_prediction.stage.profile_score
+
+                            # Compute and set Gauss factor
+                            if predictor.scaler and 'profile_score' in predictor.feature_names:
+                                ps_mean = predictor.scaler.mean_[predictor.feature_names.index('profile_score')]
+                                ps_st_dev = predictor.scaler.scale_[predictor.feature_names.index('profile_score')]
+                                child_prediction.gauss_factor = exp(-0.5 * ((profile_score - ps_mean) / ps_st_dev) ** 2)
+
+                        # Group predictions by stage UID for later combination
                         stage_uid = child_prediction.stage.uid
                         if prediction_dict.get(stage_uid):
                             prediction_dict[stage_uid].append(child_prediction)
@@ -68,20 +82,22 @@ class CPEnsemblePredictor:
                     stage_predictions[0].print()
             # Otherwise, combine predictions
             else:
-                predictions.append(self._combine_predictions(stage_predictions, normalize=normalize, verbose=verbose))
+                predictions.append(self._combine_predictions(stage_predictions, normalize=normalize, gate=gate, verbose=verbose))
 
         return sorted(predictions, key=lambda p: (p.stage.start_date if p.stage else None))
 
     @staticmethod
-    def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False, verbose: bool = True) \
-            -> CPPrediction:
+    def _combine_predictions(predictions: List[CPPrediction], normalize: bool = False, gate: bool = False,
+                             verbose: bool = True) -> CPPrediction:
         """
         Combines multiple predictions for the same stage.
         If models provide raw scores, it uses relevance scores.
         Otherwise, it falls back to rank-based fusion.
+        If gate is True, applies Gaussian gating based on profile score.
 
         :param predictions: List of predictions to combine.
         :param normalize: Whether to normalize raw scores when combining predictions.
+        :param gate: Whether to use Gaussian gating when combining predictions.
         :param verbose: Whether to print the combined prediction results.
         :return: Combined prediction.
         """
@@ -92,19 +108,31 @@ class CPEnsemblePredictor:
         consensus_scores = np.zeros(num_riders)
         num_predictors = len(predictions)
 
-        for prediction in predictions:
+        # Initialize Gaussian gates
+        if gate:
+
+            # Retrieve Gauss factors from predictions
+            gates = np.array([p.gauss_factor for p in predictions])
+
+            # Normalize gates
+            gates = gates / gates.sum()
+
+        else:
+            gates = np.ones(num_predictors) / num_predictors
+
+        # Combine predictions using gates and scores/ranks
+        for i, prediction in enumerate(predictions):
             if prediction.scores is not None:
                 # Use raw scores (optionally normalized)
                 scores = prediction.scores
                 if normalize:
                     s_min, s_max = scores.min(), scores.max()
                     scores = (scores - s_min) / (s_max - s_min) if s_max > s_min else np.ones(num_riders)
-                consensus_scores += scores / num_predictors
+                consensus_scores += gates[i] * scores
             else:
                 # Fallback to rank-based. Turn ranks (1=best) into scores (higher=best)
-                # Max rank - current rank gives a simple inverted scale
                 rank_scores = (num_riders - prediction.prediction + 1) / num_riders
-                consensus_scores += rank_scores / num_predictors
+                consensus_scores += gates[i] * rank_scores
 
         # Re-rank based on consensus scores (descending)
         combined_ranking = rankdata(-consensus_scores, method='ordinal')

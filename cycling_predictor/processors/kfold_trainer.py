@@ -1,0 +1,356 @@
+from typing import Optional, Dict, Any
+from pathlib import Path
+
+from cycling_predictor.processors.kfold_processor import KFoldProcessor
+from cycling_predictor.processors.trainer import CPTrainer
+from cycling_predictor.models import BaseModel
+from cycling_predictor.collectors import CPEntryCollector
+
+
+class KFoldTrainer(KFoldProcessor):
+    """
+    Trainer for KFold cross-validation model training and ensembling.
+    Each fold is a CPTrainer with its own model and scaler.
+    """
+    def __init__(
+            self,
+            collector: CPEntryCollector,
+            rider_feature_filter: Optional[tuple] = None,
+            stage_feature_filter: Optional[tuple] = None,
+            entry_feature_filter: Optional[tuple] = None,
+            interactions: Optional[Dict] = None,
+            rider_filter: Optional[Dict[str, Any]] = None,
+            stage_filter: Optional[Dict[str, Any]] = None,
+            scaler: Optional[Any] = None,
+            model: Optional[BaseModel] = None,
+            config: Optional[Dict[str, Any]] = None):
+        super().__init__(
+            collector=collector,
+            rider_feature_filter=rider_feature_filter,
+            stage_feature_filter=stage_feature_filter,
+            entry_feature_filter=entry_feature_filter,
+            interactions=interactions,
+            rider_filter=rider_filter,
+            stage_filter=stage_filter,
+            scaler=scaler,
+            model=model,
+            config=config,
+        )
+        self.trainers = None
+
+    @property
+    def dump_fn(self) -> str:
+        collector_fn = self.collector.dump_fn.split('_', 1)[1]
+        return (f"{self.__class__.__name__}_{Path(collector_fn).stem}_"
+                f"{self.config.get('test_size')}_{self.config.get('random_state')}_"
+                f"{'_'.join([str(v) for val in self.stage_filter.values() for v in val])
+                if self.stage_filter else list()}.json")
+
+    def train(self, n_folds=5, verbose=True):
+        """
+        Run KFold training. Each fold is a CPTrainer with its own model and scaler.
+        """
+        # Preprocess samples
+        self.preprocess()
+
+        # KFold split on batches (i.e. stages)
+        splits = self.kfold_split(n_splits=n_folds, random_state=self.config.get('random_state', 42))
+
+        # Create trainers for each fold
+        self.trainers = list()
+        for fold_idx, (train_idx, val_idx) in enumerate(splits):
+            train_batches = [self._batches[i] for i in train_idx]
+            val_batches = [self._batches[i] for i in val_idx]
+
+            # Prepare fold data
+            x_train, y_train, train_group_sizes = self.prepare_fold(train_batches)
+            x_val, y_val, val_group_sizes = self.prepare_fold(val_batches)
+
+            # Create and train a new CPTrainer for this fold
+            fold_trainer = CPTrainer(
+                collector=self.collector,
+                rider_feature_filter=self.rider_feature_filter,
+                stage_feature_filter=self.stage_feature_filter,
+                entry_feature_filter=self.entry_feature_filter,
+                interactions=self.interactions,
+                rider_filter=self.rider_filter,
+                stage_filter=self.stage_filter,
+                scaler=self.scaler,
+                model=type(self.model)(config=self.model.config),
+                config=self.config.copy() if self.config else None
+            )
+
+            # Manually set processed data for this fold
+            fold_trainer._samples = x_train
+            fold_trainer._targets = y_train
+            fold_trainer._stages = [batch.stages[0] for batch in train_batches]
+            fold_trainer._riders = [r for batch in train_batches for r in batch.riders]
+            fold_trainer._batches = train_batches
+
+            # Train the model
+            fold_trainer.model.train(x_train, train_group_sizes, y_train, verbose=verbose)
+
+            # TODO: Does this make sense? Yes - validates against the remaining fold?
+            # Test the model
+            fold_trainer.model.test(x_val, val_group_sizes, y_val, verbose=verbose)
+
+            # Plot model
+            fold_trainer.plot()
+
+            # Append trainer
+            self.trainers.append(fold_trainer)
+
+
+if __name__ == "__main__":
+
+    from cycling_predictor.models import XGBModel
+    from cycling_predictor.collectors import CPGTEntryCollector
+    from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
+    import operator as op
+
+    # Load collectors
+    _entry_collector = CPGTEntryCollector.load(
+        '../collectors/data/CPGTEntryCollector_gts_2023_2024_2025_50.json'
+    )
+    _prediction_entry_collector = CPGTEntryCollector.load(
+        '../collectors/data/CPGTEntryCollector_giro_2026.json'
+    )
+
+    # Setup profile and filters
+    profile = 'RR1'
+
+    match profile:
+
+        case 'RR1':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl')
+            _stage_feature_filter = ()
+            _entry_feature_filter = ('rider_form_mtn',)
+            _interactions = {
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 20,
+                    'learning_rate': 0.02,
+                    'max_depth': 5,
+                    'reg_alpha': 3,
+                    'reg_lambda': 3,
+                    'n_estimators': 750,
+                }
+            )
+
+        case 'RR1_RR2':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (1, 2), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl')
+            _stage_feature_filter = ()
+            _entry_feature_filter = ('rider_form_mtn',)
+            _interactions = {
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 20,
+                    'learning_rate': 0.02,
+                    'max_depth': 6,
+                    'reg_alpha': 4,
+                    'reg_lambda': 5,
+                    'n_estimators': 1000,
+                }
+            )
+
+        case 'RR2':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (2,), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl', 'itt')
+            _stage_feature_filter = ()
+            _entry_feature_filter = ('rider_form_mtn',)
+            _interactions = {
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 20,
+                    'learning_rate': 0.02,
+                    'max_depth': 6,
+                    'reg_alpha': 3,
+                    'reg_lambda': 4,
+                    'n_estimators': 1000,
+                }
+            )
+
+        case 'RR2_RR3':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (2, 3,), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'avg', 'mtn', 'gc_', 'pr_', 'tts', 'ttl', 'itt')
+            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _interactions = {
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 10,
+                    'learning_rate': 0.01,
+                    'max_depth': 6,
+                    'reg_alpha': 3,
+                    'reg_lambda': 3,
+                    'n_estimators': 750,
+                }
+            )
+
+        case 'RR3':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (3,), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'avg', 'flt', 'mtn', 'gc_', 'pr_', 'tts', 'ttl', 'itt')
+            _entry_feature_filter = ('rider_form_flt', 'rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _interactions = {
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 10,
+                    'learning_rate': 0.01,
+                    'max_depth': 9,
+                    'reg_alpha': 3,
+                    'reg_lambda': 5,
+                    'n_estimators': 500,
+                }
+            )
+
+        case 'RR4':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (4,), 'stage_type': ('RR',)}
+            _rider_feature_filter = ('cob', 'avg', 'flt', 'or_', 'spr', 'pr_', 'tts', 'ttl', 'itt', 'weight')
+            _stage_feature_filter = ()
+            _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _interactions = {
+                ('mtn', 'profile_score'): op.add,
+                ('mtn', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 20,
+                    'learning_rate': 0.01,
+                    'max_depth': 6,
+                    'reg_alpha': 6,
+                    'reg_lambda': 4,
+                    'n_estimators': 500,
+                }
+            )
+
+        case 'RR5':
+
+            # Setup filters and interactions
+            _stage_filter={'stage_profile': (5,), 'stage_type': ('RR',)}
+            _rider_feature_filter=('cob', 'avg', 'flt', 'hll', 'or_', 'spr', 'pr_', 'tts', 'ttl', 'itt')
+            _stage_feature_filter=()
+            _entry_feature_filter=('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _interactions={
+                ('mtn', 'profile_score'): op.add,
+                ('mtn', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 20,
+                    'learning_rate': 0.01,
+                    'max_depth': 6,
+                    'reg_alpha': 6,
+                    'reg_lambda': 5,
+                    'n_estimators': 500,
+                }
+            )
+
+        case 'ITT1_ITT2':
+
+            # Setup filters and interactions
+            _stage_filter = {'stage_profile': (1, 2), 'stage_type': ('ITT',)}
+            _rider_feature_filter = ('cob', 'avg', 'flt', 'mtn', 'spr')
+            _stage_feature_filter = ()
+            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _interactions = {
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            }
+
+            # Model config
+            _xgb_model = XGBModel(
+                config={
+                    'k': 10,
+                    'learning_rate': 0.01,
+                    'max_depth': 7,
+                    'reg_alpha': 5,
+                    'reg_lambda': 5,
+                    'n_estimators': 500,
+                }
+            )
+
+        case _:
+            raise ValueError(f"Unknown profile: {profile}")
+
+    # Initialize KFoldTrainer
+    _trainer = KFoldTrainer(
+        collector=_entry_collector,
+        rider_feature_filter=_rider_feature_filter,
+        entry_feature_filter=_entry_feature_filter,
+        interactions=_interactions,
+        stage_filter=_stage_filter,
+        model=_xgb_model,
+    )
+
+    # Run KFold training
+    _trainer.train(n_folds=3, verbose=True)
+
+    # Create predictors for the prediction collector
+    _predictors = list()
+    for i, _fold_trainer in enumerate(_trainer.trainers, 1):
+        _predictor = CPPredictor(
+            collector=_prediction_entry_collector,
+            rider_feature_filter=_fold_trainer.rider_feature_filter,
+            stage_feature_filter=_fold_trainer.stage_feature_filter,
+            entry_feature_filter=_fold_trainer.entry_feature_filter,
+            interactions=_fold_trainer.interactions,
+            # stage_filter=_fold_trainer.stage_filter,
+            stage_filter={'stage_type': ('RR',)},
+            scaler=_fold_trainer.scaler,
+            model=_fold_trainer.model,
+        )
+        _predictor.preprocess()
+        _predictor.predict()
+        _predictor.dump(f"data/{Path(_predictor.dump_fn).stem}_{profile}_F{i}_gauss.json")
+        _predictors.append(_predictor)
+
+    # Ensemble prediction using CPEnsemblePredictor
+    _ensemble_predictor = CPEnsemblePredictor(_predictors)
+    _ensemble_predictor.predict()

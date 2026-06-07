@@ -3,7 +3,8 @@ from typing import List, Tuple, Optional
 
 from ortools.linear_solver import pywraplp
 
-from cycling_predictor.maps import CPClassicPointsMap, CPAbbreviationMap
+from cycling_predictor.maps import CPClassicPointsMap, CPGTPointsMap, CPAbbreviationMap, \
+    CPGTGCPointsMap, CPGTSprintPointsMap, CPGTYouthPointsMap
 from cycling_predictor.classes import CPRider
 from cycling_predictor.predictions import CPPrediction
 
@@ -19,7 +20,7 @@ class CPSelector:
         self.scores = None
         self.selection = None
 
-    def score(self, include_team_points: bool = False, include_past_races: bool = False) -> None:
+    def score_classics(self, include_team_points: bool = False, include_past_races: bool = False) -> None:
         """
         Score riders based on stored predictions and Scorito logic.
 
@@ -44,12 +45,6 @@ class CPSelector:
                     if not include_past_races and prediction.stage.start_date < date.today():
                         continue
 
-                    # Temporarily only include top 10 for classic-brugge-de-panne, scheldeprijs and brabantse-pijl,
-                    # as these only have few participants registered yet, same for stages of PN & TA
-                    if predicted_rank > 10 and prediction.stage.name in (
-                            'classic-brugge-de-panne', 'scheldeprijs', 'brabantse-pijl', 'paris-nice', 'tirreno-adriatico'):
-                        continue
-
                     # Include team points for top 3 riders
                     if include_team_points and predicted_rank in (1, 2, 3):
 
@@ -68,6 +63,111 @@ class CPSelector:
                 else:
                     self.scores[rider.name] = points
 
+    def score_gts(self, include_team_points: bool = False, include_past_races: bool = False) -> None:
+        """
+        Score riders based on stored predictions and Scorito logic.
+
+        :param include_team_points: Whether to include additional points for teammates of top 3 riders.
+        :param include_past_races: Whether to include points from past races.
+        """
+        self.scores = {rider.name: 0 for rider in self.riders}
+
+        gc_ranks = {rider.name: list() for rider in self.riders}
+        sprint_ranks = {rider.name: list() for rider in self.riders}
+        youth_ranks = {rider.name: list() for rider in self.riders if rider.birthdate.year > 2000}
+
+        for prediction in self.predictions:
+            if not prediction.riders:
+                continue
+
+            # Include factor of 1.25 for mountainous stages (RR4, RR5) to reflect their higher importance for GC
+            if prediction.stage.stage_type == 'RR' and prediction.stage.stage_profile in (4, 5):
+                factor = 1.25
+            else:
+                factor = 1.0
+
+            for i, rider in enumerate(prediction.riders):
+                predicted_rank = int(prediction.prediction[i])
+
+                # If GC stage, accumulate ranks for GC and youth scoring
+                if prediction.stage.stage_type == 'RR' and prediction.stage.stage_profile in (4, 5):
+                    gc_ranks[rider.name].append(predicted_rank)
+                    if rider.birthdate.year > 2000:
+                        youth_ranks[rider.name].append(predicted_rank)
+                # elif prediction.stage.stage_type == 'ITT':
+                #     gc_ranks[rider.name].append(predicted_rank)
+                #     if rider.birthdate.year > 2000:
+                #         youth_ranks[rider.name].append(predicted_rank)
+                # If sprint stage, accumulate ranks for sprint scoring
+                elif prediction.stage.stage_type == 'RR' and prediction.stage.stage_profile in (1, 2):
+                    sprint_ranks[rider.name].append(predicted_rank)
+
+                # Scorito scoring: check if rank is in points map
+                points = 0
+                if predicted_rank in CPGTPointsMap:
+                    points = CPGTPointsMap[predicted_rank]
+
+                    # Exclude races that have already taken place
+                    if not include_past_races and prediction.stage.start_date < date.today():
+                        continue
+
+                    # Include team points for top 3 riders
+                    if include_team_points and predicted_rank == 1:
+
+                        # Add points for everyone in the team
+                        for _team_rider in prediction.riders:
+                            if rider.team == _team_rider.team and rider.name != _team_rider.name:
+                                self.scores[_team_rider.name] += 10
+
+                if rider.name in self.scores:
+                    self.scores[rider.name] += factor * points
+                else:
+                    self.scores[rider.name] = factor * points
+
+        # Implement additional scoring for sprinters and GC contenders based on predicted ranks
+        # Lowest total ranks GC stages (ITT, RR4, RR5) and in sprint stages (RR1, RR2)
+        # Order GC ranks, total lowest is highest rank, then top-down
+        total_gc_ranks = [(rider, sum(gc_ranks[rider])) for rider in gc_ranks]
+        total_gc_ranks.sort(key=lambda x: x[1])
+
+        # Assign additional points to riders based on predicted GC
+        print("GC ranking:")
+        for i, (rider_name, total_rank) in enumerate(total_gc_ranks, start=1):
+            _score = CPGTGCPointsMap.get(i, 0)
+            if _score > 0:
+                print(f"{i}. {rider_name} - Total GC rank: {total_rank} ({_score} pts)")
+                self.scores[rider_name] += _score
+            else:
+                break
+
+        # Order overall sprint ranks, total lowest is highest rank, then top-down
+        total_sprint_ranks = [(rider, sum(sprint_ranks[rider])) for rider in sprint_ranks]
+        total_sprint_ranks.sort(key=lambda x: x[1])
+
+        # Assign additional points to riders based on predicted GC
+        print("\nSprint ranking:")
+        for i, (rider_name, total_rank) in enumerate(total_sprint_ranks, start=1):
+            _score = CPGTSprintPointsMap.get(i, 0)
+            if _score > 0:
+                print(f"{i}. {rider_name} - Total sprint rank: {total_rank} ({_score} pts)")
+                self.scores[rider_name] += _score
+            else:
+                break
+
+        # Order youth ranks, for rider with birthyear > 2000, total lowest is highest rank, then top-down
+        total_youth_gc_ranks = [(rider, sum(youth_ranks[rider])) for rider in youth_ranks]
+        total_youth_gc_ranks.sort(key=lambda x: x[1])
+
+        # Assign additional points to riders based on predicted youth
+        print("\nYouth ranking:")
+        for i, (rider_name, total_rank) in enumerate(total_youth_gc_ranks, start=1):
+            _score = CPGTYouthPointsMap.get(i, 0)
+            if _score > 0:
+                print(f"{i}. {rider_name} - Total youth rank: {total_rank} ({_score} pts)")
+                self.scores[rider_name] += _score
+            else:
+                break
+
     def select(self,
                budget: float,
                team_limit: int = 4,
@@ -75,6 +175,7 @@ class CPSelector:
                exclude_riders: Optional[Tuple[str, ...]] = None,
                min_riders_per_race: Optional[int] = None,
                min_riders_scoring_per_race: Optional[int] = None,
+               max_sprinters: Optional[int] = 6,
                use_full_budget: bool = False,
                verbose: bool = True) -> Tuple[float, float]:
         """
@@ -150,6 +251,11 @@ class CPSelector:
                 # Only apply if it's possible to satisfy
                 if len(scoring_indices) >= min_riders_scoring_per_race:
                     solver.Add(solver.Sum([x[i] for i in scoring_indices]) >= min_riders_scoring_per_race)
+
+        # Constraint 6: Max number of sprinters
+        spr_indices = [i for i, r in enumerate(valid_riders) if getattr(r, 'category', None) == 'spr']
+        if spr_indices:
+            solver.Add(solver.Sum([x[i] for i in spr_indices]) <= max_sprinters)
 
         # Objective: Maximize Score
         solver.Maximize(solver.Sum([x[i] * self.scores[rider.name] for i, rider in enumerate(valid_riders)]))
@@ -238,7 +344,8 @@ class CPSelector:
                         break
                 
                 if rank:
-                    points = CPClassicPointsMap.get(rank, 0)
+                    # TODO: Make generic for classics & GTs
+                    points = CPGTPointsMap.get(rank, 0)
                     row_data.append(f"{rank} ({points})")
                     rider_total_points += points
                     race_totals[i] += points
@@ -256,20 +363,40 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
     # Load predictors
-    _sprint_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_sprint.json')
-    _cobbles_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_cobbles.json')
-    _hills_predictor = CPPredictor.load(r'data\CPPredictor_classics_2026_RR_hills.json')
-    _pn_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_5.json')
-    _ta_predictor = CPPredictor.load(r'data\CPPredictor_paris_nice_tirreno_adriatico_2026_RR_1.json')
+    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F1_gauss.json')
+    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F2_gauss.json')
+    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F3_gauss.json')
+    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F1_gauss.json')
+    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F2_gauss.json')
+    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F3_gauss.json')
+    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F1_gauss.json')
+    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F2_gauss.json')
+    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F3_gauss.json')
+    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F1_gauss.json')
+    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F2_gauss.json')
+    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F3_gauss.json')
+    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F1_gauss.json')
+    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F2_gauss.json')
+    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F3_gauss.json')
 
     # Set up ensemble predictor
     _ensemble_predictor = CPEnsemblePredictor(
         predictors=[
-            _sprint_predictor,
-            _cobbles_predictor,
-            _hills_predictor,
-            _pn_predictor,
-            _ta_predictor,
+            _rr1_predictor_1,
+            _rr1_predictor_2,
+            _rr1_predictor_3,
+            _rr2_predictor_1,
+            _rr2_predictor_2,
+            _rr2_predictor_3,
+            _rr3_predictor_1,
+            # _rr3_predictor_2,
+            _rr3_predictor_3,
+            _rr4_predictor_1,
+            _rr4_predictor_2,
+            _rr4_predictor_3,
+            _rr5_predictor_1,
+            _rr5_predictor_2,
+            _rr5_predictor_3,
         ]
     )
 
@@ -277,25 +404,40 @@ if __name__ == "__main__":
     _ensemble_predictor.preprocess(rider_feature_noise=0.1)
 
     # Predict
-    _predictions = _ensemble_predictor.predict(n=1000, rider_feature_noise=0.1, normalize=True)
+    _predictions = _ensemble_predictor.predict(n=100, rider_feature_noise=0.1, normalize=True, gate=True)
 
     # Create selector
     _selector = CPSelector(
-        riders=_sprint_predictor.collector.riders,
+        riders=_rr5_predictor_1.collector.riders,
         predictions=_predictions,
     )
 
+    # Optionally dump specific prediction
+    dump_stages = (1, 2, 3)
+    for _prediction in _predictions:
+        if _prediction.stage.stage_number in dump_stages:
+            _prediction.dump()
+
     # Score riders
-    _selector.score()
+    _selector.score_gts()
+
+    # Sort riders by score and print top 50, include cost
+    sorted_riders = sorted(_selector.scores.items(), key=lambda x: x[1], reverse=True)
+    print("\nTop 50 riders by score:")
+    print("Rank  Rider".ljust(40), "Score  Cost  Score/Cost")
+    for i, (rider_name, score) in enumerate(sorted_riders[:50], start=1):
+        rider_cost = next((r.cost for r in _selector.riders if r.name == rider_name), None)
+        rider_score_per_cost = score / rider_cost if rider_cost else 0
+        print(f"{i}. {rider_name.ljust(40)} {score} pts  €{rider_cost}  {rider_score_per_cost:.2f} pts/€")
 
     # Select team
     _max_score, _cost = _selector.select(
-        budget=45.0,
+        budget=42.0,
         team_limit=4,
         total_riders=20,
-        exclude_riders=('remco-evenepoel', 'mads-pedersen', 'tim-merlier'),
-        min_riders_per_race=3,
-        min_riders_scoring_per_race=3,
+        # min_riders_per_race=3,
+        min_riders_scoring_per_race=5,
+        max_sprinters=6,
         use_full_budget=True,
     )
 

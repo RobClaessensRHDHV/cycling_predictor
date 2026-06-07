@@ -1,5 +1,6 @@
 from typing import Any, Dict, List, Optional
 from uuid import uuid4
+from functools import cached_property
 import json
 
 import numpy as np
@@ -32,6 +33,7 @@ class CPPrediction:
         self.result = result
         self.stage = stage
         self.riders = riders
+        self.gauss_factor = 0.0
         self._uid = str(uuid4())
 
     def __repr__(self):
@@ -50,7 +52,7 @@ class CPPrediction:
     def uid(self):
         return self._uid
 
-    @property
+    @cached_property
     def rider_prediction(self) -> List[CPRider]:
         """
         Get the list of predicted riders in order.
@@ -59,7 +61,7 @@ class CPPrediction:
         """
         return [self.riders[i] for i in np.argsort(self.prediction)]
 
-    @property
+    @cached_property
     def rider_result(self) -> Optional[List[CPRider]]:
         """
         Get the list of actual riders in order.
@@ -68,6 +70,7 @@ class CPPrediction:
         """
         if self.result is None:
             return None
+        # TODO: Filter 'DNF' or any non-numeric values (or is 0 returned for DNF?)
         return [self.riders[i] for i in np.argsort(self.result)]
 
     def print(self, k: Optional[int] = 20):

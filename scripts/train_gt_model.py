@@ -9,97 +9,118 @@ from cycling_predictor.processors import CPTrainer, CPPredictor
 
 # Get entry collector
 _entry_collector = CPGTEntryCollector.load(
-    '../cycling_predictor/collectors/data/entry_collector_giro_tour_vuelta_2023_2024_2025_100.json')
-
-# Set up trainer (RR1)
-trainer = CPTrainer(
-    collector=_entry_collector,
-    rider_feature_filter=('pr_', 'tts', 'ttl', 'cob', 'mtn', 'gc_'),
-    stage_feature_filter=('race_startlist_quality_score',),
-    interactions={
-        ('spr', 'gradient_final_km'): op.sub,
-    },
-    stage_filter={'stage_profile': (1,), 'stage_type': ('RR',)},
+    '../cycling_predictor/collectors/data/CPGTEntryCollector_gts_2023_2024_2025_100.json'
 )
 
-# # Set up trainer (RR2 & RR3)
-# trainer = CPTrainer(
-#     collector=_entry_collector,
-#     rider_feature_filter=('pr_', 'tts', 'ttl', 'cob', 'mtn', 'gc_'),
-#     stage_feature_filter=('race_startlist_quality_score',),
-#     interactions={
-#         ('spr', 'gradient_final_km'): op.sub,
-#         ('hll', 'profile_score'): op.add,
-#         ('hll', 'vertical_meters'): op.add,
-#     },
-#     stage_filter={'stage_profile': (2, 3,), 'stage_type': ('RR',)},
-# )
+# Setup profile
+profile = 'RR1'
 
-# # Set up trainer (RR4 & RR5)
-# trainer = CPTrainer(
-#     collector=_entry_collector,
-#     rider_feature_filter=('pr_', 'tts', 'ttl', 'flt', 'cob'),
-#     stage_feature_filter=('race_startlist_quality_score',),
-#     interactions={
-#         # TODO: Check interaction after normalization
-#         ('spr', 'gradient_final_km'): op.sub,
-#         ('hll', 'profile_score'): op.add,
-#         ('hll', 'vertical_meters'): op.add,
-#         ('mtn', 'profile_score'): op.add,
-#         ('mtn', 'vertical_meters'): op.add,
-#     },
-#     stage_filter={'stage_profile': (4, 5,), 'stage_type': ('RR',)},
-# )
+# Setup stage filter
+match profile:
+    case 'RR1':
+        stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
+    case 'RR2_RR3':
+        stage_filter = {'stage_profile': (2, 3,), 'stage_type': ('RR',)}
+    case 'RR4_RR5':
+        stage_filter = {'stage_profile': (4, 5,), 'stage_type': ('RR',)}
+    case _:
+        raise ValueError(f"Unknown profile: {profile}")
+
+# TODO: Wrap in a function to run hyperparameter tuning for different hyperparameters
+#  - Split validation data first (20%)
+#  - Train on training (60%) and test (20%) data with varying splits (including in tuning)
+#  - Find stable regions in hyperparameter space, to avoid overfitting to specific random states
+# Setup trainer
+match profile:
+    # TODO: 'entry_feature_filter' to exclude irrelevant form features
+    case 'RR1':
+        trainer = CPTrainer(
+            collector=_entry_collector,
+            rider_feature_filter=('cob', 'mtn', 'gc_'),
+            stage_feature_filter=(),
+            interactions={
+                ('spr', 'gradient_final_km'): op.sub,
+            },
+            stage_filter=stage_filter,
+        )
+
+    case 'RR2_RR3':
+        trainer = CPTrainer(
+            collector=_entry_collector,
+            rider_feature_filter=('cob', 'mtn', 'gc_'),
+            stage_feature_filter=(),
+            interactions={
+                ('spr', 'gradient_final_km'): op.sub,
+                ('hll', 'profile_score'): op.add,
+                ('hll', 'vertical_meters'): op.add,
+            },
+            stage_filter=stage_filter,
+        )
+
+    case 'RR4_RR5':
+        trainer = CPTrainer(
+            collector=_entry_collector,
+            rider_feature_filter=('cob',),
+            stage_feature_filter=(),
+            interactions={
+                # TODO: Check interaction after normalization
+                ('spr', 'gradient_final_km'): op.sub,
+                ('mtn', 'profile_score'): op.add,
+                ('mtn', 'vertical_meters'): op.add,
+            },
+            stage_filter=stage_filter,
+        )
+
+    case _:
+        raise ValueError(f"Unknown profile: {profile}")
 
 # Preprocess data
 trainer.preprocess()
 
 # Initialize model
-# RR1
-xgb_model = XGBModel(
-    config={
-        'k': 10,
-        'learning_rate': 0.01,
-        'max_depth': 8,                 # 7 - 8
-        'reg_alpha': 1,
-        'reg_lambda': 1,
-        'n_estimators': 1000,            # 500 - 1000
-    }
-)
+match profile:
+    case 'RR1':
+        xgb_model = XGBModel(
+            config={
+                'k': 10,
+                'learning_rate': 0.01,
+                'max_depth': 8,                 # 7 - 8
+                'reg_alpha': 1,
+                'reg_lambda': 1,
+                'n_estimators': 1000,            # 500 - 1000
+            }
+        )
 
-# # RR2/3
-# xgb_model = XGBModel(
-#     config={
-#         'k': 10,
-#         'learning_rate': 0.01,
-#         'max_depth': 5,
-#         'reg_alpha': 0,
-#         'reg_lambda': 0,
-#         'n_estimators': 500,
-#     }
-# )
+    case 'RR2_RR3':
+        xgb_model = XGBModel(
+            config={
+                'k': 10,
+                'learning_rate': 0.01,
+                'max_depth': 5,
+                'reg_alpha': 0,
+                'reg_lambda': 0,
+                'n_estimators': 500,
+            }
+        )
 
-# # RR4/5
-# xgb_model = XGBModel(
-#     config={
-#         'k': 10,
-#         'learning_rate': 0.01,
-#         'max_depth': 10,                # Check 8 - 10
-#         'reg_alpha': 0,
-#         'reg_lambda': 1,
-#         'n_estimators': 750,
-#     }
-# )
+    case 'RR4_RR5':
+        xgb_model = XGBModel(
+            config={
+                'k': 10,
+                'learning_rate': 0.01,
+                'max_depth': 10,                # Check 8 - 10
+                'reg_alpha': 0,
+                'reg_lambda': 1,
+                'n_estimators': 750,
+            }
+        )
 
 # Set model
 trainer.model = xgb_model
 
 # Train model
-random_state = 16   # Best RR1
-# random_state = 22   # Best RR1/2
-# random_state = 7    # Best RR2/3
-# random_state = 9    # Best RR4/5
-# random_state = range(1, 51)
+# random_state = x   # Best RR1
+random_state = range(1, 51)
 if isinstance(random_state, int):
     trainer.config = {'random_state': random_state}
     trainer.train()
@@ -134,15 +155,18 @@ else:
     print(f"Avg SR20: {np.mean(sr20s):.3f} ± {np.std(sr20s):.3f}")
     print(f"Max SR20: {max(sr20s):.3f}")
 
+# Get prediction entry collector
+_prediction_entry_collector = CPGTEntryCollector.load(
+    '../cycling_predictor/collectors/data/CPGTEntryCollector_giro_2026_100.json'
+)
+
 # Set up predictor with trained model
 predictor = CPPredictor(
-    collector=_entry_collector,
+    collector=_prediction_entry_collector,
     rider_feature_filter=trainer.rider_feature_filter,
     stage_feature_filter=trainer.stage_feature_filter,
     interactions=trainer.interactions,
-    stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (1,), 'stage_type': ('RR',)},
-    # stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (2, 3,), 'stage_type': ('RR',)},
-    # stage_filter={'name': ('tour-de-france',), 'year': (2025,), 'stage_profile': (4, 5,), 'stage_type': ('RR',)},
+    stage_filter=stage_filter,
     scaler=trainer.scaler,
     model=trainer.model,
 )

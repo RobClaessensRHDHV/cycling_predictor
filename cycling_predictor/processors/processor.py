@@ -23,6 +23,7 @@ class CPProcessor(ABC):
             collector: CPEntryCollector,
             rider_feature_filter: Optional[Tuple[str, ...]] = None,
             stage_feature_filter: Optional[Tuple[str, ...]] = None,
+            entry_feature_filter: Optional[Tuple[str, ...]] = None,
             interactions: Optional[Dict[Tuple[str, ...], op]] = None,
             rider_filter: Optional[Dict[str, Any]] = None,
             stage_filter: Optional[Dict[str, Any]] = None,
@@ -33,6 +34,7 @@ class CPProcessor(ABC):
         :param collector: Entry collector from which data will be retrieved.
         :param rider_feature_filter: Tuple of rider features to exclude.
         :param stage_feature_filter: Tuple of stage features to exclude.
+        :param entry_feature_filter: Tuple of entry features to exclude.
         :param interactions: Interaction features to create.
         :param rider_filter: Filter for riders to include.
         :param stage_filter: Filter for stages to include.
@@ -43,6 +45,7 @@ class CPProcessor(ABC):
         self.collector = collector
         self.rider_feature_filter = rider_feature_filter
         self.stage_feature_filter = stage_feature_filter
+        self.entry_feature_filter = entry_feature_filter
         self.interactions = interactions
         self.rider_filter = rider_filter
         self.stage_filter = stage_filter
@@ -50,6 +53,13 @@ class CPProcessor(ABC):
         self.model = model
         self.config = config
         self.dataloader: Optional[DataLoader] = None
+
+        # Private attributes set during collecting and batching
+        self._samples = None
+        self._targets = None
+        self._stages = None
+        self._riders = None
+        self._batches = None
 
     @property
     def rider_feature_filter(self) -> Optional[Tuple[str, ...]]:
@@ -76,6 +86,18 @@ class CPProcessor(ABC):
         self._validate_interactions()
 
     @property
+    def entry_feature_filter(self) -> Optional[Tuple[str, ...]]:
+        try:
+            return self.__entry_feature_filter
+        except AttributeError:
+            return None
+
+    @entry_feature_filter.setter
+    def entry_feature_filter(self, entry_feature_filter: Optional[Tuple[str, ...]] = None) -> None:
+        self.__entry_feature_filter = entry_feature_filter
+        self._validate_interactions()
+
+    @property
     def interactions(self) -> Optional[Dict[Tuple[str, str], op]]:
         try:
             return self.__interactions
@@ -89,7 +111,8 @@ class CPProcessor(ABC):
 
     def _validate_interactions(self):
         features = [fn for fn in (CPEntry._rider_sample_keys + CPEntry._stage_sample_keys + CPEntry._entry_sample_keys)
-                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()))]
+                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()) + (
+                    self.entry_feature_filter or tuple()))]
 
         # Validate interactions
         if self.interactions:
@@ -122,7 +145,8 @@ class CPProcessor(ABC):
     @property
     def feature_names(self) -> Tuple[str, ...]:
         features = [fn for fn in (CPEntry._rider_sample_keys + CPEntry._stage_sample_keys + CPEntry._entry_sample_keys)
-                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()))]
+                    if fn not in ((self.rider_feature_filter or tuple()) + (self.stage_feature_filter or tuple()) + (
+                    self.entry_feature_filter or tuple()))]
 
         for (f1, f2), operation in self.interactions.items():
             features.append(f"{f1}_{operation.__name__}_{f2}")
@@ -134,15 +158,18 @@ class CPProcessor(ABC):
     def dump_fn(self) -> str:
         return f"{self.__class__.__name__}.json"
 
-    @abstractmethod
-    def scale(self, samples: np.ndarray) -> np.ndarray:
+    def scale(self, samples: np.ndarray) ->np.ndarray:
         """
-        Scale samples using the provided scaler.
+        Scale samples using the scaler.
 
         :param samples: Samples to scale.
         :return: Scaled samples.
         """
-        pass
+        if self.scaler is None:
+            self.scaler = StandardScaler()
+            return self.scaler.fit_transform(samples)
+        else:
+            return self.scaler.transform(samples)
 
     def preprocess(self, batch_size: Optional[int] = 0, rider_feature_noise: Optional[float] = None) -> None:
         """
@@ -152,39 +179,12 @@ class CPProcessor(ABC):
         :param rider_feature_noise: Optional noise to add to rider features for augmentation.
         :return:
         """
-        samples, targets, stages, riders = list(), list(), list(), list()
 
-        for stage in self.collector.stages:
-            skip_stage = False
-            if self.stage_filter:
-                for key, value in self.stage_filter.items():
-                    attr = getattr(stage, key)
-                    if isinstance(attr, (list, tuple, set)):
-                        if not any([a in value for a in attr]):
-                            print(f"Skipping stage {stage} due to stage filter {value} on {key}.")
-                            skip_stage = True
-                            break
-                    else:
-                        if attr not in value:
-                            print(f"Skipping stage {stage} due to stage filter {value} on {key}.")
-                            skip_stage = True
-                            break
-
-            # Skip stage if flagged
-            if skip_stage:
-                continue
-
-            entries = self.collector.get_entries_per_stage(stage)
-            for entry in entries:
-                sample, target, stage_uid, rider_uid = entry.to_data(self.rider_feature_filter, self.stage_feature_filter)
-                samples.append(sample)
-                targets.append(target)
-                stages.append(stage_uid)
-                riders.append(rider_uid)
+        # Collect samples, targets and stages
+        samples, targets, stages, riders = self.collect()
 
         # TODO: Possibly also do interactions after normalization
         # Include interactions in samples, applied on numpy arrays
-        samples = np.array(samples)
         if self.interactions:
             for (f1, f2), operation in self.interactions.items():
                 if f1 in self.feature_names and f2 in self.feature_names:
@@ -208,14 +208,102 @@ class CPProcessor(ABC):
         # NOTE: Not recommended to apply in general, but useful for experimentation / validation
         if rider_feature_noise:
             for i, fn in enumerate(self.feature_names):
+                # TODO: Probably include 'form' features in augmentation
                 if fn in CPEntry._rider_sample_keys:
                     samples[:, i] += np.random.normal(scale=rider_feature_noise, size=samples.shape[0])
+
+        # Overwrite processed samples (create additional attribute later?)
+        self._samples = samples
+
+        # Create batches
+        self.batch()
 
         # Create DataLoader
         dataset = CyclingDataset(samples, targets, stages, riders)
         self.dataloader = DataLoader(dataset, batch_size=batch_size or len(dataset))
 
         print(f"Created dataloader with {len(dataset)} samples of {len(set(stages))} stages and {len(set(riders))} riders.")
+
+    def collect(self):
+        """
+        Collect all samples, targets, and stages from the collector, applying filters and feature selection.
+        Stores results in self._samples, self._targets, self._stages.
+        """
+        samples, targets, stages, riders = list(), list(), list(), list()
+        for stage in self.collector.stages:
+
+            # Apply stage filter if present
+            skip_stage = False
+            if self.stage_filter:
+                for key, value in self.stage_filter.items():
+                    attr = getattr(stage, key)
+                    if isinstance(attr, (list, tuple, set)):
+                        if not any([a in value for a in attr]):
+                            print(f"Skipping stage {stage} due to stage filter {value} on {key}.")
+                            skip_stage = True
+                            break
+                    else:
+                        if attr not in value:
+                            print(f"Skipping stage {stage} due to stage filter {value} on {key}.")
+                            skip_stage = True
+                            break
+
+            # Skip stage if flagged
+            if skip_stage:
+                continue
+
+            # Collect entries for this stage
+            entries = self.collector.get_entries_per_stage(stage)
+
+            # If less than 20 entries, skip stage
+            if len(entries) < 20:
+                print(f"Skipping stage {stage} due to insufficient entries ({len(entries)}).")
+                continue
+
+            # Store samples, targets, and stages for this stage
+            for entry in entries:
+                sample, target, stage_uid, rider_uid = entry.to_data(
+                    self.rider_feature_filter, self.stage_feature_filter, self.entry_feature_filter)
+                samples.append(sample)
+                targets.append(target)
+                stages.append(stage_uid)
+                riders.append(rider_uid)
+
+        self._samples = np.asarray(samples)
+        self._targets = np.asarray(targets)
+        self._stages = stages
+        self._riders = riders
+
+        return np.array(samples), np.array(targets), stages, riders
+
+    def batch(self):
+        """
+        Returns a list of batches, each batch is a dict with keys:
+        - 'samples': np.ndarray
+        - 'targets': np.ndarray
+        - 'stage': stage UID
+        Batches are grouped by stage.
+        Stores the result in self._batches for reuse.
+        """
+        if self._samples is None:
+            raise ValueError("You must call collect() before batch().")
+
+        batches = list()
+        stage_index_mapping = dict()
+        for idx, stage in enumerate(self._stages):
+            if stage not in stage_index_mapping:
+                stage_index_mapping[stage] = []
+            stage_index_mapping[stage].append(idx)
+
+        # Create batches
+        for stage, indices in stage_index_mapping.items():
+            batch_samples = self._samples[indices]
+            batch_targets = self._targets[indices]
+            batch_riders = [self._riders[i] for i in indices] if hasattr(self, '_riders') else None
+            batch = CyclingDataset(batch_samples, batch_targets, [stage], batch_riders)
+            batches.append(batch)
+
+        self._batches = batches
 
     def plot(self):
         """
@@ -232,6 +320,7 @@ class CPProcessor(ABC):
             "collector": self.collector.dumps(),
             "rider_feature_filter": self.rider_feature_filter,
             "stage_feature_filter": self.stage_feature_filter,
+            "entry_feature_filter": self.entry_feature_filter,
             "interactions": {
                 '-'.join(k): v.__name__ for k, v in self.interactions.items()
             },
@@ -262,6 +351,7 @@ class CPProcessor(ABC):
             collector=CPEntryCollector.loads(data['collector']),
             rider_feature_filter=tuple(data['rider_feature_filter']) if data['rider_feature_filter'] else None,
             stage_feature_filter=tuple(data['stage_feature_filter']) if data['stage_feature_filter'] else None,
+            entry_feature_filter=tuple(data['entry_feature_filter']) if data['entry_feature_filter'] else None,
             interactions={tuple(k.split('-')): getattr(op, v) for k, v in data['interactions'].items()},
             rider_filter=data['rider_filter'],
             stage_filter=data['stage_filter'],

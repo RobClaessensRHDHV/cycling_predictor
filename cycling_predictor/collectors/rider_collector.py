@@ -150,7 +150,7 @@ class CPRiderCollector(CPBaseCollector):
     def dump(self, fp: Optional[str] = None):
         data = self.dumps()
         if not fp:
-            fp = f'data/rider_collector_{"_".join(self.categories)}_{"_".join(str(year) for year in self.years)}.json'
+            fp = f'data/{self.__class__.__name__}_{"_".join(self.categories)}_{"_".join(str(year) for year in self.years)}.json'
 
         with open(fp, 'w+') as f:
             json.dump(data, f, indent=2)
@@ -168,14 +168,11 @@ if __name__ == "__main__":
     scraper = cloudscraper.create_scraper()
     requests.get = scraper.get
 
-    # _collector = CPRiderCollector(
-    #     categories=['giro', 'tour', 'vuelta'],
-    #     years=[2025]
-    # )
     _collector = CPRiderCollector(
-        categories=['classics'],
-        years=[2024, 2025]
+        categories=['gts'],
+        years=[2023, 2024, 2025],
     )
+
     _collector.get_riders()
     _collector.get_co_rider_data()
     for _rider in _collector.riders:

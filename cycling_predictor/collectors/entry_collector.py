@@ -182,8 +182,13 @@ class CPEntryCollector(CPBaseCollector):
 
             # Retrieve results, compute form, get rank
             rider.get_results(stage.year, raise_error=raise_error)
-            form = rider.get_form(stage)
+            form, form_flt, form_hll, form_mtn = rider.get_forms(stage)
             rank = rider.get_rank(stage)
+
+            # One-hot encoding for GTs
+            is_giro = int('giro' in stage.name)
+            is_tour = int('tour' in stage.name)
+            is_vuelta = int('vuelta' in stage.name)
 
             # If rank is available and within max_rank, create entry for training
             if rank and (rank <= self.max_rank or self.max_rank == -1):
@@ -194,6 +199,12 @@ class CPEntryCollector(CPBaseCollector):
                     rank=rank,
                     rider_age=age,
                     rider_form=form,
+                    rider_form_flt=form_flt,
+                    rider_form_hll=form_hll,
+                    rider_form_mtn=form_mtn,
+                    is_giro=is_giro,
+                    is_tour=is_tour,
+                    is_vuelta=is_vuelta,
                 )
 
                 self._add_entry(entry)
@@ -207,6 +218,12 @@ class CPEntryCollector(CPBaseCollector):
                     rank=None,
                     rider_age=age,
                     rider_form=form,
+                    rider_form_flt=form_flt,
+                    rider_form_hll=form_hll,
+                    rider_form_mtn=form_mtn,
+                    is_giro=is_giro,
+                    is_tour=is_tour,
+                    is_vuelta=is_vuelta,
                 )
 
                 self._add_entry(entry)
@@ -359,6 +376,25 @@ class CPGTEntryCollector(CPEntryCollector):
         self.stage_number_end: int = stage_number_end
         self.dropouts: Dict[int, List[str]] = dropouts or dict()
 
+    @property
+    def dump_fn(self) -> str:
+        if self.max_rank == -1:
+            if self.stage_number_start != 1 or self.stage_number_end != 21:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_"
+                        f"stage_{self.stage_number_start}_{self.stage_number_end}.json")
+            else:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}.json")
+        else:
+            if self.stage_number_start != 1 or self.stage_number_end != 21:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_"
+                        f"stage_{self.stage_number_start}_{self.stage_number_end}_{self.max_rank}.json")
+            else:
+                return (f"{self.__class__.__name__}_{"_".join(self.categories).replace('-', '_')}_"
+                        f"{"_".join(str(year) for year in self.years)}_{self.max_rank}.json")
+
     def get_entries(self):
         for rider in self.riders:
             print(f"Collecting entries for rider {rider.name}... ({self.riders.index(rider) + 1}/{len(self.riders)})")
@@ -404,46 +440,18 @@ if __name__ == "__main__":
     requests.get = scraper.get
 
     # Get rider collector
-    with open('data/rider_collector_2026.json', 'r') as fp:
+    with open('data/RiderCollector_gts_2023_2024_2025.json', 'r') as fp:
         _rider_collector = CPRiderCollector.loads(json.load(fp))
 
-    # Collect entries
-    _collect_classics = True
-    if _collect_classics:
+    # GT collection
+    _stage_collector = CPGTEntryCollector(
+        categories=['gts'],
+        years=[2023, 2024, 2025],
+        # years=[2026],
+        riders=_rider_collector.riders,
+        max_rank=100,
+    )
+    _stage_collector.get_entries()
 
-        # Classic collection
-        _classic_collector = CPClassicEntryCollector(
-            categories=['classics'],
-            # years=[2023, 2024, 2025],
-            years=[2026],
-            fallback_year=2025,
-            riders=_rider_collector.riders,
-            # max_rank=50,
-        )
-        _classic_collector.get_entries()
-
-        # Dump classic collector
-        _classic_collector.dump()
-
-    else:
-
-        # GT collection
-        _stage_collector = CPGTEntryCollector(
-            categories=['paris-nice', 'tirreno-adriatico'],
-            # years=[2023, 2024, 2025],
-            years=[2026],
-            riders=_rider_collector.riders,
-            # max_rank=50,
-            stage_number_start=7,
-            stage_number_end=7,
-            dropouts={
-                2: ['lennert-van-eetvelt'],
-                4: ['juan-ayuso-pesquera', 'daan-hoole', 'brandon-mcnulty', 'torstein-traeen'],
-                5: ['fernando-gaviria'],
-                6: ['corbin-strong']
-            },
-        )
-        _stage_collector.get_entries()
-
-        # Dump stage collector
-        _stage_collector.dump()
+    # Dump stage collector
+    _stage_collector.dump()
