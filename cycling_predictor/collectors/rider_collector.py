@@ -4,7 +4,6 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 import requests
-import cloudscraper
 from procyclingstats import Rider
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -163,10 +162,6 @@ class CPRiderCollector(CPBaseCollector):
 
 
 if __name__ == "__main__":
-
-    # Monkey patch requests with cloudscraper to bypass Cloudflare protections
-    scraper = cloudscraper.create_scraper()
-    requests.get = scraper.get
 
     _collector = CPRiderCollector(
         categories=['tour'],

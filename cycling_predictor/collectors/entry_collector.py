@@ -5,7 +5,6 @@ from typing import Any, Dict, List, Optional
 from pathlib import Path
 
 import requests
-import cloudscraper
 import procyclingstats
 from procyclingstats import Race, Stage
 
@@ -434,10 +433,6 @@ class CPGTEntryCollector(CPEntryCollector):
 if __name__ == "__main__":
 
     from cycling_predictor.collectors.rider_collector import CPRiderCollector
-
-    # Monkey patch requests with cloudscraper to bypass Cloudflare protections
-    scraper = cloudscraper.create_scraper()
-    requests.get = scraper.get
 
     # Get rider collector
     with open('data/CPRiderCollector_tour_2026.json', 'r') as fp:

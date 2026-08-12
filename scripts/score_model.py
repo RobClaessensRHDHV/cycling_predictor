@@ -1,8 +1,6 @@
 from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
-import cloudscraper
-import requests
 
 from cycling_predictor.maps import CPOMaxScore, CPAbbreviationMap, CPCOPointsMap, CPCOFactorMap
 from cycling_predictor.predictions.prediction import CPPrediction
@@ -223,10 +221,6 @@ def score_model():
         'prediction_la_fleche_wallonne_2026.json',
         'prediction_liege_bastogne_liege_2026.json',
     ]
-
-    # Monkey patch requests with cloudscraper
-    scraper = cloudscraper.create_scraper()
-    requests.get = scraper.get
 
     # Data for plotting
     race_aliases = []

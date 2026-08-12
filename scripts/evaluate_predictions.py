@@ -84,12 +84,5 @@ def evaluate_race_predictions():
 
 if __name__ == "__main__":
 
-    import cloudscraper
-    import requests
-
-    # Monkey patch requests with cloudscraper to bypass Cloudflare protections
-    scraper = cloudscraper.create_scraper()
-    requests.get = scraper.get
-
     # Evaluate predictions
     evaluate_race_predictions()
