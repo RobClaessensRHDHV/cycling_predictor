@@ -81,6 +81,41 @@ class CPRider:
     def uid(self):
         return self._uid
 
+    @property
+    def is_gc(self):
+        # One-hot encoding for GC riders
+        return int(self.gc_ and self.gc_ >= 85)
+
+    @property
+    def is_mtn(self):
+        # One-hot encoding for climbers
+        return int(self.mtn and self.mtn >= 85)
+
+    @property
+    def is_hll(self):
+        # One-hot encoding for puncheurs
+        return int(self.hll and self.hll >= 85)
+
+    @property
+    def is_spr(self):
+        # One-hot encoding for sprinters
+        return int(self.spr and self.spr >= 85)
+
+    @property
+    def is_itt(self):
+        # One-hot encoding for ITT specialists
+        return int(self.itt and self.itt >= 85)
+
+    @property
+    def is_or(self):
+        # One-hot encoding for classic riders
+        return int(self.or_ and self.or_ >= 85)
+
+    @property
+    def is_cob(self):
+        # One-hot encoding for cobbled riders
+        return int(self.cob and self.cob >= 85)
+
     def get_results(self, year, raise_error: bool = False):
         if self.results and self.results.get(year):
             return
@@ -381,6 +416,13 @@ class CPEntry:
         'pr_',
         'height',
         'weight',
+        'is_gc',
+        'is_mtn',
+        'is_hll',
+        'is_spr',
+        'is_itt',
+        'is_or',
+        'is_cob',
     )
 
     _stage_sample_keys = (
@@ -412,9 +454,6 @@ class CPEntry:
         rider_form_flt: float = 0.0,
         rider_form_hll: float = 0.0,
         rider_form_mtn: float = 0.0,
-        is_giro: int = 0,
-        is_tour: int = 0,
-        is_vuelta: int = 0,
     ):
         self.rider = rider
         self.stage = stage
@@ -424,9 +463,6 @@ class CPEntry:
         self.rider_form_flt = rider_form_flt
         self.rider_form_hll = rider_form_hll
         self.rider_form_mtn = rider_form_mtn
-        self.is_giro = is_giro
-        self.is_tour = is_tour
-        self.is_vuelta = is_vuelta
         self._uid = str(uuid4())
 
     def __repr__(self):
@@ -443,6 +479,21 @@ class CPEntry:
     @property
     def uid(self):
         return self._uid
+
+    @property
+    def is_giro(self):
+        # One-hot encoding for Giro stages
+        return int(self.stage and 'giro' in self.stage.name)
+
+    @property
+    def is_tour(self):
+        # One-hot encoding for Tour stages
+        return int(self.stage and 'tour' in self.stage.name)
+
+    @property
+    def is_vuelta(self):
+        # One-hot encoding for Vuelta stages
+        return int(self.stage and 'vuelta' in self.stage.name)
 
     def dumps(self):
         return {
@@ -470,9 +521,6 @@ class CPEntry:
             rider_form_flt=data.get("rider_form_flt", 0.0),
             rider_form_hll=data.get("rider_form_hll", 0.0),
             rider_form_mtn=data.get("rider_form_mtn", 0.0),
-            is_giro=data.get("is_giro", 0),
-            is_tour=data.get("is_tour", 0),
-            is_vuelta=data.get("is_vuelta", 0),
         )
         entry._uid = data.get("uid", str(uuid4()))
         return entry
