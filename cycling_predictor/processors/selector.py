@@ -388,55 +388,72 @@ class CPSelector:
 
 if __name__ == "__main__":
 
+    from cycling_predictor.collectors import CPGTEntryCollector
     from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
+    # Load collector
+    _entry_collector = CPGTEntryCollector.load(r'..\collectors\data\CPGTEntryCollector_tour_2026.json')
+
     # Load predictors
-    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F1_gauss.json')
-    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F2_gauss.json')
-    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR1_F3_gauss.json')
-    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F1_gauss.json')
-    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F2_gauss.json')
-    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR2_F3_gauss.json')
-    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F1_gauss.json')
-    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F2_gauss.json')
-    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR3_F3_gauss.json')
-    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F1_gauss.json')
-    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F2_gauss.json')
-    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR4_F3_gauss.json')
-    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F1_gauss.json')
-    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F2_gauss.json')
-    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_giro_2026_RR_RR5_F3_gauss.json')
+    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F1_gauss.json')
+    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F2_gauss.json')
+    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F3_gauss.json')
+    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F1_gauss.json')
+    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F2_gauss.json')
+    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F3_gauss.json')
+    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F1_gauss.json')
+    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F2_gauss.json')
+    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F3_gauss.json')
+    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F1_gauss.json')
+    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F2_gauss.json')
+    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F3_gauss.json')
+    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F1_gauss.json')
+    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F2_gauss.json')
+    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F3_gauss.json')
+    _itt_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F1_gauss.json')
+    _itt_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F2_gauss.json')
+    _itt_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F3_gauss.json')
+
+    _predictors = [
+        _rr1_predictor_1,
+        _rr1_predictor_2,
+        _rr1_predictor_3,
+        _rr2_predictor_1,
+        _rr2_predictor_2,
+        _rr2_predictor_3,
+        _rr3_predictor_1,
+        _rr3_predictor_2,
+        _rr3_predictor_3,
+        _rr4_predictor_1,
+        _rr4_predictor_2,
+        _rr4_predictor_3,
+        _rr5_predictor_1,
+        _rr5_predictor_2,
+        _rr5_predictor_3,
+        _itt_predictor_1,
+        _itt_predictor_2,
+        _itt_predictor_3,
+    ]
+
+    # Set collector in predictors
+    for _predictor in _predictors:
+        _predictor.collector = _entry_collector
 
     # Set up ensemble predictor
     _ensemble_predictor = CPEnsemblePredictor(
-        predictors=[
-            _rr1_predictor_1,
-            _rr1_predictor_2,
-            _rr1_predictor_3,
-            _rr2_predictor_1,
-            _rr2_predictor_2,
-            _rr2_predictor_3,
-            _rr3_predictor_1,
-            # _rr3_predictor_2,
-            _rr3_predictor_3,
-            _rr4_predictor_1,
-            _rr4_predictor_2,
-            _rr4_predictor_3,
-            _rr5_predictor_1,
-            _rr5_predictor_2,
-            _rr5_predictor_3,
-        ]
+        predictors=_predictors,
     )
 
     # Preprocess data for predictions
-    _ensemble_predictor.preprocess(rider_feature_noise=0.1)
+    _ensemble_predictor.preprocess()
 
+    # TODO: Include form in feature noise!
     # Predict
     _predictions = _ensemble_predictor.predict(n=100, rider_feature_noise=0.1, normalize=True, gate=True)
 
     # Create selector
     _selector = CPSelector(
-        riders=_rr5_predictor_1.collector.riders,
+        riders=_entry_collector.riders,
         predictions=_predictions,
     )
 
@@ -447,7 +464,7 @@ if __name__ == "__main__":
             _prediction.dump()
 
     # Score riders
-    _selector.score_gts()
+    _selector.score_gts(include_team_points=True)
 
     # Sort riders by score and print top 50, include cost
     sorted_riders = sorted(_selector.scores.items(), key=lambda x: x[1], reverse=True)
@@ -460,12 +477,13 @@ if __name__ == "__main__":
 
     # Select team
     _max_score, _cost = _selector.select(
-        budget=42.0,
+        budget=45.0,
         team_limit=4,
         total_riders=20,
         # min_riders_per_race=3,
         min_riders_scoring_per_race=5,
-        max_sprinters=6,
+        max_sprinters=8,
+        sprint_budget=15,
         use_full_budget=True,
     )
 
