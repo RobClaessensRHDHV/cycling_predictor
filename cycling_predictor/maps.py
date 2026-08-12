@@ -316,6 +316,30 @@ CPRiderInfoMap = {
         'height': 1.75,
         'weight': 65.0,
     },
+    'mathias-norsgaard': {
+        'height': 2.02,
+        'weight': 88.0,
+    },
+    'guillermo-juan-martinez': {
+        'height': 1.72,
+        'weight': 60.0,
+    },
+    'menno-huising': {
+        'height': 1.85,
+        'weight': 70.0,
+    },
+    'tijmen-graat': {
+        'height': 1.76,
+        'weight': 66.0,
+    },
+    'pablo-torres-arias': {
+        'height': 1.74,
+        'weight': 64.0,
+    },
+    'walter-calzoni': {
+        'height': 1.72,
+        'weight': 66.0,
+    },
 }
 
 CPClassicPointsMap = {
