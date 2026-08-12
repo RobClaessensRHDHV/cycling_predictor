@@ -120,6 +120,7 @@ class KFoldTuner(KFoldProcessor):
 
         return objective
 
+    # TODO: Find best hyperparameters over different random states?
     def tune(self, n_folds=3, n_trials=50, verbose=True) -> dict:
         """
         Tune hyperparameters using Optuna with KFold cross-validation for multiple random states.
@@ -202,7 +203,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
             _rider_feature_filter = ()
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn',)
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -215,7 +216,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (2,), 'stage_type': ('RR',)}
             _rider_feature_filter = ()
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn',)
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -227,7 +228,7 @@ if __name__ == "__main__":
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (3,), 'stage_type': ('RR',)}
             _rider_feature_filter = ('avg',)
-            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -240,7 +241,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (4,), 'stage_type': ('RR',)}
             _rider_feature_filter = ('avg',)
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('mtn', 'profile_score'): op.add,
                 ('mtn', 'vertical_meters'): op.add,
@@ -252,7 +253,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (5,), 'stage_type': ('RR',)}
             _rider_feature_filter = ('avg',)
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('mtn', 'profile_score'): op.add,
                 ('mtn', 'vertical_meters'): op.add,
@@ -264,7 +265,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (1, 2, 3), 'stage_type': ('ITT',)}
             _rider_feature_filter = ()
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('hll', 'profile_score'): op.add,
                 ('hll', 'vertical_meters'): op.add,

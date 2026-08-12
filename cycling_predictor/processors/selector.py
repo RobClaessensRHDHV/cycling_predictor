@@ -392,27 +392,27 @@ if __name__ == "__main__":
     from cycling_predictor.processors import CPPredictor, CPEnsemblePredictor
 
     # Load collector
-    _entry_collector = CPGTEntryCollector.load(r'..\collectors\data\CPGTEntryCollector_tour_2026.json')
+    _entry_collector = CPGTEntryCollector.load(r'..\collectors\data\CPGTEntryCollector_vuelta_2026.json')
 
     # Load predictors
-    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F1_gauss.json')
-    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F2_gauss.json')
-    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR1_F3_gauss.json')
-    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F1_gauss.json')
-    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F2_gauss.json')
-    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR2_F3_gauss.json')
-    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F1_gauss.json')
-    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F2_gauss.json')
-    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR3_F3_gauss.json')
-    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F1_gauss.json')
-    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F2_gauss.json')
-    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR4_F3_gauss.json')
-    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F1_gauss.json')
-    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F2_gauss.json')
-    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_RR_RR5_F3_gauss.json')
-    _itt_predictor_1 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F1_gauss.json')
-    _itt_predictor_2 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F2_gauss.json')
-    _itt_predictor_3 = CPPredictor.load(r'data\CPPredictor_tour_2026_ITT_ITT1_ITT2_ITT3_F3_gauss.json')
+    _rr1_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR1_F1_gauss.json')
+    _rr1_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR1_F2_gauss.json')
+    _rr1_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR1_F3_gauss.json')
+    _rr2_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR2_F1_gauss.json')
+    _rr2_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR2_F2_gauss.json')
+    _rr2_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR2_F3_gauss.json')
+    _rr3_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR3_F1_gauss.json')
+    _rr3_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR3_F2_gauss.json')
+    _rr3_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR3_F3_gauss.json')
+    _rr4_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR4_F1_gauss.json')
+    _rr4_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR4_F2_gauss.json')
+    _rr4_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR4_F3_gauss.json')
+    _rr5_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR5_F1_gauss.json')
+    _rr5_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR5_F2_gauss.json')
+    _rr5_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_RR_RR5_F3_gauss.json')
+    _itt_predictor_1 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_ITT_ITT1_ITT2_ITT3_F1_gauss.json')
+    _itt_predictor_2 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_ITT_ITT1_ITT2_ITT3_F2_gauss.json')
+    _itt_predictor_3 = CPPredictor.load(r'data\CPPredictor_vuelta_2026_ITT_ITT1_ITT2_ITT3_F3_gauss.json')
 
     _predictors = [
         _rr1_predictor_1,
@@ -457,11 +457,11 @@ if __name__ == "__main__":
         predictions=_predictions,
     )
 
-    # Optionally dump specific prediction
-    dump_stages = (1, 2, 3)
-    for _prediction in _predictions:
-        if _prediction.stage.stage_number in dump_stages:
-            _prediction.dump()
+    # # Optionally dump specific prediction
+    # dump_stages = (1, 2, 3)
+    # for _prediction in _predictions:
+    #     if _prediction.stage.stage_number in dump_stages:
+    #         _prediction.dump()
 
     # Score riders
     _selector.score_gts(include_team_points=True)
@@ -477,13 +477,12 @@ if __name__ == "__main__":
 
     # Select team
     _max_score, _cost = _selector.select(
-        budget=45.0,
+        budget=48.0,
         team_limit=4,
         total_riders=20,
-        # min_riders_per_race=3,
         min_riders_scoring_per_race=5,
-        max_sprinters=8,
-        sprint_budget=15,
+        # max_sprinters=8,
+        # sprint_budget=15,
         use_full_budget=True,
     )
 

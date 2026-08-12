@@ -113,7 +113,7 @@ if __name__ == "__main__":
         '../collectors/data/CPGTEntryCollector_gts_2023_2024_2025_50.json'
     )
     _prediction_entry_collector = CPGTEntryCollector.load(
-        '../collectors/data/CPGTEntryCollector_giro_2026.json'
+        '../collectors/data/CPGTEntryCollector_vuelta_2026.json'
     )
 
     # Setup profile and filters
@@ -127,7 +127,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
             _rider_feature_filter = ()
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn',)
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -142,7 +142,7 @@ if __name__ == "__main__":
                     'max_depth': 5,
                     'reg_alpha': 3,
                     'reg_lambda': 3,
-                    'n_estimators': 750,
+                    'n_estimators': 500,
                 }
             )
 
@@ -150,9 +150,9 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (2,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob',)
+            _rider_feature_filter = ('cob', 'is_cob')
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn',)
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -163,7 +163,7 @@ if __name__ == "__main__":
             _xgb_model = XGBModel(
                 config={
                     'k': 10,
-                    'learning_rate': 0.03,
+                    'learning_rate': 0.02,
                     'max_depth': 5,
                     'reg_alpha': 3,
                     'reg_lambda': 5,
@@ -175,8 +175,8 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (3,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('avg',)
-            _entry_feature_filter = ('rider_form_flt', 'rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _rider_feature_filter = ('avg', 'cob', 'is_cob')
+            _entry_feature_filter = ()
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -187,10 +187,10 @@ if __name__ == "__main__":
             _xgb_model = XGBModel(
                 config={
                     'k': 10,
-                    'learning_rate': 0.02,
-                    'max_depth': 5,
+                    'learning_rate': 0.01,
+                    'max_depth': 10,
                     'reg_alpha': 5,
-                    'reg_lambda': 3,
+                    'reg_lambda': 5,
                     'n_estimators': 1000,
                 }
             )
@@ -201,7 +201,7 @@ if __name__ == "__main__":
             _stage_filter = {'stage_profile': (4,), 'stage_type': ('RR',)}
             _rider_feature_filter = ('avg',)
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('mtn', 'profile_score'): op.add,
                 ('mtn', 'vertical_meters'): op.add,
@@ -211,11 +211,11 @@ if __name__ == "__main__":
             _xgb_model = XGBModel(
                 config={
                     'k': 20,
-                    'learning_rate': 0.03,
-                    'max_depth': 5,
+                    'learning_rate': 0.02,
+                    'max_depth': 8,
                     'reg_alpha': 5,
-                    'reg_lambda': 3,
-                    'n_estimators': 1000,
+                    'reg_lambda': 5,
+                    'n_estimators': 750,
                 }
             )
 
@@ -225,7 +225,7 @@ if __name__ == "__main__":
             _stage_filter={'stage_profile': (5,), 'stage_type': ('RR',)}
             _rider_feature_filter=('avg',)
             _stage_feature_filter=()
-            _entry_feature_filter=('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter=()
             _interactions={
                 ('mtn', 'profile_score'): op.add,
                 ('mtn', 'vertical_meters'): op.add,
@@ -235,11 +235,11 @@ if __name__ == "__main__":
             _xgb_model = XGBModel(
                 config={
                     'k': 10,
-                    'learning_rate': 0.01,
-                    'max_depth': 7,
-                    'reg_alpha': 4,
-                    'reg_lambda': 6,
-                    'n_estimators': 1000,
+                    'learning_rate': 0.02,
+                    'max_depth': 8,
+                    'reg_alpha': 5,
+                    'reg_lambda': 5,
+                    'n_estimators': 500,
                 }
             )
 
@@ -247,9 +247,9 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (1, 2, 3), 'stage_type': ('ITT',)}
-            _rider_feature_filter = ()
+            _rider_feature_filter = ('cob', 'is_cob')
             _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
+            _entry_feature_filter = ()
             _interactions = {
                 ('hll', 'profile_score'): op.add,
                 ('hll', 'vertical_meters'): op.add,
@@ -258,12 +258,12 @@ if __name__ == "__main__":
             # Model config
             _xgb_model = XGBModel(
                 config={
-                    'k': 20,
-                    'learning_rate': 0.02,
-                    'max_depth': 8,
-                    'reg_alpha': 3,
-                    'reg_lambda': 3,
-                    'n_estimators': 500,
+                    'k': 10,
+                    'learning_rate': 0.03,
+                    'max_depth': 7,
+                    'reg_alpha': 4,
+                    'reg_lambda': 5,
+                    'n_estimators': 750,
                 }
             )
 
