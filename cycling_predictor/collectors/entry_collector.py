@@ -424,16 +424,15 @@ if __name__ == "__main__":
     from cycling_predictor.collectors.rider_collector import CPRiderCollector
 
     # Get rider collector
-    with open('data/RiderCollector_gts_2023_2024_2025.json', 'r') as fp:
+    with open('data/CPRiderCollector_vuelta_2026.json', 'r') as fp:
         _rider_collector = CPRiderCollector.loads(json.load(fp))
 
     # GT collection
     _stage_collector = CPGTEntryCollector(
-        categories=['gts'],
-        years=[2023, 2024, 2025],
-        # years=[2026],
+        categories=['vuelta'],
+        years=[2026],
         riders=_rider_collector.riders,
-        max_rank=100,
+        # max_rank=100,
     )
     _stage_collector.get_entries()
 

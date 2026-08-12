@@ -164,8 +164,8 @@ class CPRiderCollector(CPBaseCollector):
 if __name__ == "__main__":
 
     _collector = CPRiderCollector(
-        categories=['gts'],
-        years=[2023, 2024, 2025],
+        categories=['vuelta'],
+        years=[2026],
     )
 
     _collector.get_riders()
