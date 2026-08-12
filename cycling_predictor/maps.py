@@ -106,6 +106,7 @@ CPAbbreviationMap = {
 
 CPRiderInfoMap = {
     'anders-halland-johannessen': {
+        'height': 1.76,
         'weight': 65.0
     },
     'emilien-jeanniere': {
@@ -113,6 +114,7 @@ CPRiderInfoMap = {
         'weight': 68.0
     },
     'matheo-vercher': {
+        'height': 1.71,
         'weight': 65.0
     },
     'thomas-gachignard': {
@@ -285,7 +287,35 @@ CPRiderInfoMap = {
     'sakarias-koller-loland': {
         'height': 1.80,
         'weight': 65.0,
-    }
+    },
+    'max-walker': {
+        'height': 1.80,
+        'weight': 70.0,
+    },
+    'robbe-dhondt': {
+        'height': 1.76,
+        'weight': 68.0,
+    },
+    'frits-biesterbos': {
+        'height': 1.78,
+        'weight': 66.0,
+    },
+    'anders-skaarseth': {
+        'height': 1.86,
+        'weight': 72.0,
+    },
+    'nicolas-vinokurov': {
+        'height': 1.84,
+        'weight': 69.0,
+    },
+    'nicolas-breuillard': {
+        'height': 1.75,
+        'weight': 65.0,
+    },
+    'joris-delbove': {
+        'height': 1.75,
+        'weight': 65.0,
+    },
 }
 
 CPClassicPointsMap = {
