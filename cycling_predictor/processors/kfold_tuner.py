@@ -200,20 +200,7 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (1,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl')
-            _stage_feature_filter = ()
-            _entry_feature_filter = ('rider_form_mtn',)
-            _interactions = {
-                ('spr', 'gradient_final_km'): op.sub,
-                ('hll', 'profile_score'): op.add,
-                ('hll', 'vertical_meters'): op.add,
-            }
-
-        case 'RR1_RR2':
-
-            # Setup filters and interactions
-            _stage_filter = {'stage_profile': (1, 2), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl')
+            _rider_feature_filter = ()
             _stage_feature_filter = ()
             _entry_feature_filter = ('rider_form_mtn',)
             _interactions = {
@@ -226,21 +213,9 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (2,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'pr_', 'tts', 'ttl')
+            _rider_feature_filter = ()
             _stage_feature_filter = ()
             _entry_feature_filter = ('rider_form_mtn',)
-            _interactions = {
-                ('spr', 'gradient_final_km'): op.sub,
-                ('hll', 'profile_score'): op.add,
-                ('hll', 'vertical_meters'): op.add,
-            }
-
-        case 'RR2_RR3':
-
-            # Setup filters and interactions
-            _stage_filter = {'stage_profile': (3,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'avg', 'mtn', 'gc_', 'pr_', 'tts', 'ttl', 'itt')
-            _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
                 ('hll', 'profile_score'): op.add,
@@ -251,7 +226,7 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (3,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'avg', 'flt', 'mtn', 'gc_', 'pr_', 'tts', 'ttl', 'itt')
+            _rider_feature_filter = ('avg',)
             _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
             _interactions = {
                 ('spr', 'gradient_final_km'): op.sub,
@@ -263,7 +238,7 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (4,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'avg', 'flt', 'or_', 'spr', 'pr_', 'tts', 'ttl')
+            _rider_feature_filter = ('avg',)
             _stage_feature_filter = ()
             _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
             _interactions = {
@@ -275,7 +250,7 @@ if __name__ == "__main__":
 
             # Setup filters and interactions
             _stage_filter = {'stage_profile': (5,), 'stage_type': ('RR',)}
-            _rider_feature_filter = ('cob', 'avg', 'flt', 'or_', 'spr', 'pr_', 'tts', 'ttl', 'itt')
+            _rider_feature_filter = ('avg',)
             _stage_feature_filter = ()
             _entry_feature_filter = ('rider_form_flt', 'rider_form_hll', 'is_giro', 'is_tour', 'is_vuelta')
             _interactions = {
@@ -283,11 +258,11 @@ if __name__ == "__main__":
                 ('mtn', 'vertical_meters'): op.add,
             }
 
-        case 'ITT1_ITT2':
+        case 'ITT1_ITT2_ITT3':
 
             # Setup filters and interactions
-            _stage_filter = {'stage_profile': (1, 2), 'stage_type': ('ITT',)}
-            _rider_feature_filter = ('cob', 'mtn', 'gc_', 'spr')
+            _stage_filter = {'stage_profile': (1, 2, 3), 'stage_type': ('ITT',)}
+            _rider_feature_filter = ()
             _stage_feature_filter = ()
             _entry_feature_filter = ('rider_form_mtn', 'is_giro', 'is_tour', 'is_vuelta')
             _interactions = {
