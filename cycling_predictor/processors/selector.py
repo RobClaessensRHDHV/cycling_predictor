@@ -130,6 +130,13 @@ class CPSelector:
         total_gc_ranks = [(rider, sum(gc_ranks[rider])) for rider in gc_ranks]
         total_gc_ranks.sort(key=lambda x: x[1])
 
+        # Remove riders with no GC ranks (i.e., those who didn't participate in GC stages)
+        for rider, total_rank in total_gc_ranks[:]:
+            if total_rank == 0:
+                total_gc_ranks.remove((rider, total_rank))
+            else:
+                break
+
         # Assign additional points to riders based on predicted GC
         print("GC ranking:")
         for i, (rider_name, total_rank) in enumerate(total_gc_ranks, start=1):
@@ -144,7 +151,14 @@ class CPSelector:
         total_sprint_ranks = [(rider, sum(sprint_ranks[rider])) for rider in sprint_ranks]
         total_sprint_ranks.sort(key=lambda x: x[1])
 
-        # Assign additional points to riders based on predicted GC
+        # Remove riders with no sprint ranks (i.e., those who didn't participate in sprint stages)
+        for rider, total_rank in total_sprint_ranks[:]:
+            if total_rank == 0:
+                total_sprint_ranks.remove((rider, total_rank))
+            else:
+                break
+
+        # Assign additional points to riders based on predicted sprint ranking
         print("\nSprint ranking:")
         for i, (rider_name, total_rank) in enumerate(total_sprint_ranks, start=1):
             _score = CPGTSprintPointsMap.get(i, 0)
@@ -157,6 +171,13 @@ class CPSelector:
         # Order youth ranks, for rider with birthyear > 2000, total lowest is highest rank, then top-down
         total_youth_gc_ranks = [(rider, sum(youth_ranks[rider])) for rider in youth_ranks]
         total_youth_gc_ranks.sort(key=lambda x: x[1])
+
+        # Remove riders with no youth ranks (i.e., those who didn't participate in GC stages)
+        for rider, total_rank in total_youth_gc_ranks[:]:
+            if total_rank == 0:
+                total_youth_gc_ranks.remove((rider, total_rank))
+            else:
+                break
 
         # Assign additional points to riders based on predicted youth
         print("\nYouth ranking:")
