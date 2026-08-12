@@ -196,7 +196,8 @@ class CPSelector:
                exclude_riders: Optional[Tuple[str, ...]] = None,
                min_riders_per_race: Optional[int] = None,
                min_riders_scoring_per_race: Optional[int] = None,
-               max_sprinters: Optional[int] = 6,
+               max_sprinters: Optional[int] = None,
+               sprint_budget: Optional[float] = None,
                use_full_budget: bool = False,
                verbose: bool = True) -> Tuple[float, float]:
         """
@@ -208,6 +209,8 @@ class CPSelector:
         :param exclude_riders: Tuple of rider names to exclude from selection.
         :param min_riders_per_race: Minimum number of riders present in each race.
         :param min_riders_scoring_per_race: Minimum number of riders scoring points (top 20) in each race.
+        :param max_sprinters: Maximum number of sprinters allowed in the selection.
+        :param sprint_budget: Maximum budget allocated for sprinters.
         :param use_full_budget: Whether to enforce using the full budget.
         :param verbose: Whether to print selection and corresponding details.
         :return: Tuple of maximum achievable score and cost of selected team.
@@ -275,8 +278,12 @@ class CPSelector:
 
         # Constraint 6: Max number of sprinters
         spr_indices = [i for i, r in enumerate(valid_riders) if getattr(r, 'category', None) == 'spr']
-        if spr_indices:
+        if spr_indices and max_sprinters is not None:
             solver.Add(solver.Sum([x[i] for i in spr_indices]) <= max_sprinters)
+
+        # Constraint 7: Sprint budget (if specified)
+        if sprint_budget is not None and spr_indices:
+            solver.Add(solver.Sum([x[i] * valid_riders[i].cost for i in spr_indices]) <= sprint_budget)
 
         # Objective: Maximize Score
         solver.Maximize(solver.Sum([x[i] * self.scores[rider.name] for i, rider in enumerate(valid_riders)]))
