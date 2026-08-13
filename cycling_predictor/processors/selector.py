@@ -94,10 +94,10 @@ class CPSelector:
                     gc_ranks[rider.name].append(predicted_rank)
                     if rider.birthdate.year > 2000:
                         youth_ranks[rider.name].append(predicted_rank)
-                # elif prediction.stage.stage_type == 'ITT':
-                #     gc_ranks[rider.name].append(predicted_rank)
-                #     if rider.birthdate.year > 2000:
-                #         youth_ranks[rider.name].append(predicted_rank)
+                elif prediction.stage.stage_type == 'ITT':
+                    gc_ranks[rider.name].append(predicted_rank)
+                    if rider.birthdate.year > 2000:
+                        youth_ranks[rider.name].append(predicted_rank)
                 # If sprint stage, accumulate ranks for sprint scoring
                 elif prediction.stage.stage_type == 'RR' and prediction.stage.stage_profile in (1, 2):
                     sprint_ranks[rider.name].append(predicted_rank)
@@ -480,6 +480,7 @@ if __name__ == "__main__":
         budget=48.0,
         team_limit=4,
         total_riders=20,
+        exclude_riders=('mathias-norsgaard',),      # Exclude Norsgaard as his extreme height and weight cause strange predictions
         min_riders_scoring_per_race=5,
         # max_sprinters=8,
         # sprint_budget=15,
